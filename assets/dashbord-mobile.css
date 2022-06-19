@@ -28,7 +28,10 @@
     --primary-color: hsl(0, 0%, 100%);
     --highlight-color: hsl(180, 99%, 52%);
     --second-color: hsl(206.6, 89.7, 54.1);
-    --gradient-color: linear-gradient(180deg, #0cfcfe 0%, #2196f3 100%);
+    --gradient-color: linear-gradient(90deg, #0cfcfe 0%, #2196f3 100%);
+    --holo-color: #00FCFC;
+    --width: 150px;
+    --height: 5px;
 }
 
 /*---------RESETEO------------------------------*/
@@ -42,14 +45,15 @@
 }
 
 Body {
-    background-color: gray;
+    background-color: #000;
 }
+
 
 /*------INICIA HEADER--------------------------------*/
 header {
     width: 100%;
     height: 100vh;
-    background-color: grey;
+    background-color: #000;
 }
 
 /*NEVEGACION------------------------------------------*/
@@ -119,10 +123,11 @@ nav {
 #check:checked~.nav-menu li {
     display: block;
 }
+
 /*-------------------------------------------------------*/
 
-.dashbord-de-usuarios{
-    background-color: #0cfcfe;
+.dashbord-de-usuarios {
+    background-color: #000;
     width: auto;
     height: auto;
     display: flex;
@@ -133,26 +138,112 @@ nav {
     align-items: center;
 }
 
-.tarjetas-usuario{
-    width: 240px;
-    height: 330px;
-    background-color: #2196f3;
+.card-user {
+    background-color: rgb(31, 27, 27);
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
     justify-content: center;
-    margin: 10px;
-}
-.tarjetas-usuario img{
-    width: 220px;
-    height: 150px;
-    margin: 10px;
-}
-.tarjetas-usuario h1{
-    font-size: 20px;
-    color: aliceblue;
-    margin-left: 10px;
-}
-.tarjetas-usuario p{
-    font-size: 12px;
-    color: black;
-    margin-left: 10px;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+    z-index: 1;
+    width: 300px;
 }
 
+.card-user img {
+    height: 250px;
+    width: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+
+}
+.card-user h2{
+    color: var(--highlight-color);
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    margin-top: 10px;
+}.id{
+    font-family: 'BLACKPAST',sans-serif;
+}
+
+.card-user p{
+    font-family: 'LUFGA-LIGHT', sans-serif;
+    color: white;
+    font-size: 10px;
+}
+.card-user span{
+    font-family: 'BLACKPAST',sans-serif;
+    font-size: 12px;
+}
+.button {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 20px;
+    font-family: 'LUFGA', sans-serif;
+    font-size: 13px;
+    object-fit: contain;
+    background: linear-gradient(90deg, #0cfcfe 0%, #2196f3 100%);
+    color: black;
+    border-radius: 25px;
+    margin-top: 8px;
+}
+.button:hover {
+    background: linear-gradient(90deg, #F3A22E 0%, hsl(42, 78%, 58%) 100%);
+    color: var(--primary-color);
+}
+.filtrado {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 10px;
+    background-color: rgb(0, 0, 0, .30);
+    text-decoration: none;
+    list-style: none;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'BLACKPAST',sans-serif;
+    font-size: 10px;
+}
+
+.filtrado a {
+    color: white;
+    cursor: pointer;
+}
+
+
+.tarjetas {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    width: 280px;
+    max-width: 300px;
+    background-color: rgb(31, 27, 27);
+    border-radius: 15px;
+    text-align: center;
+    font-family: 'LUFGA',sans-serif;
+    color: white;
+    font-size: 10px;
+    gap: 10px;
+}
+.tarjetas h3{
+    margin-top: 10px;
+}
+.tarjetas span{
+    color: #000;
+}
+
+.porcentajes {
+    background-color: greenyellow;
+    
+}
