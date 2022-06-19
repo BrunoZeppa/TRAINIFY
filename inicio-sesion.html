@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://fonts.cdnfonts.com/css/cocogoose" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/16afc7fd77.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./assets/inicio-sesion.css">
+    <title>Trainify</title>
+</head>
+
+<body>
+    <header>
+        <!--------------------------------NAVEGACION--------------------------------------->
+        <nav>
+            <!--logo-->
+            <div>
+                <img class="logo" src="./assets/images/logo-&-iso.svg" alt="">
+            </div>
+            <!--menu haburguesa-->
+            <input type="checkbox" id="check">
+            <label for="check" class="burger-menu">
+                <img src="./assets/images/burger-menu.svg" alt="">
+            </label>
+            <!--barra de navegación-->
+            <ul class="nav-menu">
+                <li><a class="active" href="#programas">training</a></li>
+                <li><a href="#">nutrition</a></li>
+                <li><a href="#">prices</a></li>
+                <li><a href="#">store</a></li>
+            </ul>
+        </nav>
+        <div class="inicia-sesion-div">
+            <form id="formulario">
+                <input type="text"
+                placeholder="escribe tu usurio"
+                id="usuario">
+                <input type="password" name=""
+                id="contraseña"
+                placeholder="escribe tu contraseña"
+                >
+                <br>
+                <button type="submit">enviar</button>
+            </form>
+        </div>
+    </header>  
+    <script src="/assets/js/inicio-sesion.js"></script>
+</body>
+    
