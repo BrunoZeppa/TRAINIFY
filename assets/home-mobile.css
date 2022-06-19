@@ -93,6 +93,7 @@
 
 Body {
     background-color: black;
+    border: none;
 }
 
 /*--=================INICIA HEADER===========================----*/
@@ -103,6 +104,7 @@ header {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    border: none;
 }
 #header.change{
     background-image: none;
@@ -826,6 +828,8 @@ main {
     text-align: center;
     grid-column: 2/5;
     margin-bottom: 3.5rem;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 
@@ -1235,6 +1239,11 @@ order: 4;
         background-image: url(./images/FOOTER-02.png);
         background-position: top;
         background-repeat: no-repeat;
+    }
+    .aside2 h3{
+        font-size: 38px;
+        margin-left: 10%;
+        margin-right: 10%;
     }
 
 }
