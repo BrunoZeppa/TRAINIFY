@@ -140,18 +140,15 @@ function filtrarUsuarios(id) {
     dashboardID.innerHTML = fragmento;
 };
 
-function porcentajeGrasa( genero, edad){
-    if(genero == "masculino" && edad <= 30){
-        ((users.pTriceps + users.pSubEscapular + users.pSupraIliaco + users.pAbdominal + users.pCuadricipital + users.pComodin) * 0.097)+3.64
-    }
-    if(genero == "masculino" && edad >= 31){
-        ((users.pTriceps + users.pSubEscapular + users.pSupraIliaco + users.pAbdominal + users.pCuadricipital + users.pComodin) * 0.1066)+4.975
-    }
-    if(genero == "femenino" && edad <= 30){
-        ((users.pTriceps + users.pSubEscapular + users.pSupraIliaco + users.pAbdominal + users.pCuadricipital + users.pComodin) * 0.217)-4.47
-    }
-    if(genero == "masculino" && edad >= 31){
-        ((users.pTriceps + users.pSubEscapular + users.pSupraIliaco + users.pAbdominal + users.pCuadricipital + users.pComodin) * 0.224)-2.8
-    }
-    return porcentajeGrasa("masculino",28)
+function porcentajeGrasa( genero, edad ){
+
+    if(genero == "masculino" && edad <= 30)
+       return ((users[0].pTriceps + users[0].pSubEscapular + users[0].pSupraIliaco + users[0].pAbdominal + users[0].pCuadricipital + users[0].pComodin) * 0.097)+3.64;
+        if(genero == "masculino" && edad >= 31)
+       return ((users[0].pTriceps + users[0].pSubEscapular + users[0].pSupraIliaco + users[0].pAbdominal + users[0].pCuadricipital + users[0].pComodin) * 0.1066)+4.975;
+    
+    if(genero == "femenino" && edad <= 30)
+       return ((users[0].pTriceps + users[0].pSubEscapular + users[0].pSupraIliaco + users[0].pAbdominal + users[0].pCuadricipital + users[0].pComodin) * 0.217)-4.47;
+    if(genero == "femenino" && edad >= 31)
+       return ((users[0].pTriceps + users[0].pSubEscapular + users[0].pSupraIliaco + users[0].pAbdominal + users[0].pCuadricipital + users[0].pComodin) * 0.224)-2.8;
 }
