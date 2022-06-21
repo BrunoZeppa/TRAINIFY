@@ -2,11 +2,13 @@
 'use strict'
 
 document.addEventListener("DOMContentLoaded", () => {
-    filtrarUsuarios("BrunoBZG24")
+    filtrarUsuarios("BrunoBZG24");
+    mostrarResultado();
 
 })
 
 let dashboardID = document.querySelector(".dashbord-de-usuarios");
+let deshbordResults = document.querySelector(".dashbord-de-resultados")
 
 
 
@@ -140,6 +142,28 @@ function filtrarUsuarios(id) {
     dashboardID.innerHTML = fragmento;
 };
 
+function mostrarResultado(){
+    let fragment = "";
+    users.forEach((users) => {
+        fragment += `
+        <div class="tarjetas">
+                    <h3>Porcentaje de grasa</h3>
+                    <p>Valor normal de acuerdo al genero y la edad</p>
+                    <div class="porcentajes">
+                        <span>${porcentajeGrasa(users.genero, users.edad)}%</span>
+                    </div>
+                </div>`;
+    })
+    deshbordResults.innerHTML = fragment
+};
+
+
+
+
+
+
+
+
 function porcentajeGrasa( genero, edad ){
 
     if(genero == "masculino" && edad <= 30)
@@ -151,4 +175,25 @@ function porcentajeGrasa( genero, edad ){
        return ((users[0].pTriceps + users[0].pSubEscapular + users[0].pSupraIliaco + users[0].pAbdominal + users[0].pCuadricipital + users[0].pComodin) * 0.217)-4.47;
     if(genero == "femenino" && edad >= 31)
        return ((users[0].pTriceps + users[0].pSubEscapular + users[0].pSupraIliaco + users[0].pAbdominal + users[0].pCuadricipital + users[0].pComodin) * 0.224)-2.8;
-}
+};
+function imc(peso, altura){
+    return (peso/(altura * altura))*10000;
+};
+function icc(cintura, cadera){
+    return cintura / cadera; 
+};
+function pesoOseo(estatura, muñeca, rodilla){
+    return 3.02*((estatura/100)^2 * (muñeca/100) * (rodilla / 100) * 400)^0.712;
+};
+function pesoGrasa(grasa, peso){
+    return (grasa * peso  ) / 100;
+};
+function pesoResidual (genero, peso ){
+    if(genero == "masculino")
+    return peso * 0.241;
+    if(genero == "femenino")
+    return peso * 0.209;
+};
+function pesoMuscular (peso, grasa, hueso, agua){
+   return peso - (grasa + hueso + agua );
+};
