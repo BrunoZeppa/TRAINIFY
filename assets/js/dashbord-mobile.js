@@ -3,13 +3,12 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     filtrarUsuarios("BrunoBZG24");
-    mostrarResultado();
+    mostrarResultado("BrunoBZG24");
 
 })
 
 let dashboardID = document.querySelector(".dashbord-de-usuarios");
-let deshbordResults = document.querySelector(".dashbord-de-resultados")
-
+let deshbordResults = document.querySelector(".dashbord-de-resultados");
 
 
 const users = [
@@ -37,6 +36,8 @@ const users = [
         pCuadricipital: 12,
         pComodin: 18,
         pPantorrilla: 12,
+        dMuñeca: 5,
+        dRodilla: 11,
         nivHombros: 10,
         escoliosis: 5,
         nivCadera: 5,
@@ -142,9 +143,10 @@ function filtrarUsuarios(id) {
     dashboardID.innerHTML = fragmento;
 };
 
-function mostrarResultado(){
+function mostrarResultado(id) {
     let fragment = "";
-    users.forEach((users) => {
+    let usuarioFiltrados = users.filter((users) => users.id == id);
+    usuarioFiltrados.forEach((users) => {
         fragment += `
         <div class="tarjetas">
                     <h3>Porcentaje de grasa</h3>
@@ -152,48 +154,163 @@ function mostrarResultado(){
                     <div class="porcentajes">
                         <span>${porcentajeGrasa(users.genero, users.edad)}%</span>
                     </div>
-                </div>`;
+                </div>
+                <div class="tarjetas">
+                    <h3>Índece de masa corporal</h3>
+                    <p>Valor normal de acuerdo al genero y la edad</p>
+                    <div class="porcentajes">
+                        <span>${imc(users.peso, users.altura)}</span>
+                    </div>
+                </div>
+                <div class="tarjetas">
+                    <h3>Índice Cintura-Cadera</h3>
+                    <p>Valor normal de acuerdo al genero y la edad</p>
+                    <div class="porcentajes">
+                        <span>${icc(users.cCintura, users.cCadera)}%</span>
+                    </div>
+                </div>
+                <div class="tarjetas">
+                    <h3>Peso Tejido Adiposo</h3>
+                    <p>Valor normal de acuerdo al genero y la edad</p>
+                    <div class="porcentajes">
+                        <span>${pesoGrasa(porcentajeGrasa(users.genero, users.edad), users.peso)}kg</span>
+                    </div>
+                </div>
+                <div class="tarjetas">
+                    <h3>Peso Óseo</h3>
+                    <p>Valor normal de acuerdo al genero y la edad</p>
+                    <div class="porcentajes">
+                        <span>${pesoOseo(users.altura, users.dMuñeca, users.dRodilla)}kg</span>
+                    </div>
+                </div>
+                <div class="tarjetas">
+                    <h3>Peso Residual</h3>
+                    <p>Valor normal de acuerdo al genero y la edad</p>
+                    <div class="porcentajes">
+                        <span>${pesoResidual(users.genero, users.peso)}kg</span>
+                    </div>
+                </div>
+                <div class="tarjetas">
+                    <h3>Peso Muscular</h3>
+                    <p>Valor normal de acuerdo al genero y la edad</p>
+                    <div class="porcentajes">
+                        <span>${pesoMuscular(users.peso, pesoGrasa(porcentajeGrasa(users.genero, users.edad), users.peso), pesoOseo(users.altura, users.dMuñeca, users.dRodilla), pesoResidual(users.genero, users.peso))}kg</span>
+                    </div>
+                </div>
+                <div class="tarjetas">
+                    <h3>Tipo de fibras Músculares</h3>
+                    <p>Valor normal de acuerdo al genero y la edad</p>
+                    <div class="porcentajes">
+                        <span>${tipoFibrasMusculares(users.angSalto)}</span>
+                    </div>
+                </div>
+                <div class="tarjetas">
+                    <h3>Tensión Arterial Sistólica</h3>
+                    <p>Valor normal de acuerdo al genero y la edad</p>
+                    <div class="porcentajes">
+                        <span>${users.tas}mm/hg</span>
+                    </div>
+                </div>
+                <div class="tarjetas">
+                    <h3>Tensión Arterial Diastólica</h3>
+                    <p>Valor normal de acuerdo al genero y la edad</p>
+                    <div class="porcentajes">
+                        <span>${users.tad}mm/hg</span>
+                    </div>
+                </div>
+                <div class="tarjetas">
+                    <h3>Fracuencia cardiaca</h3>
+                    <p>Valor normal de acuerdo al genero y la edad</p>
+                    <div class="porcentajes">
+                        <span>${users.fcr}ppm</span>
+                    </div>
+                </div>
+                <div class="tarjetas">
+                    <h3>Análisis postural</h3>
+                    <p>Valor normal de acuerdo al genero y la edad</p>
+                    <div class="porcentajes">
+                        <span>${analisisPostural(users.nivHombros, users.escoliosis, users.nivCadera, users.aliTobillos, users.sifosis, users.lordosis)}</span>
+                    </div>
+                </div>
+                <div class="tarjetas">
+                    <h3>Índice de adaptación al esfuerzo</h3>
+                    <p>Valor normal de acuerdo al genero y la edad</p>
+                    <div class="porcentajes">
+                        <span>${iae(users.fc1, users.fc2, users.fc3)}%</span>
+                    </div>
+                </div>
+                <div class="tarjetas">
+                    <h3>Vo2Max</h3>
+                    <p>Valor normal de acuerdo al genero y la edad</p>
+                    <div class="porcentajes">
+                        <span>${Vo2Max(users.genero, users.fcVo2max)}ml/kg/min</span>
+                    </div>
+                </div>
+                <div class="tarjetas">
+                    <h3>Flexibilidad coxofemoral</h3>
+                    <p>Valor normal de acuerdo al genero y la edad</p>
+                    <div class="porcentajes">
+                    <span>${(users.flexibilidad)}</span>
+                </div>
+            </div>`
+            ;
     })
     deshbordResults.innerHTML = fragment
 };
 
 
 
+function porcentajeGrasa(genero, edad) {
 
+    if (genero == "masculino" && edad <= 30)
+        return Math.round(((users[0].pTriceps + users[0].pSubEscapular + users[0].pSupraIliaco + users[0].pAbdominal + users[0].pCuadricipital + users[0].pComodin) * 0.097) + 3.64);
+    if (genero == "masculino" && edad >= 31)
+        return Math.round(((users[0].pTriceps + users[0].pSubEscapular + users[0].pSupraIliaco + users[0].pAbdominal + users[0].pCuadricipital + users[0].pComodin) * 0.1066) + 4.975);
 
+    if (genero == "femenino" && edad <= 30)
+        return Math.round(((users[0].pTriceps + users[0].pSubEscapular + users[0].pSupraIliaco + users[0].pAbdominal + users[0].pCuadricipital + users[0].pComodin) * 0.217) - 4.47);
+    if (genero == "femenino" && edad >= 31)
+        return Math.round(((users[0].pTriceps + users[0].pSubEscapular + users[0].pSupraIliaco + users[0].pAbdominal + users[0].pCuadricipital + users[0].pComodin) * 0.224) - 2.8);
+};
+function imc(peso, altura) {
+    return Math.round((peso / (altura * altura)) * 10000);
+};
+function icc(cintura, cadera) {
+    return cintura / cadera;
+};
+function pesoOseo(estatura, muñeca, rodilla) {
+    return 3.02 * ((estatura / 100) ^ 2 * (muñeca / 100) * (rodilla / 100) * 400) ^ 0.712;
+};
+function pesoGrasa(grasa, peso) {
+    return (grasa * peso) / 100;
+};
+function pesoResidual(genero, peso) {
+    if (genero == "masculino")
+        return peso * 0.241;
+    if (genero == "femenino")
+        return peso * 0.209;
+};
+function pesoMuscular(peso, grasa, hueso, agua) {
+    return peso - (grasa + hueso + agua);
+};
+function analisisPostural(hombros, escoliosis, cadera, tobillos, sifosis, lordosis) {
+    return hombros + escoliosis + cadera + tobillos + sifosis + lordosis;
+};
+function iae(fc1, fc2, fc3) {
+    return ((fc1 + fc2 + fc3) - 200) / 10;
+};
+function Vo2Max(genero, fcTermino) {
+    if (genero == "masculino")
+        return Math.round(111.33 - (0.42 * fcTermino));
+    if (genero == "femenino")
+        return Math.round(65.81 - (0.1847 * fcTermino));
+};
+function tipoFibrasMusculares (angulo){
+    if(angulo == 45)
+    return "Rápidas";
+    if(angulo == 90)
+    return "Mixtas";
+    if(angulo == 145)
+    return "lentas";
+}
 
-
-
-function porcentajeGrasa( genero, edad ){
-
-    if(genero == "masculino" && edad <= 30)
-       return ((users[0].pTriceps + users[0].pSubEscapular + users[0].pSupraIliaco + users[0].pAbdominal + users[0].pCuadricipital + users[0].pComodin) * 0.097)+3.64;
-        if(genero == "masculino" && edad >= 31)
-       return ((users[0].pTriceps + users[0].pSubEscapular + users[0].pSupraIliaco + users[0].pAbdominal + users[0].pCuadricipital + users[0].pComodin) * 0.1066)+4.975;
-    
-    if(genero == "femenino" && edad <= 30)
-       return ((users[0].pTriceps + users[0].pSubEscapular + users[0].pSupraIliaco + users[0].pAbdominal + users[0].pCuadricipital + users[0].pComodin) * 0.217)-4.47;
-    if(genero == "femenino" && edad >= 31)
-       return ((users[0].pTriceps + users[0].pSubEscapular + users[0].pSupraIliaco + users[0].pAbdominal + users[0].pCuadricipital + users[0].pComodin) * 0.224)-2.8;
-};
-function imc(peso, altura){
-    return (peso/(altura * altura))*10000;
-};
-function icc(cintura, cadera){
-    return cintura / cadera; 
-};
-function pesoOseo(estatura, muñeca, rodilla){
-    return 3.02*((estatura/100)^2 * (muñeca/100) * (rodilla / 100) * 400)^0.712;
-};
-function pesoGrasa(grasa, peso){
-    return (grasa * peso  ) / 100;
-};
-function pesoResidual (genero, peso ){
-    if(genero == "masculino")
-    return peso * 0.241;
-    if(genero == "femenino")
-    return peso * 0.209;
-};
-function pesoMuscular (peso, grasa, hueso, agua){
-   return peso - (grasa + hueso + agua );
-};
