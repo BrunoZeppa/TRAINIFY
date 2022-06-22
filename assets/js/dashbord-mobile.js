@@ -122,7 +122,7 @@ const users = [
 function filtrarUsuarios(id) {
     let fragmento = "";
     let usuarioFiltrados = users.filter((users) => users.id == id);
-    usuarioFiltrados.forEach((users) => {
+    usuarioFiltrados.forEach((users, clases) => {
         fragmento += `
         <div class="card-user">
           <div>
