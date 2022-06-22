@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 let dashboardID = document.querySelector(".dashbord-de-usuarios");
 let deshbordResults = document.querySelector(".dashbord-de-resultados");
-
+let color = document.getElementsByClassName(".porcentajes")
 
 const users = [
     {
