@@ -19,13 +19,13 @@ const users = [
         cCadera: 100,
         cBrazo: 37,
         cPantorrilla: 40,
-        pTriceps: 14,
-        pSubEscapular: 20,
-        pSupraIliaco: 14,
-        pAbdominal: 23,
-        pCuadricipital: 12,
-        pComodin: 18,
-        pPantorrilla: 12,
+        pTriceps: 5,
+        pSubEscapular: 4,
+        pSupraIliaco: 5,
+        pAbdominal: 6,
+        pCuadricipital: 3,
+        pComodin: 2,
+        pPantorrilla: 5,
         dMuñeca: 5,
         dRodilla: 11,
         nivHombros: 10,
@@ -110,6 +110,8 @@ const users = [
     },
 ]
 
+var colors = ["green", "blue", "yellow", "red"]
+
 document.addEventListener("DOMContentLoaded", () => {
     filtrarUsuarios("BrunoBZG24");
     mostrarResultado("BrunoBZG24");
@@ -160,7 +162,7 @@ function mostrarResultado(id) {
         <div class="tarjetas">
                     <h3>Porcentaje de grasa</h3>
                     <p>Valor normal de acuerdo al genero y la edad</p>
-                    <div class="porcentajes">
+                    <div class="porcentajes" style="background-color:${colorResultado(porcentajeGrasa(users.genero, users.edad),users.genero,users.edad)} ;">
                         <span>${porcentajeGrasa(users.genero, users.edad)}%</span>
                     </div>
                 </div>
@@ -360,7 +362,158 @@ function tipoDeCuerpo (ectomorfia, mesomorfia, endomorfia){
     if(endomorfia > ectomorfia && endomorfia > mesomorfia)
     return "Endomorfo"; 
 }
-/*
-function colorResultado(resultadoGrasa){
-    if(resultadoGrasa == )
-}*/
+
+function colorResultado(resultadoGrasa, genero, edad){
+    if(edad >= 18 && edad <=20 && genero == "masculino" && resultadoGrasa <= 7)
+    return "skyblue";
+    if(edad >= 21 && edad <=25 && genero == "masculino" && resultadoGrasa <= 7)
+    return "skyblue";
+    if(edad >= 26 && edad <=30 && genero == "masculino" && resultadoGrasa <= 9)
+    return "skyblue";
+    if(edad >= 31 && edad <=35 && genero == "masculino" && resultadoGrasa <= 10)
+    return "skyblue";
+    if(edad >= 36 && edad <=40 && genero == "masculino" && resultadoGrasa <= 12)
+    return "skyblue";
+    if(edad >= 41 && edad <=45 && genero == "masculino" && resultadoGrasa <= 15)
+    return "skyblue";
+    if(edad >= 46 && edad <=50 && genero == "masculino" && resultadoGrasa <= 16)
+    return "skyblue";
+    if(edad >= 51 && edad <=55 && genero == "masculino" && resultadoGrasa <= 17)
+    return "skyblue";
+    if(edad >= 56 && genero == "masculino" && resultadoGrasa <= 18)
+    return "skyblue";
+
+    if(edad >= 18 && edad <=20 && genero == "femenino" && resultadoGrasa <= 17)
+    return "skyblue";
+    if(edad >= 21 && edad <=25 && genero == "femenino" && resultadoGrasa <= 19)
+    return "skyblue";
+    if(edad >= 26 && edad <=30 && genero == "femenino" && resultadoGrasa <= 21)
+    return "skyblue";
+    if(edad >= 31 && edad <=35 && genero == "femenino" && resultadoGrasa <= 21)
+    return "skyblue";
+    if(edad >= 36 && edad <=40 && genero == "femenino" && resultadoGrasa <= 24)
+    return "skyblue";
+    if(edad >= 41 && edad <=45 && genero == "femenino" && resultadoGrasa <= 24)
+    return "skyblue";
+    if(edad >= 46 && edad <=50 && genero == "femenino" && resultadoGrasa <= 25)
+    return "skyblue";
+    if(edad >= 51 && edad <=55 && genero == "femenino" && resultadoGrasa <= 26)
+    return "skyblue";
+    if(edad >= 56 && genero == "femenino" && resultadoGrasa <= 26)
+    return "skyblue";
+
+    if(edad >= 18 && edad <=20 && genero == "masculino" && resultadoGrasa >= 7 && resultadoGrasa <= 13)
+    return "yellowgreen";
+    if(edad >= 21 && edad <=25 && genero == "masculino" && resultadoGrasa >= 7 && resultadoGrasa <= 14)
+    return "yellowgreen";
+    if(edad >= 26 && edad <=30 && genero == "masculino" && resultadoGrasa >= 9 && resultadoGrasa <= 17)
+    return "yellowgreen";
+    if(edad >= 31 && edad <=35 && genero == "masculino" && resultadoGrasa >= 10 && resultadoGrasa <= 18)
+    return "yellowgreen";
+    if(edad >= 36 && edad <=40 && genero == "masculino" && resultadoGrasa >= 12 && resultadoGrasa <= 19)
+    return "yellowgreen";
+    if(edad >= 41 && edad <=45 && genero == "masculino" && resultadoGrasa >= 15 && resultadoGrasa <= 21)
+    return "yellowgreen";
+    if(edad >= 46 && edad <=50 && genero == "masculino" && resultadoGrasa >= 16 && resultadoGrasa <= 22)
+    return "yellowgreen";
+    if(edad >= 51 && edad <=55 && genero == "masculino" && resultadoGrasa >= 17 && resultadoGrasa <= 24)
+    return "yellowgreen";
+    if(edad >= 56 && genero == "masculino" && resultadoGrasa >= 18 && resultadoGrasa <= 25)
+    return "yellowgreen";
+
+    if(edad >= 18 && edad <=20 && genero == "femenino" && resultadoGrasa >= 17 && resultadoGrasa <= 22)
+    return "yellowgreen";
+    if(edad >= 21 && edad <=25 && genero == "femenino" && resultadoGrasa >= 19 && resultadoGrasa <= 24)
+    return "yellowgreen";
+    if(edad >= 26 && edad <=30 && genero == "femenino" && resultadoGrasa >= 21 && resultadoGrasa <= 25)
+    return "yellowgreen";
+    if(edad >= 31 && edad <=35 && genero == "femenino" && resultadoGrasa >= 21 && resultadoGrasa <= 26)
+    return "yellowgreen";
+    if(edad >= 36 && edad <=40 && genero == "femenino" && resultadoGrasa >= 24 && resultadoGrasa <= 27)
+    return "yellowgreen";
+    if(edad >= 41 && edad <=45 && genero == "femenino" && resultadoGrasa >= 24 && resultadoGrasa <= 28)
+    return "yellowgreen";
+    if(edad >= 46 && edad <=50 && genero == "femenino" && resultadoGrasa >= 25 && resultadoGrasa <= 29)
+    return "yellowgreen";
+    if(edad >= 51 && edad <=55 && genero == "femenino" && resultadoGrasa >= 26 && resultadoGrasa <= 30)
+    return "yellowgreen";
+    if(edad >= 56 && genero == "femenino" && resultadoGrasa >= 26 && resultadoGrasa <= 30)
+    return "yellowgreen";
+
+    if(edad >= 18 && edad <=20 && genero == "masculino" && resultadoGrasa >= 14 && resultadoGrasa <= 20)
+    return "orange";
+    if(edad >= 21 && edad <=25 && genero == "masculino" && resultadoGrasa >= 15 && resultadoGrasa <= 22)
+    return "orange";
+    if(edad >= 26 && edad <=30 && genero == "masculino" && resultadoGrasa >= 18 && resultadoGrasa <= 23)
+    return "orange";
+    if(edad >= 31 && edad <=35 && genero == "masculino" && resultadoGrasa >= 19 && resultadoGrasa <= 25)
+    return "orange";
+    if(edad >= 36 && edad <=40 && genero == "masculino" && resultadoGrasa >= 20 && resultadoGrasa <= 25)
+    return "orange";
+    if(edad >= 41 && edad <=45 && genero == "masculino" && resultadoGrasa >= 22 && resultadoGrasa <= 28)
+    return "orange";
+    if(edad >= 46 && edad <=50 && genero == "masculino" && resultadoGrasa >= 23 && resultadoGrasa <= 29)
+    return "orange";
+    if(edad >= 51 && edad <=55 && genero == "masculino" && resultadoGrasa >= 24 && resultadoGrasa <= 30)
+    return "orange";
+    if(edad >= 56 && genero == "masculino" && resultadoGrasa >= 26 && resultadoGrasa <= 32)
+    return "orange";
+
+    if(edad >= 18 && edad <=20 && genero == "femenino" && resultadoGrasa >= 23 && resultadoGrasa <= 30)
+    return "orange";
+    if(edad >= 21 && edad <=25 && genero == "femenino" && resultadoGrasa >= 25 && resultadoGrasa <= 31)
+    return "orange";
+    if(edad >= 26 && edad <=30 && genero == "femenino" && resultadoGrasa >= 26 && resultadoGrasa <= 33)
+    return "orange";
+    if(edad >= 31 && edad <=35 && genero == "femenino" && resultadoGrasa >= 27 && resultadoGrasa <= 33)
+    return "orange";
+    if(edad >= 36 && edad <=40 && genero == "femenino" && resultadoGrasa >= 28 && resultadoGrasa <= 34)
+    return "orange";
+    if(edad >= 41 && edad <=45 && genero == "femenino" && resultadoGrasa >= 29 && resultadoGrasa <= 35)
+    return "orange";
+    if(edad >= 46 && edad <=50 && genero == "femenino" && resultadoGrasa >= 30 && resultadoGrasa <= 37)
+    return "orange";
+    if(edad >= 51 && edad <=55 && genero == "femenino" && resultadoGrasa >= 31 && resultadoGrasa <= 38)
+    return "orange";
+    if(edad >= 56 && genero == "femenino" && resultadoGrasa >= 31 && resultadoGrasa <= 38)
+    return "orange";
+
+    if(edad >= 18 && edad <=20 && genero == "masculino" && resultadoGrasa >= 20)
+    return "red";
+    if(edad >= 21 && edad <=25 && genero == "masculino" && resultadoGrasa >= 22)
+    return "red";
+    if(edad >= 26 && edad <=30 && genero == "masculino" && resultadoGrasa >= 23)
+    return "red";
+    if(edad >= 31 && edad <=35 && genero == "masculino" && resultadoGrasa >= 25)
+    return "red";
+    if(edad >= 36 && edad <=40 && genero == "masculino" && resultadoGrasa >= 25)
+    return "red";
+    if(edad >= 41 && edad <=45 && genero == "masculino" && resultadoGrasa >= 28)
+    return "red";
+    if(edad >= 46 && edad <=50 && genero == "masculino" && resultadoGrasa >= 29)
+    return "red";
+    if(edad >= 51 && edad <=55 && genero == "masculino" && resultadoGrasa >= 30)
+    return "red";
+    if(edad >= 56 && genero == "masculino" && resultadoGrasa >= 32)
+    return "red";
+
+    if(edad >= 18 && edad <=20 && genero == "femenino" && resultadoGrasa >= 30)
+    return "red";
+    if(edad >= 21 && edad <=25 && genero == "femenino" && resultadoGrasa >= 31)
+    return "red";
+    if(edad >= 26 && edad <=30 && genero == "femenino" && resultadoGrasa >= 33)
+    return "red";
+    if(edad >= 31 && edad <=35 && genero == "femenino" && resultadoGrasa >= 33)
+    return "red";
+    if(edad >= 36 && edad <=40 && genero == "femenino" && resultadoGrasa >= 34)
+    return "red";
+    if(edad >= 41 && edad <=45 && genero == "femenino" && resultadoGrasa >= 35)
+    return "red";
+    if(edad >= 46 && edad <=50 && genero == "femenino" && resultadoGrasa >= 37)
+    return "red";
+    if(edad >= 51 && edad <=55 && genero == "femenino" && resultadoGrasa >= 38)
+    return "red";
+    if(edad >= 56 && genero == "femenino" && resultadoGrasa >= 38)
+    return "red";
+
+};
