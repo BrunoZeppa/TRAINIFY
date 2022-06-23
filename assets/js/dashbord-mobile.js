@@ -1,16 +1,6 @@
 
 'use strict'
 
-document.addEventListener("DOMContentLoaded", () => {
-    filtrarUsuarios("BrunoBZG24");
-    mostrarResultado("BrunoBZG24");
-
-})
-
-let dashboardID = document.querySelector(".dashbord-de-usuarios");
-let deshbordResults = document.querySelector(".dashbord-de-resultados");
-let color = document.getElementsByClassName(".porcentajes")
-
 const users = [
     {
         id: "BrunoBZG24",
@@ -119,7 +109,26 @@ const users = [
         imgUrl: "https://picsum.photos/id/342/200/300"
     },
 ]
-function filtrarUsuarios(id) {
+
+document.addEventListener("DOMContentLoaded", () => {
+    filtrarUsuarios("BrunoBZG24");
+    mostrarResultado("BrunoBZG24");
+
+})
+
+/*--======================= VARIABLES ========================--*/
+
+let dashboardID = document.querySelector(".dashbord-de-usuarios");
+let deshbordResults = document.querySelector(".dashbord-de-resultados");
+let color = document.getElementsByClassName(".porcentajes");
+var resultadoGrasa = porcentajeGrasa(users.genero, users.edad);
+
+/*-----------------------  FIN VARIABLES -----------------------*/
+
+/*--======================= FUNCIONES ========================--*/
+
+
+function filtrarUsuarios(id){
     let fragmento = "";
     let usuarioFiltrados = users.filter((users) => users.id == id);
     usuarioFiltrados.forEach((users, clases) => {
@@ -313,4 +322,45 @@ function tipoFibrasMusculares (angulo){
     if(angulo == 145)
     return "lentas";
 }
+function sumaHWR (pliegueTriceps, pliegueEscapula, pliegueIliaco){
+    return pliegueTriceps + pliegueEscapula + pliegueIliaco;
+}   
 
+function perimetroCorregido ( sumaPliegues, estatura){
+    return sumaPliegues * 170.18 / estatura;
+}
+function perimetroBrazoContraido (diametroBrazContraido, pliegueTriceps ){
+    return diametroBrazContraido - ( pliegueTriceps / 100 );
+}
+function perimetroPantorrilla (diametroPantorrilla, plieguePantorrilla ){
+    return diametroPantorrilla - ( plieguePantorrilla / 100 );
+}
+function indicePondral ( peso, estatura){
+    return estatura / (peso ^ (1/3));
+}
+function endomorfia (perimetroCorregido){
+    0.7182 + (0.1451 * perimetroCorregido) - (0.00068*(perimetroCorregido^2)) + (0.0000014*(perimetroCorregido^3));
+}
+function ectomorfia  ( indicePonderal){
+    if(indicePonderal<=38.28)
+    return 0.1;
+    if(indicePonderal>38.28 || indicePonderal<40.75)
+    return (indicePonderal * 0.463) - 17.63;
+    if(indicePonderal>40.75)
+    return (indicePonderal * 0.732) - 28.58;
+}
+function mesomorfia (muneca, rodilla, pbc, prc, estatura){
+    return (0.858 * muneca)+(0.601 * rodilla)+(0.188 * pbc)+(0.161 * prc) - (0.131 * estatura) + 4.5; 
+}
+function tipoDeCuerpo (ectomorfia, mesomorfia, endomorfia){
+    if(ectomorfia > mesomorfia && ectomorfia> endomorfia)
+    return "Ectomorfo"; 
+    if(mesomorfia > ectomorfia && mesomorfia > endomorfia)
+    return "Mesomorfo";
+    if(endomorfia > ectomorfia && endomorfia > mesomorfia)
+    return "Endomorfo"; 
+}
+/*
+function colorResultado(resultadoGrasa){
+    if(resultadoGrasa == )
+}*/
