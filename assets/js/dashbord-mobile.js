@@ -124,9 +124,16 @@ let dashboardID = document.querySelector(".dashbord-de-usuarios");
 let deshbordResults = document.querySelector(".dashbord-de-resultados");
 let color = document.getElementsByClassName(".porcentajes");
 var resultadoGrasa = porcentajeGrasa(users.genero, users.edad);
+let mostrarTodo = document.querySelector(".mostrar-todo");
+let composicionCorporal = document.querySelector(".composicion-corporal");
+let aspectosDeSalud = document.querySelector(".aspectos-de-salud");
+let capacidadesFisicas = document.querySelector(".capacidades-fisicas");
+let antropometria = document.querySelector(".antropometria");
 
 /*-----------------------  FIN VARIABLES -----------------------*/
-
+mostrarTodo.addEventListener("click", () =>{
+    
+})
 /*--======================= FUNCIONES ========================--*/
 
 
@@ -181,41 +188,6 @@ function mostrarResultado(id) {
                     </div>
                 </div>
                 <div class="tarjetas">
-                    <h3>Peso Tejido Adiposo</h3>
-                    <p>Valor normal de acuerdo al genero y la edad</p>
-                    <div class="porcentajes">
-                        <span>${pesoGrasa(porcentajeGrasa(users.genero, users.edad), users.peso)}kg</span>
-                    </div>
-                </div>
-                <div class="tarjetas">
-                    <h3>Peso Óseo</h3>
-                    <p>Valor normal de acuerdo al genero y la edad</p>
-                    <div class="porcentajes">
-                        <span>${pesoOseo(users.altura, users.dMuñeca, users.dRodilla)}kg</span>
-                    </div>
-                </div>
-                <div class="tarjetas">
-                    <h3>Peso Residual</h3>
-                    <p>Valor normal de acuerdo al genero y la edad</p>
-                    <div class="porcentajes">
-                        <span>${pesoResidual(users.genero, users.peso)}kg</span>
-                    </div>
-                </div>
-                <div class="tarjetas">
-                    <h3>Peso Muscular</h3>
-                    <p>Valor normal de acuerdo al genero y la edad</p>
-                    <div class="porcentajes">
-                        <span>${pesoMuscular(users.peso, pesoGrasa(porcentajeGrasa(users.genero, users.edad), users.peso), pesoOseo(users.altura, users.dMuñeca, users.dRodilla), pesoResidual(users.genero, users.peso))}kg</span>
-                    </div>
-                </div>
-                <div class="tarjetas">
-                    <h3>Tipo de fibras Músculares</h3>
-                    <p>Valor normal de acuerdo al genero y la edad</p>
-                    <div class="porcentajes">
-                        <span>${tipoFibrasMusculares(users.angSalto)}</span>
-                    </div>
-                </div>
-                <div class="tarjetas">
                     <h3>Tensión Arterial Sistólica</h3>
                     <p>Valor normal de acuerdo al genero y la edad</p>
                     <div class="porcentajes" style="background-color:${colorResultadoTas(users.genero, users.edad, users.tas)}";>
@@ -263,7 +235,42 @@ function mostrarResultado(id) {
                     <div class="porcentajes" style="background-color:${colorResultadoFlexibilidad(users.genero, users.flexibilidad)};">
                     <span>${(users.flexibilidad)}</span>
                 </div>
-            </div>`
+            </div>
+            <div class="tarjetas">
+            <h3>Peso Tejido Adiposo</h3>
+            <p>Valor normal de acuerdo al genero y la edad</p>
+            <div class="porcentajes">
+                <span>${pesoGrasa(porcentajeGrasa(users.genero, users.edad), users.peso)}kg</span>
+            </div>
+        </div>
+        <div class="tarjetas">
+            <h3>Peso Óseo</h3>
+            <p>Valor normal de acuerdo al genero y la edad</p>
+            <div class="porcentajes">
+                <span>${pesoOseo(users.altura, users.dMuñeca, users.dRodilla)}kg</span>
+            </div>
+        </div>
+        <div class="tarjetas">
+            <h3>Peso Residual</h3>
+            <p>Valor normal de acuerdo al genero y la edad</p>
+            <div class="porcentajes">
+                <span>${pesoResidual(users.genero, users.peso)}kg</span>
+            </div>
+        </div>
+        <div class="tarjetas">
+            <h3>Peso Muscular</h3>
+            <p>Valor normal de acuerdo al genero y la edad</p>
+            <div class="porcentajes">
+                <span>${pesoMuscular(users.peso, pesoGrasa(porcentajeGrasa(users.genero, users.edad), users.peso), pesoOseo(users.altura, users.dMuñeca, users.dRodilla), pesoResidual(users.genero, users.peso))}kg</span>
+            </div>
+        </div>
+        <div class="tarjetas">
+                    <h3>Tipo de fibras Músculares</h3>
+                    <p>Valor normal de acuerdo al genero y la edad</p>
+                    <div class="porcentajes">
+                        <span>${tipoFibrasMusculares(users.angSalto)}</span>
+                    </div>
+                </div>`
             ;
     })
     deshbordResults.innerHTML = fragment
