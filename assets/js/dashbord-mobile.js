@@ -162,21 +162,21 @@ function mostrarResultado(id) {
         <div class="tarjetas">
                     <h3>Porcentaje de grasa</h3>
                     <p>Valor normal de acuerdo al genero y la edad</p>
-                    <div class="porcentajes" style="background-color:${colorResultado(porcentajeGrasa(users.genero, users.edad),users.genero,users.edad)} ;">
+                    <div class="porcentajes" style="background-color:${colorResultadoGrasa(porcentajeGrasa(users.genero, users.edad),users.genero,users.edad)} ;">
                         <span>${porcentajeGrasa(users.genero, users.edad)}%</span>
                     </div>
                 </div>
                 <div class="tarjetas">
                     <h3>Índece de masa corporal</h3>
                     <p>Valor normal de acuerdo al genero y la edad</p>
-                    <div class="porcentajes">
+                    <div class="porcentajes" style="background-color:${colorResultadoImc(imc(users.peso, users.altura))};">
                         <span>${imc(users.peso, users.altura)}</span>
                     </div>
                 </div>
                 <div class="tarjetas">
                     <h3>Índice Cintura-Cadera</h3>
                     <p>Valor normal de acuerdo al genero y la edad</p>
-                    <div class="porcentajes">
+                    <div class="porcentajes" style="background-color:${colorResultadoIcc(icc(users.cCintura, users.cCadera), users.genero)};">
                         <span>${icc(users.cCintura, users.cCadera)}%</span>
                     </div>
                 </div>
@@ -218,49 +218,49 @@ function mostrarResultado(id) {
                 <div class="tarjetas">
                     <h3>Tensión Arterial Sistólica</h3>
                     <p>Valor normal de acuerdo al genero y la edad</p>
-                    <div class="porcentajes">
+                    <div class="porcentajes" style="background-color:${colorResultadoTas(users.genero, users.edad, users.tas)}";>
                         <span>${users.tas}mm/hg</span>
                     </div>
                 </div>
                 <div class="tarjetas">
                     <h3>Tensión Arterial Diastólica</h3>
                     <p>Valor normal de acuerdo al genero y la edad</p>
-                    <div class="porcentajes">
+                    <div class="porcentajes" style="background-color:${colorResultadoTad(users.genero, users.edad, users.tad)};">
                         <span>${users.tad}mm/hg</span>
                     </div>
                 </div>
                 <div class="tarjetas">
-                    <h3>Fracuencia cardiaca</h3>
+                    <h3>Fracuencia cardiaca en reposo</h3>
                     <p>Valor normal de acuerdo al genero y la edad</p>
-                    <div class="porcentajes">
+                    <div class="porcentajes" style="background-color:${colorResultadoFcr(users.genero, users.edad, users.fcr)};">
                         <span>${users.fcr}ppm</span>
                     </div>
                 </div>
                 <div class="tarjetas">
                     <h3>Análisis postural</h3>
                     <p>Valor normal de acuerdo al genero y la edad</p>
-                    <div class="porcentajes">
+                    <div class="porcentajes" style="background-color:${colorResultadoAnalisisPostural(analisisPostural(users.nivHombros, users.escoliosis, users.nivCadera, users.aliTobillos, users.sifosis, users.lordosis))};">
                         <span>${analisisPostural(users.nivHombros, users.escoliosis, users.nivCadera, users.aliTobillos, users.sifosis, users.lordosis)}</span>
                     </div>
                 </div>
                 <div class="tarjetas">
                     <h3>Índice de adaptación al esfuerzo</h3>
                     <p>Valor normal de acuerdo al genero y la edad</p>
-                    <div class="porcentajes">
+                    <div class="porcentajes" style="background-color:${colorResultadoIae(iae(users.fc1, users.fc2, users.fc3))};">
                         <span>${iae(users.fc1, users.fc2, users.fc3)}%</span>
                     </div>
                 </div>
                 <div class="tarjetas">
                     <h3>Vo2Max</h3>
                     <p>Valor normal de acuerdo al genero y la edad</p>
-                    <div class="porcentajes">
+                    <div class="porcentajes" style="background-color:${colorResultadoVo2Max( users.genero, users.edad, Vo2Max(users.genero, users.fcVo2max))};">
                         <span>${Vo2Max(users.genero, users.fcVo2max)}ml/kg/min</span>
                     </div>
                 </div>
                 <div class="tarjetas">
                     <h3>Flexibilidad coxofemoral</h3>
                     <p>Valor normal de acuerdo al genero y la edad</p>
-                    <div class="porcentajes">
+                    <div class="porcentajes" style="background-color:${colorResultadoFlexibilidad(users.genero, users.flexibilidad)};">
                     <span>${(users.flexibilidad)}</span>
                 </div>
             </div>`
@@ -355,7 +355,7 @@ function mesomorfia (muneca, rodilla, pbc, prc, estatura){
     return (0.858 * muneca)+(0.601 * rodilla)+(0.188 * pbc)+(0.161 * prc) - (0.131 * estatura) + 4.5; 
 }
 function tipoDeCuerpo (ectomorfia, mesomorfia, endomorfia){
-    if(ectomorfia > mesomorfia && ectomorfia> endomorfia)
+    if(ectomorfia > mesomorfia && ectomorfia > endomorfia)
     return "Ectomorfo"; 
     if(mesomorfia > ectomorfia && mesomorfia > endomorfia)
     return "Mesomorfo";
@@ -363,7 +363,7 @@ function tipoDeCuerpo (ectomorfia, mesomorfia, endomorfia){
     return "Endomorfo"; 
 }
 
-function colorResultado(resultadoGrasa, genero, edad){
+function colorResultadoGrasa(resultadoGrasa, genero, edad){
     if(edad >= 18 && edad <=20 && genero == "masculino" && resultadoGrasa <= 7)
     return "skyblue";
     if(edad >= 21 && edad <=25 && genero == "masculino" && resultadoGrasa <= 7)
@@ -517,3 +517,604 @@ function colorResultado(resultadoGrasa, genero, edad){
     return "red";
 
 };
+
+function colorResultadoImc (imc){
+    if(imc <= 18)
+    return "skyblue";
+    if(imc >= 19 && imc <= 25)
+    return "yellowgreen";
+    if(imc >= 26 && imc <= 30)
+    return "orange";
+    if(imc >= 31)
+    return "red";
+}
+
+function colorResultadoIcc (icc, genero){
+    if(icc <= 0.94999 && genero == "masculino")
+    return "skyblue";
+    if(icc <= 0.79999 && genero == "femenino")
+    return "skyblue";
+
+    if(icc >= 0.95 && icc <= 1 && genero == "masculino")
+    return "yellowgreen";
+    if(icc >= 0.80 && icc <= 0.85 && genero == "femenino")
+    return "yellowgreen";
+
+    if(icc >= 1.01 && icc <= 1.29 && genero == "masculino")
+    return "orange";
+    if(icc >= 0.86 && icc <= 0.91 && genero == "femenino")
+    return "orange";
+
+    if(icc >= 1.30 && genero == "masculino")
+    return "red";
+    if(icc >= 0.92 && genero == "femenino")
+    return "red";
+
+}
+
+function colorResultadoTas (genero, edad, tas){
+    if(edad >= 18 && edad <=20 && genero == "masculino" && tas <= 104)
+    return "skyblue";
+    if(edad >= 21 && edad <=25 && genero == "masculino" && tas <= 104)
+    return "skyblue";
+    if(edad >= 26 && edad <=30 && genero == "masculino" && tas <= 107)
+    return "skyblue";
+    if(edad >= 31 && edad <=35 && genero == "masculino" && tas <= 109)
+    return "skyblue";
+    if(edad >= 36 && edad <=40 && genero == "masculino" && tas <= 109)
+    return "skyblue";
+    if(edad >= 41 && edad <=45 && genero == "masculino" && tas <= 109)
+    return "skyblue";
+    if(edad >= 46 && edad <=50 && genero == "masculino" && tas <= 109)
+    return "skyblue";
+    if(edad >= 51 && edad <=55 && genero == "masculino" && tas <= 114)
+    return "skyblue";
+    if(edad >= 56 && genero == "masculino" && tas <= 114)
+    return "skyblue";
+
+    if(edad >= 18 && edad <=20 && genero == "femenino" && tas <= 99)
+    return "skyblue";
+    if(edad >= 21 && edad <=25 && genero == "femenino" && tas <= 99)
+    return "skyblue";
+    if(edad >= 26 && edad <=30 && genero == "femenino" && tas <= 101)
+    return "skyblue";
+    if(edad >= 31 && edad <=35 && genero == "femenino" && tas <= 104)
+    return "skyblue";
+    if(edad >= 36 && edad <=40 && genero == "femenino" && tas <= 104)
+    return "skyblue";
+    if(edad >= 41 && edad <=45 && genero == "femenino" && tas <= 104)
+    return "skyblue";
+    if(edad >= 46 && edad <=50 && genero == "femenino" && tas <= 104)
+    return "skyblue";
+    if(edad >= 51 && edad <=55 && genero == "femenino" && tas <= 109)
+    return "skyblue";
+    if(edad >= 56 && genero == "femenino" && tas <= 114)
+    return "skyblue";
+
+    if(edad >= 18 && edad <=20 && genero == "masculino" && tas >= 105 && tas <= 120)
+    return "yellowgreen";
+    if(edad >= 21 && edad <=25 && genero == "masculino" && tas >= 105 && tas <= 120)
+    return "yellowgreen";
+    if(edad >= 26 && edad <=30 && genero == "masculino" && tas >= 108 && tas <= 120)
+    return "yellowgreen";
+    if(edad >= 31 && edad <=35 && genero == "masculino" && tas >= 110 && tas <= 120)
+    return "yellowgreen";
+    if(edad >= 36 && edad <=40 && genero == "masculino" && tas >= 110 && tas <= 120)
+    return "yellowgreen";
+    if(edad >= 41 && edad <=45 && genero == "masculino" && tas >= 110 && tas <= 120)
+    return "yellowgreen";
+    if(edad >= 46 && edad <=50 && genero == "masculino" && tas >= 110 && tas <= 120)
+    return "yellowgreen";
+    if(edad >= 51 && edad <=55 && genero == "masculino" && tas >= 115 && tas <= 120)
+    return "yellowgreen";
+    if(edad >= 56 && genero == "masculino" && tas >= 115 && tas <= 120)
+    return "yellowgreen";
+
+    if(edad >= 18 && edad <=20 && genero == "femenino" && tas >= 100 && tas <= 120)
+    return "yellowgreen";
+    if(edad >= 21 && edad <=25 && genero == "femenino" && tas >= 100 && tas <= 120)
+    return "yellowgreen";
+    if(edad >= 26 && edad <=30 && genero == "femenino" && tas >= 102 && tas <= 120)
+    return "yellowgreen";
+    if(edad >= 31 && edad <=35 && genero == "femenino" && tas >= 105 && tas <= 120)
+    return "yellowgreen";
+    if(edad >= 36 && edad <=40 && genero == "femenino" && tas >= 105 && tas <= 120)
+    return "yellowgreen";
+    if(edad >= 41 && edad <=45 && genero == "femenino" && tas >= 105 && tas <= 120)
+    return "yellowgreen";
+    if(edad >= 46 && edad <=50 && genero == "femenino" && tas >= 105 && tas <= 120)
+    return "yellowgreen";
+    if(edad >= 51 && edad <=55 && genero == "femenino" && tas >= 110 && tas <= 120)
+    return "yellowgreen";
+    if(edad >= 56 && genero == "femenino" && tas >= 115 && tas <= 120)
+    return "yellowgreen";
+
+    if(edad >= 18 && edad <=20 && genero == "masculino" && tas >= 121 && tas <= 135)
+    return "orange";
+    if(edad >= 21 && edad <=25 && genero == "masculino" && tas >= 121 && tas <= 139)
+    return "orange";
+    if(edad >= 26 && edad <=30 && genero == "masculino" && tas >= 121 && tas <= 139)
+    return "orange";
+    if(edad >= 31 && edad <=35 && genero == "masculino" && tas >= 121 && tas <= 145)
+    return "orange";
+    if(edad >= 36 && edad <=40 && genero == "masculino" && tas >= 121 && tas <= 145)
+    return "orange";
+    if(edad >= 41 && edad <=45 && genero == "masculino" && tas >= 121 && tas <= 150)
+    return "orange";
+    if(edad >= 46 && edad <=50 && genero == "masculino" && tas >= 121 && tas <= 150)
+    return "orange";
+    if(edad >= 51 && edad <=55 && genero == "masculino" && tas >= 121 && tas <= 155)
+    return "orange";
+    if(edad >= 56 && genero == "masculino" && tas >= 121 && tas <= 160)
+    return "orange";
+
+    if(edad >= 18 && edad <=20 && genero == "femenino" && tas >= 121 && tas <= 130)
+    return "orange";
+    if(edad >= 21 && edad <=25 && genero == "femenino" && tas >= 121 && tas <= 130)
+    return "orange";
+    if(edad >= 26 && edad <=30 && genero == "femenino" && tas >= 121 && tas <= 135)
+    return "orange";
+    if(edad >= 31 && edad <=35 && genero == "femenino" && tas >= 121 && tas <= 139)
+    return "orange";
+    if(edad >= 36 && edad <=40 && genero == "femenino" && tas >= 121 && tas <= 139)
+    return "orange";
+    if(edad >= 41 && edad <=45 && genero == "femenino" && tas >= 121 && tas <= 150)
+    return "orange";
+    if(edad >= 46 && edad <=50 && genero == "femenino" && tas >= 121 && tas <= 150)
+    return "orange";
+    if(edad >= 51 && edad <=55 && genero == "femenino" && tas >= 121 && tas <= 155)
+    return "orange";
+    if(edad >= 56 && genero == "femenino" && tas >= 121 && tas <= 160)
+    return "orange";
+
+    if(edad >= 18 && edad <=20 && genero == "masculino" && tas >= 136)
+    return "red";
+    if(edad >= 21 && edad <=25 && genero == "masculino" && tas >= 140)
+    return "red";
+    if(edad >= 26 && edad <=30 && genero == "masculino" && tas >= 140)
+    return "red";
+    if(edad >= 31 && edad <=35 && genero == "masculino" && tas >= 146)
+    return "red";
+    if(edad >= 36 && edad <=40 && genero == "masculino" && tas >= 146)
+    return "red";
+    if(edad >= 41 && edad <=45 && genero == "masculino" && tas >= 151)
+    return "red";
+    if(edad >= 46 && edad <=50 && genero == "masculino" && tas >= 151)
+    return "red";
+    if(edad >= 51 && edad <=55 && genero == "masculino" && tas >= 156)
+    return "red";
+    if(edad >= 56 && genero == "masculino" && tas >= 161)
+    return "red";
+
+    if(edad >= 18 && edad <=20 && genero == "femenino" && tas >= 131)
+    return "red";
+    if(edad >= 21 && edad <=25 && genero == "femenino" && tas >= 131)
+    return "red";
+    if(edad >= 26 && edad <=30 && genero == "femenino" && tas >= 136)
+    return "red";
+    if(edad >= 31 && edad <=35 && genero == "femenino" && tas >= 140)
+    return "red";
+    if(edad >= 36 && edad <=40 && genero == "femenino" && tas >= 140)
+    return "red";
+    if(edad >= 41 && edad <=45 && genero == "femenino" && tas >= 151)
+    return "red";
+    if(edad >= 46 && edad <=50 && genero == "femenino" && tas >= 151)
+    return "red";
+    if(edad >= 51 && edad <=55 && genero == "femenino" && tas >= 156)
+    return "red";
+    if(edad >= 56 && genero == "femenino" && tas >= 161)
+    return "red";
+
+}
+
+function colorResultadoTad (genero, edad, tad){
+    if(edad >= 18 && edad <=20 && genero == "masculino" && tad <= 59)
+    return "skyblue";
+    if(edad >= 21 && edad <=25 && genero == "masculino" && tad <= 61)
+    return "skyblue";
+    if(edad >= 26 && edad <=30 && genero == "masculino" && tad <= 64)
+    return "skyblue";
+    if(edad >= 31 && edad <=35 && genero == "masculino" && tad <= 67)
+    return "skyblue";
+    if(edad >= 36 && edad <=40 && genero == "masculino" && tad <= 67)
+    return "skyblue";
+    if(edad >= 41 && edad <=45 && genero == "masculino" && tad <= 69)
+    return "skyblue";
+    if(edad >= 46 && edad <=50 && genero == "masculino" && tad <= 69)
+    return "skyblue";
+    if(edad >= 51 && edad <=55 && genero == "masculino" && tad <= 69)
+    return "skyblue";
+    if(edad >= 56 && genero == "masculino" && tad <= 69)
+    return "skyblue";
+
+    if(edad >= 18 && edad <=20 && genero == "femenino" && tad <= 59)
+    return "skyblue";
+    if(edad >= 21 && edad <=25 && genero == "femenino" && tad <= 59)
+    return "skyblue";
+    if(edad >= 26 && edad <=30 && genero == "femenino" && tad <= 59)
+    return "skyblue";
+    if(edad >= 31 && edad <=35 && genero == "femenino" && tad <= 64)
+    return "skyblue";
+    if(edad >= 36 && edad <=40 && genero == "femenino" && tad <= 64)
+    return "skyblue";
+    if(edad >= 41 && edad <=45 && genero == "femenino" && tad <= 64)
+    return "skyblue";
+    if(edad >= 46 && edad <=50 && genero == "femenino" && tad <= 64)
+    return "skyblue";
+    if(edad >= 51 && edad <=55 && genero == "femenino" && tad <= 69)
+    return "skyblue";
+    if(edad >= 56 && genero == "femenino" && tad <= 69)
+    return "skyblue";
+
+    if(edad >= 18 && edad <=20 && genero == "masculino" && tad >= 60 && tad <= 80)
+    return "yellowgreen";
+    if(edad >= 21 && edad <=25 && genero == "masculino" && tad >= 62 && tad <= 80)
+    return "yellowgreen";
+    if(edad >= 26 && edad <=30 && genero == "masculino" && tad >= 65 && tad <= 80)
+    return "yellowgreen";
+    if(edad >= 31 && edad <=35 && genero == "masculino" && tad >= 68 && tad <= 80)
+    return "yellowgreen";
+    if(edad >= 36 && edad <=40 && genero == "masculino" && tad >= 68 && tad <= 80)
+    return "yellowgreen";
+    if(edad >= 41 && edad <=45 && genero == "masculino" && tad >= 70 && tad <= 80)
+    return "yellowgreen";
+    if(edad >= 46 && edad <=50 && genero == "masculino" && tad >= 70 && tad <= 80)
+    return "yellowgreen";
+    if(edad >= 51 && edad <=55 && genero == "masculino" && tad >= 70 && tad <= 80)
+    return "yellowgreen";
+    if(edad >= 56 && genero == "masculino" && tas >= 70 && tad <= 80)
+    return "yellowgreen";
+
+    if(edad >= 18 && edad <=20 && genero == "femenino" && tad >= 60 && tad <= 80)
+    return "yellowgreen";
+    if(edad >= 21 && edad <=25 && genero == "femenino" && tad >= 60 && tad <= 80)
+    return "yellowgreen";
+    if(edad >= 26 && edad <=30 && genero == "femenino" && tad >= 60 && tad <= 80)
+    return "yellowgreen";
+    if(edad >= 31 && edad <=35 && genero == "femenino" && tad >= 65 && tad <= 80)
+    return "yellowgreen";
+    if(edad >= 36 && edad <=40 && genero == "femenino" && tad >= 65 && tad <= 80)
+    return "yellowgreen";
+    if(edad >= 41 && edad <=45 && genero == "femenino" && tad >= 65 && tad <= 80)
+    return "yellowgreen";
+    if(edad >= 46 && edad <=50 && genero == "femenino" && tad >= 65 && tad <= 80)
+    return "yellowgreen";
+    if(edad >= 51 && edad <=55 && genero == "femenino" && tad >= 70 && tad <= 80)
+    return "yellowgreen";
+    if(edad >= 56 && genero == "femenino" && tas >= 70 && tad <= 80)
+    return "yellowgreen";
+
+    if(edad >= 18 && edad <=20 && genero == "masculino" && tad >= 81 && tad <= 86)
+    return "orange";
+    if(edad >= 21 && edad <=25 && genero == "masculino" && tad >= 81 && tad <= 88)
+    return "orange";
+    if(edad >= 26 && edad <=30 && genero == "masculino" && tad >= 81 && tad <= 89)
+    return "orange";
+    if(edad >= 31 && edad <=35 && genero == "masculino" && tad >= 81 && tad <= 92)
+    return "orange";
+    if(edad >= 36 && edad <=40 && genero == "masculino" && tad >= 81 && tad <= 92)
+    return "orange";
+    if(edad >= 41 && edad <=45 && genero == "masculino" && tad >= 81 && tad <= 96)
+    return "orange";
+    if(edad >= 46 && edad <=50 && genero == "masculino" && tad >= 81 && tad <= 96)
+    return "orange";
+    if(edad >= 51 && edad <=55 && genero == "masculino" && tad >= 81 && tad <= 97)
+    return "orange";
+    if(edad >= 56 && genero == "masculino" && tas >= 81 && tad <= 100)
+    return "orange";
+
+    if(edad >= 18 && edad <=20 && genero == "femenino" && tad >= 81 && tad <= 85)
+    return "orange";
+    if(edad >= 21 && edad <=25 && genero == "femenino" && tad >= 81 && tad <= 85)
+    return "orange";
+    if(edad >= 26 && edad <=30 && genero == "femenino" && tad >= 81 && tad <= 85)
+    return "orange";
+    if(edad >= 31 && edad <=35 && genero == "femenino" && tad >= 81 && tad <= 88)
+    return "orange";
+    if(edad >= 36 && edad <=40 && genero == "femenino" && tad >= 81 && tad <= 89)
+    return "orange";
+    if(edad >= 41 && edad <=45 && genero == "femenino" && tad >= 81 && tad <= 96)
+    return "orange";
+    if(edad >= 46 && edad <=50 && genero == "femenino" && tad >= 81 && tad <= 96)
+    return "orange";
+    if(edad >= 51 && edad <=55 && genero == "femenino" && tad >= 81 && tad <= 97)
+    return "orange";
+    if(edad >= 56 && genero == "femenino" && tad >= 81 && tad <= 100)
+    return "orange";
+
+    if(edad >= 18 && edad <=20 && genero == "masculino" && tad >= 87)
+    return "red";
+    if(edad >= 21 && edad <=25 && genero == "masculino" && tad >= 89)
+    return "red";
+    if(edad >= 26 && edad <=30 && genero == "masculino" && tad >= 90)
+    return "red";
+    if(edad >= 31 && edad <=35 && genero == "masculino" && tad >= 93)
+    return "red";
+    if(edad >= 36 && edad <=40 && genero == "masculino" && tad >= 93)
+    return "red";
+    if(edad >= 41 && edad <=45 && genero == "masculino" && tad >= 97)
+    return "red";
+    if(edad >= 46 && edad <=50 && genero == "masculino" && tad >= 97)
+    return "red";
+    if(edad >= 51 && edad <=55 && genero == "masculino" && tad >= 98)
+    return "red";
+    if(edad >= 56 && genero == "masculino" && tad >= 101)
+    return "red";
+
+    if(edad >= 18 && edad <=20 && genero == "femenino" && tad >= 86)
+    return "red";
+    if(edad >= 21 && edad <=25 && genero == "femenino" && tad >= 86)
+    return "red";
+    if(edad >= 26 && edad <=30 && genero == "femenino" && tad >= 86)
+    return "red";
+    if(edad >= 31 && edad <=35 && genero == "femenino" && tad >= 89)
+    return "red";
+    if(edad >= 36 && edad <=40 && genero == "femenino" && tad >= 90)
+    return "red";
+    if(edad >= 41 && edad <=45 && genero == "femenino" && tad >= 97)
+    return "red";
+    if(edad >= 46 && edad <=50 && genero == "femenino" && tad >= 97)
+    return "red";
+    if(edad >= 51 && edad <=55 && genero == "femenino" && tad >= 98)
+    return "red";
+    if(edad >= 56 && genero == "femenino" && tad >= 101)
+    return "red";
+
+}
+
+function colorResultadoFcr (genero, edad, fcr){
+    if(edad >= 13 && edad <=19 && genero == "masculino" && fcr <= 59)
+    return "skyblue";
+    if(edad >= 20 && edad <=29 && genero == "masculino" && fcr <= 59)
+    return "skyblue";
+    if(edad >= 30 && edad <=39 && genero == "masculino" && fcr <= 61)
+    return "skyblue";
+    if(edad >= 40 && edad <=49 && genero == "masculino" && fcr <= 63)
+    return "skyblue";
+    if(edad >= 50 && edad <=55 && genero == "masculino" && fcr <= 65)
+    return "skyblue";
+    if(edad >= 56 && genero == "masculino" && fcr <= 65)
+    return "skyblue";
+
+    if(edad >= 13 && edad <=19 && genero == "femenino" && fcr <= 69)
+    return "skyblue";
+    if(edad >= 20 && edad <=29 && genero == "femenino" && fcr <= 69)
+    return "skyblue";
+    if(edad >= 30 && edad <=39 && genero == "femenino" && fcr <= 69)
+    return "skyblue";
+    if(edad >= 40 && edad <=49 && genero == "femenino" && fcr <= 71)
+    return "skyblue";
+    if(edad >= 50 && edad <=55 && genero == "femenino" && fcr <= 73)
+    return "skyblue";
+    if(edad >= 56 && genero == "femenino" && fcr <= 73)
+    return "skyblue";
+
+    if(edad >= 13 && edad <=19 && genero == "masculino" && fcr >= 60 && fcr <= 68)
+    return "yellowgreen";
+    if(edad >= 20 && edad <=29 && genero == "masculino" && fcr >= 60 && fcr <= 68)
+    return "yellowgreen";
+    if(edad >= 30 && edad <=39 && genero == "masculino" && fcr >= 62 && fcr <= 70)
+    return "yellowgreen";
+    if(edad >= 40 && edad <=49 && genero == "masculino" && fcr >= 64 && fcr <= 72)
+    return "yellowgreen";
+    if(edad >= 50 && edad <=55 && genero == "masculino" && fcr >= 66 && fcr <= 74)
+    return "yellowgreen";
+    if(edad >= 56 && genero == "masculino" && fcr >= 66 && fcr <= 74)
+    return "yellowgreen";
+
+    if(edad >= 13 && edad <=19 && genero == "femenino" && fcr >= 70 && fcr <= 76)
+    return "yellowgreen";
+    if(edad >= 20 && edad <=29 && genero == "femenino" && fcr >= 70 && fcr <= 76)
+    return "yellowgreen";
+    if(edad >= 30 && edad <=39 && genero == "femenino" && fcr >= 70 && fcr <= 78)
+    return "yellowgreen";
+    if(edad >= 40 && edad <=49 && genero == "femenino" && fcr >= 72 && fcr <= 78)
+    return "yellowgreen";
+    if(edad >= 50 && edad <=55 && genero == "femenino" && fcr >= 74 && fcr <= 82) 
+    return "yellowgreen";
+    if(edad >= 56 && genero == "femenino" && fcr >= 74 && fcr <= 82)
+    return "yellowgreen";
+
+    if(edad >= 13 && edad <=19 && genero == "masculino" && fcr >= 69 && fcr <= 86)
+    return "orange";
+    if(edad >= 20 && edad <=29 && genero == "masculino" && fcr >= 69 && fcr <= 86)
+    return "orange";
+    if(edad >= 30 && edad <=39 && genero == "masculino" && fcr >= 71 && fcr <= 86)
+    return "orange";
+    if(edad >= 40 && edad <=49 && genero == "masculino" && fcr >= 73 && fcr <= 90)
+    return "orange";
+    if(edad >= 50 && edad <=55 && genero == "masculino" && fcr >= 75 && fcr <= 90)
+    return "orange";
+    if(edad >= 56 && genero == "masculino" && fcr >= 75 && fcr <= 90)
+    return "orange";
+
+    if(edad >= 13 && edad <=19 && genero == "femenino" && fcr >= 77 && fcr <= 96)
+    return "orange";
+    if(edad >= 20 && edad <=29 && genero == "femenino" && fcr >= 77 && fcr <= 96)
+    return "orange";
+    if(edad >= 30 && edad <=39 && genero == "femenino" && fcr >= 79 && fcr <= 98)
+    return "orange";
+    if(edad >= 40 && edad <=49 && genero == "femenino" && fcr >= 79 && fcr <= 100)
+    return "orange";
+    if(edad >= 50 && edad <=55 && genero == "femenino" && fcr >= 83 && fcr <=104) 
+    return "orange";
+    if(edad >= 56 && genero == "femenino" && fcr >= 83 && fcr <= 104)
+    return "orange";
+
+    if(edad >= 13 && edad <=19 && genero == "masculino" && fcr >= 87)
+    return "red";
+    if(edad >= 20 && edad <=29 && genero == "masculino" && fcr >= 87)
+    return "red";
+    if(edad >= 30 && edad <=39 && genero == "masculino" && fcr >= 87)
+    return "red";
+    if(edad >= 40 && edad <=49 && genero == "masculino" && fcr >= 91)
+    return "red";
+    if(edad >= 50 && edad <=55 && genero == "masculino" && fcr >= 91)
+    return "red";
+    if(edad >= 56 && genero == "masculino" && fcr >= 91)
+    return "red";
+
+    if(edad >= 13 && edad <=19 && genero == "femenino" && fcr >= 97)
+    return "red";
+    if(edad >= 20 && edad <=29 && genero == "femenino" && fcr >= 97)
+    return "red";
+    if(edad >= 30 && edad <=39 && genero == "femenino" && fcr >= 99)
+    return "red";
+    if(edad >= 40 && edad <=49 && genero == "femenino" && fcr >= 101)
+    return "red";
+    if(edad >= 50 && edad <=55 && genero == "femenino" && fcr >=105) 
+    return "red";
+    if(edad >= 56 && genero == "femenino" && fcr >= 105)
+    return "red";
+}
+
+function colorResultadoAnalisisPostural(analisisPostural){
+    if(analisisPostural >= 45)
+    return "yellowgreen";
+    if(analisisPostural >= 35 && analisisPostural <= 44)
+    return "skyblue";
+    if(analisisPostural >= 10 && analisisPostural <= 34)
+    return "orange";
+    if(analisisPostural <= 9)
+    return "red";  
+}
+
+function colorResultadoIae (iae){
+    if(iae >= 16)
+    return "red";
+    if(iae >= 11 && iae <= 15.99)
+    return "orange";
+    if(iae >= 6 && iae <= 10.99)
+    return "skyblue";
+    if(iae <= 5.99)
+    return "yellowgreen"; 
+
+}
+
+function colorResultadoVo2Max (genero, edad, Vo2Max){
+    if(edad >= 13 && edad <=19 && genero == "masculino" && Vo2Max >= 59.9)
+    return "yellowgreen";
+    if(edad >= 20 && edad <=29 && genero == "masculino" && Vo2Max >= 52.4)
+    return "yellowgreen";
+    if(edad >= 30 && edad <=39 && genero == "masculino" && Vo2Max >= 49.4)
+    return "yellowgreen";
+    if(edad >= 40 && edad <=49 && genero == "masculino" && Vo2Max >= 48)
+    return "yellowgreen";
+    if(edad >= 50 && edad <=55 && genero == "masculino" && Vo2Max >= 45.3)
+    return "yellowgreen";
+    if(edad >= 56 && genero == "masculino" && Vo2Max >= 44.2)
+    return "yellowgreen";
+
+    if(edad >= 13 && edad <=19 && genero == "femenino" && Vo2Max >= 44.2)
+    return "yellowgreen";
+    if(edad >= 20 && edad <=29 && genero == "femenino" && Vo2Max >= 41.9)
+    return "yellowgreen";
+    if(edad >= 30 && edad <=39 && genero == "femenino" && Vo2Max >= 41)
+    return "yellowgreen";
+    if(edad >= 40 && edad <=49 && genero == "femenino" && Vo2Max >= 40)
+    return "yellowgreen";
+    if(edad >= 50 && edad <=55 && genero == "femenino" && Vo2Max >= 36.9)
+    return "yellowgreen";
+    if(edad >= 56 && genero == "femenino" && Vo2Max >= 35)
+    return "yellowgreen";
+
+    if(edad >= 13 && edad <=19 && genero == "masculino" && Vo2Max >= 45.2 && Vo2Max <= 59.8)
+    return "skyblue";
+    if(edad >= 20 && edad <=29 && genero == "masculino" && Vo2Max >= 42.5 && Vo2Max <= 52.3)
+    return "skyblue";
+    if(edad >= 30 && edad <=39 && genero == "masculino" && Vo2Max >= 41 && Vo2Max <= 49.3)
+    return "skyblue";
+    if(edad >= 40 && edad <=49 && genero == "masculino" && Vo2Max >= 39 && Vo2Max <= 47.9)
+    return "skyblue";
+    if(edad >= 50 && edad <=55 && genero == "masculino" && Vo2Max >= 35.8 && Vo2Max <= 45.)
+    return "skyblue";
+    if(edad >= 56 && genero == "masculino" && Vo2Max >= 32.3 && Vo2Max <= 44.1)
+    return "skyblue";
+
+    if(edad >= 13 && edad <=19 && genero == "femenino" && Vo2Max >= 35 && Vo2Max <= 44.1)
+    return "skyblue";
+    if(edad >= 20 && edad <=29 && genero == "femenino" && Vo2Max >= 33 && Vo2Max <= 42.9)
+    return "skyblue";
+    if(edad >= 30 && edad <=39 && genero == "femenino" && Vo2Max >= 31.5 && Vo2Max <= 41.8)
+    return "skyblue";
+    if(edad >= 40 && edad <=49 && genero == "femenino" && Vo2Max >= 29 && Vo2Max <= 39.9)
+    return "skyblue";
+    if(edad >= 50 && edad <=55 && genero == "femenino" && Vo2Max >= 27 && Vo2Max <= 36.8)
+    return "skyblue";
+    if(edad >= 56 && genero == "femenino" && Vo2Max >= 24.5 && Vo2Max <= 34.9)
+    return "skyblue";
+
+    if(edad >= 13 && edad <=19 && genero == "masculino" && Vo2Max >= 35 && Vo2Max <= 45.1)
+    return "orange";
+    if(edad >= 20 && edad <=29 && genero == "masculino" && Vo2Max >= 33 && Vo2Max <= 42.4)
+    return "orange";
+    if(edad >= 30 && edad <=39 && genero == "masculino" && Vo2Max >= 31.5 && Vo2Max <= 42.9)
+    return "orange";
+    if(edad >= 40 && edad <=49 && genero == "masculino" && Vo2Max >= 30.2 && Vo2Max <= 38.9)
+    return "orange";
+    if(edad >= 50 && edad <=55 && genero == "masculino" && Vo2Max >= 26.1 && Vo2Max <= 35.7)
+    return "orange";
+    if(edad >= 56 && genero == "masculino" && Vo2Max >= 20.5 && Vo2Max <= 32.2)
+    return "orange";
+
+    if(edad >= 13 && edad <=19 && genero == "femenino" && Vo2Max >= 25 && Vo2Max <= 44.1)
+    return "orange";
+    if(edad >= 20 && edad <=29 && genero == "femenino" && Vo2Max >= 23.6 && Vo2Max <= 42.8)
+    return "orange";
+    if(edad >= 30 && edad <=39 && genero == "femenino" && Vo2Max >= 22.8 && Vo2Max <= 41.7)
+    return "orange";
+    if(edad >= 40 && edad <=49 && genero == "femenino" && Vo2Max >= 21 && Vo2Max <= 39.8)
+    return "orange";
+    if(edad >= 50 && edad <=55 && genero == "femenino" && Vo2Max >= 20.02 && Vo2Max <= 36.7) 
+    return "orange";
+    if(edad >= 56 && genero == "femenino" && Vo2Max >= 17.5 && Vo2Max <= 34.8)
+    return "orange";
+
+    if(edad >= 13 && edad <=19 && genero == "masculino" && Vo2Max <= 34.9)
+    return "red";
+    if(edad >= 20 && edad <=29 && genero == "masculino" && Vo2Max <= 32.9)
+    return "red";
+    if(edad >= 30 && edad <=39 && genero == "masculino" && Vo2Max <= 31.4)
+    return "red";
+    if(edad >= 40 && edad <=49 && genero == "masculino" && Vo2Max <= 30.1)
+    return "red";
+    if(edad >= 50 && edad <=55 && genero == "masculino" && Vo2Max <= 26)
+    return "red";
+    if(edad >= 56 && genero == "masculino" && Vo2Max <= 20.4)
+    return "red";
+
+    if(edad >= 13 && edad <=19 && genero == "femenino" && Vo2Max <= 24.9)
+    return "red";
+    if(edad >= 20 && edad <=29 && genero == "femenino" && Vo2Max <= 23.5)
+    return "red";
+    if(edad >= 30 && edad <=39 && genero == "femenino" && Vo2Max <= 22.7)
+    return "red";
+    if(edad >= 40 && edad <=49 && genero == "femenino" && Vo2Max <= 20.9)
+    return "red";
+    if(edad >= 50 && edad <=55 && genero == "femenino" && Vo2Max <=20.1) 
+    return "red";
+    if(edad >= 56 && genero == "femenino" && Vo2Max <= 17.4)
+    return "red";
+}
+function colorResultadoFlexibilidad (genero, flexibilidad){
+    if(genero == "masculino" && flexibilidad >= 27)
+    return "yellowgreen";
+    if(genero == "femenino" && flexibilidad >= 30)
+    return "yellowgreen";
+
+    if(genero == "masculino"  && flexibilidad >= 0 && flexibilidad <= 26)
+    return "skyblue";
+    if(genero == "femenino"  && flexibilidad >= 1 && flexibilidad <= 29)
+    return "skyblue";
+
+    if(genero == "masculino"  && flexibilidad >= -20 && flexibilidad <= -1)
+    return "orange";
+    if(genero == "femenino"  && flexibilidad >= -15 && flexibilidad <= 0)
+    return "orange";
+
+    if(genero == "masculino" && flexibilidad <= -21)
+    return "red";
+    if(genero == "femenino" && flexibilidad <= -16)
+    return "red";
+
+}
