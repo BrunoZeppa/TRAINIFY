@@ -113,8 +113,8 @@ const users = [
 var colors = ["green", "blue", "yellow", "red"]
 
 document.addEventListener("DOMContentLoaded", () => {
-    filtrarUsuarios("BrunoBZG24");
-    mostrarResultado("BrunoBZG24");
+    usuarioFiltrado("BrunoBZG24");
+    clickMostrarTodo("BrunoBZG24");
 
 })
 
@@ -134,13 +134,25 @@ let antropometria = document.querySelector(".antropometria");
 mostrarTodo.addEventListener("click", () =>{
     
 })
+composicionCorporal.addEventListener("click", () =>{
+    
+})
+aspectosDeSalud.addEventListener("click", () =>{
+    
+})
+capacidadesFisicas.addEventListener("click", () =>{
+    
+})
+antropometria.addEventListener("click", () =>{
+    
+})
 /*--======================= FUNCIONES ========================--*/
 
 
-function filtrarUsuarios(id){
+function usuarioFiltrado(id){
     let fragmento = "";
     let usuarioFiltrados = users.filter((users) => users.id == id);
-    usuarioFiltrados.forEach((users, clases) => {
+    usuarioFiltrados.forEach((users) => {
         fragmento += `
         <div class="card-user">
           <div>
@@ -161,7 +173,7 @@ function filtrarUsuarios(id){
     dashboardID.innerHTML = fragmento;
 };
 
-function mostrarResultado(id) {
+function clickMostrarTodo(id) {
     let fragment = "";
     let usuarioFiltrados = users.filter((users) => users.id == id);
     usuarioFiltrados.forEach((users) => {
@@ -275,6 +287,13 @@ function mostrarResultado(id) {
     })
     deshbordResults.innerHTML = fragment
 };
+
+function fAntropometria (id){
+    let fragmento = new DocumentFragment;
+    for ( let i = 0; i < users.length; i++){
+
+    }
+}
 
 
 
