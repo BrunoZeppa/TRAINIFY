@@ -297,6 +297,7 @@ function fAntropometria (id){
 
 
 
+
 function porcentajeGrasa(genero, edad) {
 
     if (genero == "masculino" && edad <= 30)
