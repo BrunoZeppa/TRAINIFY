@@ -477,8 +477,8 @@ aside span{
     display: flex;
     flex-direction: column;
     color: var(--secondary-color-content);
-    padding-bottom: 5rem;
-    padding-top: 3.2rem;
+    padding-bottom: 8rem;
+    padding-top: 4.3rem;
 }
 .metodologia2 div{
     margin-top: 4rem;
