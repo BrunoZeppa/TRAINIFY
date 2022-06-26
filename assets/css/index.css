@@ -13,10 +13,9 @@
     src: url(../fonts/file-lfglght.otf);
 
 }
-
 @font-face {
     font-family: 'COCOGOOSE';
-    src: url(../fonts/Cocogoose\ Pro-trial.ttf);
+    src: url(../fonts/Cocogoose\ Pro\ Italic-trial.ttf);
 }
 @font-face {
     font-family: 'COCOGOOSE-SEMILIGHT';
@@ -884,7 +883,7 @@ main {
 .estandar h1{
     font-size: 40px;
     color: var(--primary-color);
-    font-family: 'COCOGOOSE';
+    font-family: 'COCOGOOSE', sans-serif;
     margin-top:10px;
     margin-left: 20px;
     margin-bottom: 90px;
@@ -916,7 +915,7 @@ main {
     margin-bottom: 25px;
     margin-left: 10px;
     color: var(--primary-color);
-    font-family: 'LUFGA';
+    font-family: 'LUFGA-MEDIUM';
     text-transform: uppercase;
     font-size: 19px;
 }
@@ -974,7 +973,7 @@ main {
     margin-bottom: 25px;
     margin-left: 10px;
     color: var(--primary-color);
-    font-family: 'LUFGA';
+    font-family: 'LUFGA-MEDIUM';
     text-transform: uppercase;
     font-size: 19px;
 }
@@ -1031,7 +1030,7 @@ main {
     margin-bottom: 25px;
     margin-left: 10px;
     color: var(--primary-color);
-    font-family: 'LUFGA';
+    font-family: 'LUFGA-MEDIUM';
     text-transform: uppercase;
     font-size: 19px;
 }
@@ -1089,7 +1088,7 @@ main {
     margin-bottom: 25px;
     margin-left: 10px;
     color: var(--primary-color);
-    font-family: 'LUFGA';
+    font-family: 'LUFGA-MEDIUM';
     text-transform: uppercase;
     font-size: 19px;
 }

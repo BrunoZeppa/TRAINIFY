@@ -253,7 +253,7 @@ nav {
 
 #nav-menu li a.active,
 #nav-menu li a:hover {
-    color: var(--highlight-color);
+    color: var(--primary-color-vivid-cyan);
     transition: .3s;
 }
 
