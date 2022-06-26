@@ -1,31 +1,26 @@
 @font-face {
     font-family: 'BLACKPAST';
-    src: url(./fonts/file.otf);
+    src: url(../fonts/file.otf);
 }
 
 @font-face {
-    font-family: 'LUFGA';
-    src: url(./fonts/file-lfg.otf);
-}
-
-@font-face {
-    font-family: 'LUFGA-THIN';
-    src: url(./fonts/file-lfgthin.otf);
+    font-family: 'LUFGA-MEDIUM';
+    src: url(../fonts/Lufga-Medium.otf);
 }
 
 @font-face {
     font-family: 'LUFGA-LIGHT';
-    src: url(./fonts/file-lfglght.otf);
+    src: url(../fonts/file-lfglght.otf);
 
 }
 
 @font-face {
     font-family: 'COCOGOOSE';
-    src: url(./fonts/Cocogoose\ Pro\ Italic-trial.ttf);
+    src: url(../fonts/Cocogoose\ Pro-trial.ttf);
 }
 @font-face {
     font-family: 'COCOGOOSE-SEMILIGHT';
-    src: url(./fonts/Cocogoose\ Pro\ Semilight-trial.ttf);
+    src: url(../fonts/Cocogoose\ Pro\ Semilight-trial.ttf);
 }
 
 
@@ -100,7 +95,7 @@ Body {
 header {
     width: 100%;
     height: 100vh;
-    background-image: url(./images/HOME-01.jpg);
+    background-image: url(../images/home/HOME-01.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -358,7 +353,7 @@ main {
 .programas {
     width: 100%;
     height: 100vh;
-    background-image: url(./images/HOME-05.jpg);
+    background-image: url(../images/home/HOME-05.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -434,7 +429,7 @@ main {
     grid-row: 2;
     width: 240px;
     height: 330px;
-    background: url(./images/fondo-servicios.png);
+    background: url(../images/home/fondo-servicios.png);
     background-size: cover;
     border-radius: 3%;
     text-align: center;
@@ -460,7 +455,7 @@ main {
 
 
 .health-program-card:hover {
-    background: url(./images/fondo-programas-azul.png);
+    background: url(../images/home/fondo-programas-azul.png);
     background-size: cover;
     color: var(--primary-color);
     text-shadow: none;
@@ -476,7 +471,7 @@ main {
     width: 240px;
     height: 330px;
     border-radius: 3%;
-    background: url(./images/fondo-servicios.png);
+    background: url(../images/home/fondo-servicios.png);
     background-size: cover;
     text-align: center;
     object-fit: contain;
@@ -488,7 +483,7 @@ main {
 }
 
 .fitness-program-card:hover {
-    background: url(./images/fondo-programas-azul.png);
+    background: url(../images/home/fondo-programas-azul.png);
     background-size: cover;
     color: var(--primary-color);
     text-shadow: none;
@@ -501,7 +496,7 @@ main {
     width: 240px;
     height: 330px;
     border-radius: 3%;
-    background: url(./images/fondo-servicios.png);
+    background: url(../images/home/fondo-servicios.png);
     background-size: cover;
     text-align: center;
     object-fit: contain;
@@ -513,7 +508,7 @@ main {
 }
 
 .performance-program-card:hover {
-    background: url(./images/fondo-programas-azul.png);
+    background: url(../images/home/fondo-programas-azul.png);
     background-size: cover;
     color: var(--primary-color);
     text-shadow: none;
@@ -526,7 +521,7 @@ main {
     width: 240px;
     height: 330px;
     border-radius: 3%;
-    background: url(./images/fondo-servicios.png);
+    background: url(../images/home/fondo-servicios.png);
     background-size: cover;
     text-align: center;
     object-fit: contain;
@@ -538,7 +533,7 @@ main {
 }
 
 .special-condition-program-card:hover {
-    background: url(./images/fondo-programas-azul.png);
+    background: url(../images/home/fondo-programas-azul.png);
     background-size: cover;
     color: var(--primary-color);
     text-shadow: none;
@@ -549,7 +544,7 @@ main {
 .que-es {
     width: 100%;
     height: auto;
-    background-image: url(./images/que-es-fondo.jpg);
+    background-image: url(../images/home/que-es-fondo.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -598,7 +593,7 @@ main {
 .entrena-donde-y-cuando-quieras {
     width: 100%;
     height: 25vh;
-    background-image: url(./images/fonde-entrana-donde-y-cuando-quieras.jpg);
+    background-image: url(../images/home/fonde-entrana-donde-y-cuando-quieras.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -621,7 +616,7 @@ main {
 .como-lo-hacemos {
     height: 160vh;
     width: 100%;
-    background-image: url(./images/como-lo-hacemos-fondo.jpg);
+    background-image: url(../images/home/como-lo-hacemos-fondo.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -686,7 +681,7 @@ main {
 .footer-como-le-hacemos {
     height: 25vh;
     width: 100%;
-    background-image: url(./images/footer-como-le-hacemos.png);
+    background-image: url(../images/home/footer-como-le-hacemos.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -702,7 +697,7 @@ main {
 .metodologia {
     width: 100%;
     height: auto;
-    background-image: url(./images/metodologia-wallpaper.jpg);
+    background-image: url(../images/home/metodologia-wallpaper.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -751,7 +746,7 @@ main {
 }
 
 .paso-1 {
-    background-image: url(./images/Metodologia-1.png);
+    background-image: url(../images/home/Metodologia-1.png);
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
@@ -766,7 +761,7 @@ main {
 
 
 .paso-2 {
-    background-image: url(./images/metodologia-2.png);
+    background-image: url(../images/home/metodologia-2.png);
     background-position: right;
     background-repeat: no-repeat;
     background-size: cover;
@@ -790,7 +785,7 @@ main {
 }
 
 .paso-3 {
-    background-image: url(./images/metodologia-3.png);
+    background-image: url(../images/home/metodologia-3.png);
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
@@ -806,7 +801,7 @@ main {
 
 .selecciona-tu-plan {
     height: 115vh;
-    background-image: url(./images/plan-wallpaper.jpg);
+    background-image: url(../images/home/plan-wallpaper.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -879,7 +874,7 @@ main {
     grid-row: 2;
     width: 247.97px;
     height: 475.92px;
-    background: url(./images/estandar-plan.svg);
+    background: url(../images/home/estandar-plan.svg);
     background-size: cover;
     border-radius: 3%;
     text-align: center;
@@ -938,7 +933,7 @@ main {
     width: 247.97px;;
     height: 475.92px;
     border-radius: 3%;
-    background: url(./images/health-plan.svg);
+    background: url(../images/home/health-plan.svg);
     background-size: cover;
     text-align: center;
     object-fit: contain;
@@ -995,7 +990,7 @@ main {
     width: 247.97px;;
     height: 475.92px;
     border-radius: 3%;
-    background: url(./images/fitness-plan.svg);
+    background: url(../images/home/fitness-plan.svg);
     background-size: cover;
     text-align: center;
     object-fit: contain;
@@ -1052,7 +1047,7 @@ main {
     width: 247.97px;;
     height: 475.92px;
     border-radius: 3%;
-    background: url(./images/performance-plan.svg);
+    background: url(../images/home/performance-plan.svg);
     background-size: cover;
     text-align: center;
     object-fit: contain;
@@ -1105,7 +1100,7 @@ main {
 .contacto{
     width: 100%;
     height: 125vh;
-    background-image:url(./images/contact-wallpaper.jpg);
+    background-image:url(../images/home/contact-wallpaper.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1199,7 +1194,7 @@ order: 4;
 .footer{
     height: auto;
     width: 100%;
-    background-image: url(./images/turquesa-footer-fondo.png);
+    background-image: url(../images/home/turquesa-footer-fondo.png);
     background-position: top;
     background-repeat: no-repeat;
 }
@@ -1236,7 +1231,7 @@ order: 4;
 
 @media screen and (min-width: 402px){
     .footer{
-        background-image: url(./images/FOOTER-02.png);
+        background-image: url(../images/home/FOOTER-02.png);
         background-position: top;
         background-repeat: no-repeat;
     }
