@@ -601,7 +601,7 @@ aside span{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat; 
-    padding-bottom: 3rem;
+    padding: 2.3rem;
 }
 .contacto h3{
     font-family: var(--secondary-title-font);
@@ -629,7 +629,7 @@ aside span{
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin: 2rem 25px 2rem 25px;
+    margin: 2rem auto 2rem auto;
 }
 
 .redes{
