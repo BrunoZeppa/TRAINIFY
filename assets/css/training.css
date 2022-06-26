@@ -600,8 +600,9 @@ aside span{
     background-image:url(../images/home/contact-wallpaper.jpg);
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat; 
-    padding: 2.3rem;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
 }
 .contacto h3{
     font-family: var(--secondary-title-font);
@@ -630,6 +631,7 @@ aside span{
     flex-direction: column;
     gap: 10px;
     margin: 2rem auto 2rem auto;
+    align-self: center;
 }
 
 .redes{
