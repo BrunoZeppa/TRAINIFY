@@ -12,7 +12,10 @@
 @font-face {
     font-family: 'LUFGA-LIGHT';
     src: url(../fonts/file-lfglght.otf);
-
+}
+@font-face {
+    font-family: 'LUFGA-THIN';
+    src: url(../fonts/Lufga-Thin.otf);
 }
 
 @font-face {
@@ -471,106 +474,70 @@ aside span{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: var(--padding-content);
-    overflow-x: scroll;
     display: flex;
-    gap: 2rem;
+    flex-direction: column;
+    color: var(--secondary-color-content);
+    padding-bottom: 5rem;
 }
 .metodologia2 div{
-    margin-top: var(--mb-3);
-    margin-bottom: var(--mb-3);
-    height: 20rem;
+    margin-top: 4rem;
+    height: auto;
     display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
-
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-.semana1{
-    background-image: url(../images/training/semana1.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 .semana1 img{
-    width: 60rem;
-    height: 6.5rem;
-    position: relative;
-    align-self: flex-start;
-    visibility: hidden;
+    width: 10rem;
+    height: 11rem;
+    margin-top: auto;
+    margin-bottom: auto;
 }
-.semana1 article{
-    width: 26rem;
-    margin-left: 8rem;
+.semana1>article{
+    width: 22rem;
+    padding-left: 2rem;
+   
 }
-.semana1 p{
-    margin-left: 3rem;
-}
-.semana2{
-    background-image: url(../images/training/semana2.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;  
-}
+
 .semana2 img{
-    width: 60rem;
-    height: 5rem;
-    position: relative;
-    align-self: flex-start;
-    visibility: hidden;
+    width: 10rem;
+    height: 20rem;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 .semana2 article{
-    width: 38rem;
-    margin-left: 8rem;
-    text-align: right;
-}
-.semana2 p{
-    margin-left: 10rem;
+    width: 22rem;
+    order: 1;
+    margin-top: 3rem;
+    padding-right: 2rem;
 }
 .semana3{
-    background-image: url(../images/training/semana3.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; 
-    margin-left: var(--mb-2-5);
+    height: 10rem;
 }
-
 .semana3 img{
-    width: 60rem;
-    height: 7.5rem;
-    position: relative;
-    align-self: flex-start;
-    visibility: hidden;
+    width: 10rem;
+    height: 11rem;
 }
 .semana3 article{
-    width: 28rem;
-    margin-left: 8rem;
-}
-.semana3 p{
-    margin-left: 6rem;
+    width: 22rem;
+    padding-left: 2rem;
+    margin-top: 2rem; 
 }
 
-.semana4{
-    background-image: url(../images/training/semana4.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; 
-}
+
 .semana4 img{
-    width: 60rem;
-    height: 6.5rem;
-    position: relative;
-    align-self: flex-start;
-    visibility: hidden;
+    width: 10rem;
+    height: 20rem;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 .semana4 article{
-    width: 35rem;
-    margin-left: 8rem;
-    text-align: right;
+    width: 22rem;
+    order: 1;
+    margin-top: 3rem;
+    padding-right: 2rem;
 }
-.semana4 p{
-    margin-left: 5rem; 
-}
+
 /*--===============================  BENEFICIOS  =================================--*/
 .beneficios{
     background-color: black;
@@ -625,14 +592,34 @@ aside span{
     background:var(--primary-background-gradient-blue);
     border-radius: 25px;
 }
+
+/*--===============================  SETEO CONTACTO  =================================--*/
+
 .contacto{
-    width: 100%;
-    height: 125vh;
     background-image:url(../images/home/contact-wallpaper.jpg);
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
-    
+    background-repeat: no-repeat; 
+    padding-bottom: 3rem;
+}
+.contacto h3{
+    font-family: var(--secondary-title-font);
+    text-transform: uppercase;
+    font-size: var(--secondary-title-size);
+    color: var(--primary-color-vivid-blue);
+    margin-bottom: var(--mb-2);
+}
+.contacto h4{
+    font-family: 'LUFGA-THIN', sans-serif;
+    text-transform: uppercase;
+    font-size: var(--secondary-title-size);
+    color: var(--secondary-color-content);
+    margin-bottom: var(--mb-2);
+}
+.contacto p{
+    color: var(--secondary-color-content);
+    font-size: var(--content-size);
+    font-family: var(--content-font);
 }
 .contacto img{
     width: 160px;
@@ -640,21 +627,17 @@ aside span{
 .redes-y-contacto-div{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 10px;
-    margin: 0 25px 0 25px;
+    margin: 2rem 25px 2rem 25px;
 }
 
 .redes{
     width: fit-content;
     height: auto;
     display: flex;
-    flex-direction: row;
-    text-align: center;
-    margin-left: 35px;
-    margin-top: 30px;
+    flex-direction: column;
     gap: 15px;
+
 }
 .redes div{
     display: flex;
@@ -668,26 +651,25 @@ aside span{
 .redes i{
     font-size: 20px;
 }
+.direccion-y-redes{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    order: 3;
+    margin-top: 2.5rem;
+}
+.direccion{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
 
 .contact-form{
     width: 300px;
     height: auto;
-    order: 3;
+    order: 1;
 }
 
-.contact-form h2{
-    font-family: 'LUFGA-LIGHT';
-    text-transform: uppercase;
-    font-size: 23px;
-    color: #2196f3;
-}
-.contact-form h4{
-    color: white;
-    font-family: 'LUFGA-LIGHT';
-    text-transform: uppercase;
-    font-size: 18px;
-    font-weight: 100;
-}
 .contact-form input{
     border-radius: 10%;
     width: 300px;
@@ -699,9 +681,7 @@ aside span{
 }
 
 .redes-y-contacto-div hr{
-    color: var(--highlight-color);
-    order: 2;
-    max-width: 297px;
+    display: none;
 }
 .btn-form-enviar{
 align-self: center;
@@ -716,40 +696,38 @@ object-fit: contain;
 background: linear-gradient(90deg, #0cfcfe 0%, #2196f3 100%);
 color: black;
 border-radius: 25px;
-order: 4;
+order: 2;
 }
-
-.footer{
+/*--===============================  SETEO FOOTER  =================================--*/
+footer{
     height: auto;
     background-image: url(../images/home/turquesa-footer-fondo.png);
     background-position: top;
     background-repeat: no-repeat;
+    padding: 3rem;
+    color: var(--secondary-color-content);
+    font-family: sans-serif;
+    font-size: var(--content-size);
+}
+footer p{
+    margin-top: var(--mb-1);
 }
 
 .contenedor-footer{
-    margin: 0px 25px 0 25px;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    gap: 20px;
-    margin-left: 10vw;
-    margin-right: 10vw;
+    gap: 22px;
+    margin-left: auto;
+    margin-right: auto;
 }
-.contenedor-footer div{
-    font-family: sans-serif;
-    color: rgb(245, 245, 245);
-    font-size: 14px;
-}
-.contenedor-footer p{
-    margin-top: 13px;
-}
+
 
 .contenedor-footer img{
    margin-top: 3rem;
+   margin-left: auto;
+   margin-right: auto;
    width: 200px;
    max-width: 210px;
-   align-self: center;
-   margin-left: 10%;
-   margin-right: 10%;
    
 }
+/*--=================  TERMINA MOBILE, EMPIEZA 599PX ->  =================================--*/
