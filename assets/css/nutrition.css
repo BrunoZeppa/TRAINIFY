@@ -272,9 +272,10 @@ nav {
 
 #nav-menu>li>a {
     color: white;
-    font-family: 'BLACKPAST', sans-serif;
+    font-family:var(--principal-title-font);
     font-weight: 600;
     z-index: 0;
+    font-size: var(--content-size);
 }
 
 #nav-menu li a.active,
