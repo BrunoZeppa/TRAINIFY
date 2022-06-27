@@ -1,0 +1,505 @@
+@font-face {
+    font-family: 'BLACKPAST';
+    src: url(../fonts/file.otf);
+}
+
+@font-face {
+    font-family: 'LUFGA-MEDIUM';
+    src: url(../fonts/Lufga-Medium.otf);
+}
+
+@font-face {
+    font-family: 'LUFGA-LIGHT';
+    src: url(../fonts/file-lfglght.otf);
+}
+
+@font-face {
+    font-family: 'LUFGA-THIN';
+    src: url(../fonts/Lufga-Thin.otf);
+}
+
+@font-face {
+    font-family: 'COCOGOOSE';
+    src: url(../fonts/Cocogoose\ Pro-trial.ttf);
+}
+
+@font-face {
+    font-family: 'COCOGOOSE-SEMILIGHT';
+    src: url(../fonts/Cocogoose\ Pro\ Semilight-trial.ttf);
+}
+
+/*-============================ RUTAS ===========================-*/
+:root {
+    --nav-height: 7rem;
+
+    /*-------- Color Textos ----------*/
+
+    --primary-color-white: white;
+    --primary-color-vivid-cyan: hsl(185.5, 99.2%, 52.2%);
+    --primary-color-vivid-blue: hsl(206.6, 89.7%, 54.1%);
+    --primary-background-gradient-blue: linear-gradient(90deg, #0cfcfe 0%, #2196f3 100%);
+    --primary-background-hoover-gradiente-orange: linear-gradient(90deg, #F3A22E 0%, hsl(42, 78%, 58%) 100%);
+    --secondary-color-content: rgba(245, 245, 245, 0.921);
+
+    /*-------- Tamaño y funte de titulos y textos ----------*/
+
+    --principal-title-size: 2.25rem;
+    --principal-title-font: 'BLACKPAST', sans-serif;
+    --secondary-title-size: 2.25rem;
+    --secondary-title-font: 'LUFGA-MEDIUM', sans-serif;
+    --content-size: 1.5rem;
+    --content-font: 'LUFGA-LIGHT', sans-serif;
+
+    /*-------- Peso de titulos y subtitulos ----------*/
+
+    --font-medium: 500;
+    --font-bold: 700;
+    /*--------- Margenes Bottom -------*/
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+
+    /*--------- Padding Mobile -------*/
+
+    --padding-nav: 1rem;
+    --padding-content: 2rem;
+
+    /*------- z index ------------*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+
+/*-============================ RESETEO ===========================-*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+
+/*-============================ HEADER ===========================-*/
+/* ( primeros 100 vh ) */
+
+header {
+    height: 100vh;
+    background-image: url(../images/nutrition/nutrition-wp.jpg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    border: none;
+    padding: var(--padding-nav);
+}
+
+#header.change {
+    background-image: none;
+    background-color: black;
+}
+
+/*-============================ NAVEGACION ===========================-*/
+
+nav {
+    height: var(--nav-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 180px;
+    height: 180px;
+}
+
+/*=======- cambio de apariencia al click de la hamburguesa -===========*/
+#hamburger button {
+    background: none;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+    width: 60px;
+    height: 60px;
+}
+
+#hamburger button span {
+    border-radius: 5px;
+    background: var(--primary-background-gradient-blue);
+    display: block;
+    width: 60%;
+    margin: 5px auto;
+    height: 2px;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+#hamburger button.open .top-line {
+    animation-name: top-line-animation;
+}
+
+#hamburger button.open .middle-line {
+    animation-name: middle-line-animation;
+}
+
+#hamburger button.open .bottom-line {
+    animation-name: bottom-line-animation;
+}
+
+#hamburger button .top-line {
+    animation-name: top-line-animation-close;
+}
+
+#hamburger button .middle-line {
+    animation-name: middle-line-animation-close;
+}
+
+#hamburger button .bottom-line {
+    animation-name: bottom-line-animation-close;
+}
+
+@keyframes top-line-animation {
+
+    50%,
+    100% {
+        margin: 0 auto;
+        transform: translateY(2px) rotate(-45deg);
+    }
+}
+
+@keyframes middle-line-animation {
+
+    20%,
+    100% {
+        margin: 0 auto;
+        width: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes bottom-line-animation {
+
+    50%,
+    100% {
+        margin: 0 auto;
+        transform: translateY(-2px) rotate(45deg);
+    }
+}
+
+@keyframes top-line-animation-close {
+    0% {
+        margin: 0 auto;
+        transform: translateY(2px) rotate(-45deg);
+    }
+
+    50%,
+    100% {
+        margin: 5px auto;
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+@keyframes middle-line-animation-close {
+    0% {
+        margin: 0 auto;
+        width: 0;
+        opacity: 0;
+    }
+
+    20%,
+    100% {
+        margin: 0 auto;
+        width: 60%;
+        opacity: 1;
+    }
+}
+
+@keyframes bottom-line-animation-close {
+    0% {
+        margin: 0 auto;
+        transform: translateY(-2px) rotate(45deg);
+    }
+
+    50%,
+    100% {
+        margin: 5px auto;
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+/*=======- fin -===========*/
+
+
+#nav-menu {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 10px;
+    background-color: black;
+    text-align: center;
+    transition: all .5s;
+    z-index: 0;
+}
+
+#nav-menu.show {
+    display: block;
+}
+
+#nav-menu li {
+    display: block;
+    line-height: 30px;
+    margin: 50px 0;
+    transition: all .5s;
+    z-index: 0;
+}
+
+#nav-menu.show {
+    display: block;
+    line-height: 30px;
+    margin: 50px 0;
+    transition: all .5s;
+    z-index: 0;
+}
+
+#nav-menu>li>a {
+    color: white;
+    font-family: 'BLACKPAST', sans-serif;
+    font-weight: 600;
+    z-index: 0;
+}
+
+#nav-menu li a.active,
+#nav-menu li a:hover {
+    color: var(--primary-color-vivid-cyan);
+    transition: .3s;
+}
+
+/*=======- INICIA EL SECTION -===========*/
+section {
+    background-image: url(../images/nutrition/section-nut-wp.jpg);
+    padding-left: var(--padding-content);
+    padding-right: var(--padding-content);
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+section h2 {
+    color: var(--primary-color-white);
+    font-family: var(--principal-title-font);
+    font-size: var(--principal-title-size);
+}
+
+section p {
+    color: var(--secondary-color-content);
+    font-family: var(--content-font);
+    font-size: var(--content-size);
+    margin-bottom: var(--mb-2);
+}
+
+section img {
+    width: 28rem;
+    margin-top: var(--mb-1);
+}
+
+.uno {
+    background-image: url(../images/nutrition/uno.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 28rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dos {
+    background-image: url(../images/nutrition/dos.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 28rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pdos{
+    text-align: right;
+    margin-right: 3rem;
+}
+
+
+.tres {
+    background-image: url(../images/nutrition/tres.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 28rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+/*--===============================  SETEO CONTACTO  =================================--*/
+
+.contacto{
+    background-image:url(../images/home/contact-wallpaper.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+}
+.contacto h3{
+    font-family: var(--secondary-title-font);
+    text-transform: uppercase;
+    font-size: var(--secondary-title-size);
+    color: var(--primary-color-vivid-blue);
+    margin-bottom: var(--mb-2);
+}
+.contacto h4{
+    font-family: 'LUFGA-THIN', sans-serif;
+    text-transform: uppercase;
+    font-size: var(--secondary-title-size);
+    color: var(--secondary-color-content);
+    margin-bottom: var(--mb-2);
+}
+.contacto p{
+    color: var(--secondary-color-content);
+    font-size: var(--content-size);
+    font-family: var(--content-font);
+}
+.contacto img{
+    width: 160px;
+}
+.redes-y-contacto-div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 2rem auto 2rem auto;
+    align-self: center;
+}
+
+.redes{
+    width: fit-content;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+}
+.redes div{
+    display: flex;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+}
+.redes i{
+    font-size: 20px;
+}
+.direccion-y-redes{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    order: 3;
+    margin-top: 2.5rem;
+}
+.direccion{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form{
+    width: 300px;
+    height: auto;
+    order: 1;
+}
+
+.contact-form input{
+    border-radius: 10%;
+    width: 300px;
+    height: 35px;
+    margin-top: 10px;
+}
+#mensaje-mail{
+    height: 200px;
+}
+
+.redes-y-contacto-div hr{
+    display: none;
+}
+.btn-form-enviar{
+align-self: center;
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100px;
+height: 40px;
+font-family: 'LUFGA', sans-serif;
+font-size: 13px;
+object-fit: contain;
+background: linear-gradient(90deg, #0cfcfe 0%, #2196f3 100%);
+color: black;
+border-radius: 25px;
+order: 2;
+}
+/*--===============================  SETEO FOOTER  =================================--*/
+footer{
+    height: auto;
+    background-image: url(../images/home/turquesa-footer-fondo.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    padding: 3rem;
+    color: var(--secondary-color-content);
+    font-family: sans-serif;
+    font-size: var(--content-size);
+}
+footer p{
+    margin-top: var(--mb-1);
+}
+
+.contenedor-footer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.contenedor-footer img{
+   margin-top: 3rem;
+   margin-left: auto;
+   margin-right: auto;
+   width: 200px;
+   max-width: 210px;
+   
+}
+@media screen and ( min-width: 401px){
+    footer{
+        background-image: url(../images/home/FOOTER-02.png);
+        background-position: top;
+        background-repeat: no-repeat;
+        background-color: black;
+    }
+}
