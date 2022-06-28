@@ -1,3 +1,4 @@
+/*-============================ FUENTES ===========================-*/
 @font-face {
     font-family: 'BLACKPAST';
     src: url(../fonts/file.otf);
@@ -12,7 +13,6 @@
     font-family: 'LUFGA-LIGHT';
     src: url(../fonts/file-lfglght.otf);
 }
-
 @font-face {
     font-family: 'LUFGA-THIN';
     src: url(../fonts/Lufga-Thin.otf);
@@ -22,56 +22,54 @@
     font-family: 'COCOGOOSE';
     src: url(../fonts/Cocogoose\ Pro-trial.ttf);
 }
-
 @font-face {
     font-family: 'COCOGOOSE-SEMILIGHT';
     src: url(../fonts/Cocogoose\ Pro\ Semilight-trial.ttf);
 }
-
 /*-============================ RUTAS ===========================-*/
-:root {
-    --nav-height: 7rem;
+:root{
+    --nav-height: 7rem; 
 
     /*-------- Color Textos ----------*/
 
     --primary-color-white: white;
-    --primary-color-vivid-cyan: hsl(185.5, 99.2%, 52.2%);
-    --primary-color-vivid-blue: hsl(206.6, 89.7%, 54.1%);
+    --primary-color-vivid-cyan: hsl(185.5,99.2%,52.2%);
+    --primary-color-vivid-blue: hsl(206.6,89.7%,54.1%);
     --primary-background-gradient-blue: linear-gradient(90deg, #0cfcfe 0%, #2196f3 100%);
     --primary-background-hoover-gradiente-orange: linear-gradient(90deg, #F3A22E 0%, hsl(42, 78%, 58%) 100%);
     --secondary-color-content: rgba(245, 245, 245, 0.921);
 
     /*-------- Tamaño y funte de titulos y textos ----------*/
 
-    --principal-title-size: 2.25rem;
+    --principal-title-size: 2.25rem; 
     --principal-title-font: 'BLACKPAST', sans-serif;
-    --secondary-title-size: 2.25rem;
+    --secondary-title-size: 2.25rem; 
     --secondary-title-font: 'LUFGA-MEDIUM', sans-serif;
-    --content-size: 1.5rem;
+    --content-size: 1.5rem; 
     --content-font: 'LUFGA-LIGHT', sans-serif;
 
     /*-------- Peso de titulos y subtitulos ----------*/
 
     --font-medium: 500;
     --font-bold: 700;
-    /*--------- Margenes Bottom -------*/
-    --mb-0-5: .5rem;
-    --mb-0-75: .75rem;
-    --mb-1: 1rem;
-    --mb-1-5: 1.5rem;
-    --mb-2: 2rem;
-    --mb-2-5: 2.5rem;
-    --mb-3: 3rem;
+     /*--------- Margenes Bottom -------*/
+     --mb-0-5: .5rem;
+     --mb-0-75: .75rem;
+     --mb-1: 1rem;
+     --mb-1-5: 1.5rem;
+     --mb-2: 2rem;
+     --mb-2-5: 2.5rem;
+     --mb-3: 3rem;
 
-    /*--------- Padding Mobile -------*/
+     /*--------- Padding Mobile -------*/
 
-    --padding-nav: 1rem;
-    --padding-content: 2rem;
-
-    /*------- z index ------------*/
-    --z-tooltip: 10;
-    --z-fixed: 100;
-}
+     --padding-nav: 1rem;
+     --padding-content: 2rem;
+   
+     /*------- z index ------------*/
+     --z-tooltip: 10;
+     --z-fixed: 100;
+   }
 
 
 /*-============================ RESETEO ===========================-*/
@@ -90,13 +88,13 @@ html {
 
 
 /*-============================ HEADER ===========================-*/
-/* ( primeros 100 vh ) */
+                       /* ( primeros 100 vh ) */
 
 header {
     height: 100vh;
-    background-image: url(../images/nutrition/nutrition-wp.jpg);
+    background-image: url(../images/store/store-wp.jpg);
     background-repeat: no-repeat;
-    background-position: 75% 25%;
+    background-position: 70% 30%;
     background-size: cover;
     border: none;
     padding: var(--padding-nav);
@@ -122,7 +120,7 @@ nav {
 }
 
 /*=======- cambio de apariencia al click de la hamburguesa -===========*/
-#hamburger button {
+#hamburger button{
     background: none;
     border: 0;
     cursor: pointer;
@@ -131,7 +129,7 @@ nav {
     height: 60px;
 }
 
-#hamburger button span {
+#hamburger button span{
     border-radius: 5px;
     background: var(--primary-background-gradient-blue);
     display: block;
@@ -142,96 +140,76 @@ nav {
     animation-fill-mode: forwards;
 }
 
-#hamburger button.open .top-line {
-    animation-name: top-line-animation;
+#hamburger button.open .top-line{
+    animation-name: top-line-animation;   
+}
+#hamburger button.open .middle-line{
+    animation-name: middle-line-animation;   
+}
+#hamburger button.open .bottom-line{
+    animation-name: bottom-line-animation;   
 }
 
-#hamburger button.open .middle-line {
-    animation-name: middle-line-animation;
+#hamburger button .top-line{
+    animation-name: top-line-animation-close;   
+}
+#hamburger button .middle-line{
+    animation-name: middle-line-animation-close;   
+}
+#hamburger button .bottom-line{
+    animation-name: bottom-line-animation-close;   
 }
 
-#hamburger button.open .bottom-line {
-    animation-name: bottom-line-animation;
-}
-
-#hamburger button .top-line {
-    animation-name: top-line-animation-close;
-}
-
-#hamburger button .middle-line {
-    animation-name: middle-line-animation-close;
-}
-
-#hamburger button .bottom-line {
-    animation-name: bottom-line-animation-close;
-}
-
-@keyframes top-line-animation {
-
-    50%,
-    100% {
+@keyframes top-line-animation{
+    50%, 100%{
         margin: 0 auto;
         transform: translateY(2px) rotate(-45deg);
     }
 }
-
-@keyframes middle-line-animation {
-
-    20%,
-    100% {
+@keyframes middle-line-animation{
+    20%, 100%{
         margin: 0 auto;
         width: 0;
         opacity: 0;
     }
 }
-
-@keyframes bottom-line-animation {
-
-    50%,
-    100% {
+@keyframes bottom-line-animation{
+    50%, 100%{
         margin: 0 auto;
-        transform: translateY(-2px) rotate(45deg);
+        transform: translateY(-2px) rotate(45deg); 
     }
 }
-
-@keyframes top-line-animation-close {
-    0% {
+@keyframes top-line-animation-close{
+    0%{
         margin: 0 auto;
         transform: translateY(2px) rotate(-45deg);
     }
-
-    50%,
-    100% {
+    50%, 100%{
         margin: 5px auto;
         transform: translateY(0px) rotate(0deg);
     }
 }
-
-@keyframes middle-line-animation-close {
-    0% {
+@keyframes middle-line-animation-close{
+    0%{
         margin: 0 auto;
         width: 0;
         opacity: 0;
     }
-
-    20%,
-    100% {
+    
+    20%, 100%{
         margin: 0 auto;
         width: 60%;
         opacity: 1;
     }
 }
-
-@keyframes bottom-line-animation-close {
-    0% {
+@keyframes bottom-line-animation-close{
+    0%{
         margin: 0 auto;
-        transform: translateY(-2px) rotate(45deg);
+        transform: translateY(-2px) rotate(45deg); 
     }
-
-    50%,
-    100% {
+    50%, 100%{
         margin: 5px auto;
-        transform: translateY(0px) rotate(0deg);
+        transform: translateY(0px) rotate(0deg); 
     }
 }
 
@@ -249,8 +227,7 @@ nav {
     transition: all .5s;
     z-index: 0;
 }
-
-#nav-menu.show {
+#nav-menu.show{
     display: block;
 }
 
@@ -261,8 +238,7 @@ nav {
     transition: all .5s;
     z-index: 0;
 }
-
-#nav-menu.show {
+#nav-menu.show{
     display: block;
     line-height: 30px;
     margin: 50px 0;
@@ -284,79 +260,75 @@ nav {
     transition: .3s;
 }
 
-/*=======- INICIA EL SECTION -===========*/
-section {
-    background-image: url(../images/nutrition/section-nut-wp.jpg);
-    padding-left: var(--padding-content);
-    padding-right: var(--padding-content);
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+/*--===============================  SETEO CONTENIDO PRINCIPAL =================================--*/
+                                /* ( Reglas para el contenido p. ) */
+main{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    padding: var(--padding-content);
+    flex-direction: column;
+}
+
+.products__filters {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    margin-bottom: 3.5rem;
+    margin: var(--mb-2);
+}
+
+.products__filters h3{
+    font-size: var(--secondary-title-size);
+    font-family: var(--secondary-title-font);
+}
+
+.products__filters span{
+    font-size: var(--content-size);
+    font-family: var(--content-font);
+}
+.products__filters li{
+    border-right: rgba(0, 0, 0, 0.449) .5px solid;
+    cursor: pointer;
+}
+
+.container-store{
+    margin-left: auto;
+    margin-right: auto;
+    width: 30rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+
+}
+.product-card{
+    background-color: black;
+    width: 28rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
-}
-
-section h2 {
-    color: var(--primary-color-white);
-    font-family: var(--principal-title-font);
-    font-size: var(--principal-title-size);
-}
-
-section p {
-    color: var(--secondary-color-content);
-    font-family: var(--content-font);
-    font-size: var(--content-size);
     margin-bottom: var(--mb-2);
 }
-
-section img {
+.product-card h3{
+    color: white;
+    font-size: var(--secondary-title-size);
+    font-family: var(--content-font);
+}
+.product-card strong{
+    color: var(--primary-color-vivid-blue);
+    font-size: var(--secondary-title-size);
+    font-family: var(--secondary-title-font);
+}
+.product-card img{
     width: 28rem;
-    margin-top: var(--mb-1);
 }
 
-.uno {
-    background-image: url(../images/nutrition/uno.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 28rem;
-    height: 10rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.dos {
-    background-image: url(../images/nutrition/dos.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 28rem;
-    height: 10rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.pdos{
-    text-align: right;
-    margin-right: 3rem;
-}
-
-
-.tres {
-    background-image: url(../images/nutrition/tres.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 28rem;
-    height: 10rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
 /*--===============================  SETEO CONTACTO  =================================--*/
 
 .contacto{
@@ -504,3 +476,7 @@ footer p{
         background-color: black;
     }
 }
+    
+    
+/*--=================  TERMINA MOBILE, EMPIEZA 599PX ->  =================================--*/
+

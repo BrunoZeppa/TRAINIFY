@@ -879,6 +879,7 @@ main {
     text-align: center;
     object-fit: contain;
     color: black;
+    
 }
 .estandar h1{
     font-size: 40px;
@@ -908,7 +909,7 @@ main {
 .estandar small{
     margin-left: 20px;
     font-weight: 100;
-    font-size: 12.5px; 
+    font-size: 12.5px;
 }
 .estandar h2{
     margin-top: 35px;

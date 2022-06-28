@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/16afc7fd77.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./assets/css/nutrition.css">
-    
-
-    <title>Nutrition</title>
+    <link rel="stylesheet" href="./assets/css/store.css">
+    <title>Store</title>
 </head>
 
 <body>
@@ -30,40 +28,72 @@
 
             <ul id="nav-menu">
                 <li><a href="./training.html">training</a></li>
-                <li><a class="active" href="./nutrition.html">nutrition</a></li>
+                <li><a href="./nutrition.html">nutrition</a></li>
                 <li><a href="./prices.html">prices</a></li>
-                <li><a href="./store.html">store</a></li>
+                <li><a class="active" href="./store.html">store</a></li>
             </ul>
         </nav>
         <!--===============================  PORTADA =================================-->
     </header>
-    <!--===============================  SECTION  =================================-->
-    <section>
-        <div>
-            <div class="uno">
-                <h2>cálculo</h2>
+    <!--===============================  FONDO CONTENIDO PRINCIPAL =================================-->
+    <main>
+        <div class="products__container container">
+            <ul class="products__filters">
+              <li class="products__item products__line" data-filter="all">
+                <h3 class="products__title">
+                  Mostar todo
+                </h3>
+                <span class="products__stock">
+                  7 productos
+                </span>
+              </li>
+
+              <li class="products__item products__line active-product" data-filter=".hoodies">
+                <h3 class="products__title">
+                  Equipo
+                </h3>
+                <span class="products__stock">
+                  3 products
+                </span>
+              </li>
+
+              <li class="products__item products__line" data-filter=".shirts">
+                <h3 class="products__title">
+                  Ropa
+                </h3>
+                <span class="products__stock">
+                  4 products
+                </span>
+              </li>
+
+              <li class="products__item products__line" data-filter=".shirts">
+                <h3 class="products__title">
+                  Suplementos
+                </h3>
+                <span class="products__stock">
+                  4 products
+                </span>
+              </li>
+            </ul>
+
+            <div class="products__content grid" id="products__content"></div>
+          </div>
+
+        <section class="container-store">
+            <div class="product-card">
+                <img src="./assets/images/store/TRX.jpg" alt="">
+                <h3>Suspensores TFY</h3>
+                <strong>$900</strong>
+
             </div>
-            <p>El cálculo de calorías es lo primero que hace nuestro sistema. Esto lo realiza a través del método de
-                Harris Benedict en población menor a 60 años y a través del método de la OMS (organización mundial de la
-                salud) </p>
-        </div>
-        <div>
-            <div class="dos">
-                <h2>Calidad</h2>
-            </div>
-            <p class="pdos">Lo segundo es hacer una apropiada búsqueda de carbohidratos simples, alimentos libres de grasas trans y
-                saturadas.</p>
-        </div>
-        <div>
-            <div class="tres">
-                <h2>Selección</h2>
-            </div>
-            <p>Gracias a nuestro sistema te permitimos seleccionar tus alimentos favoritos u opciones parecidas sin
-                tener que recurrir a las restricciones.</p>
-        </div>
-    </section>
-    <!--===============================  FOOTER =================================-->
-    <aside class="contacto">
+            <!-- Aqui va el DOM-->
+        </section>
+        <img src="" alt="">
+        <h3></h3>
+
+    </main>
+     <!--===============================  FOOTER =================================-->
+     <aside class="contacto">
         <img src="./assets/images/home/pesa-contacto.png" alt="">
         <div class="redes-y-contacto-div">
             <div class="direccion-y-redes">
@@ -126,7 +156,7 @@
         <br>
     </footer>
 
-    <script src="./assets/js/nutrition.js"></script>
+    <script src="./assets/js/store.js"></script>
 </body>
 
 </html>
