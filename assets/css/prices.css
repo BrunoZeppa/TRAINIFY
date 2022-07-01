@@ -290,6 +290,7 @@ section{
     background-size: cover;
     background-position: center;
     background-color: black;
+    padding-bottom: 3.2rem;
 }
 .aside2 {
     display: grid;
