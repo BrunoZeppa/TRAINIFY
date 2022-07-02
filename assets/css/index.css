@@ -345,13 +345,13 @@ header img {
 }
 
 .banner {
-    margin-top: 8.3rem;
+    margin-top: 12.3rem;
     margin-left: 2.1rem;
 }
 
 .contactanos-btn {
-    width: 11rem;
-    height: 3rem;
+    width: 13rem;
+    height: 4rem;
     font-family: var(--content-font);
     font-weight: var(--font-bold);
     font-size: var(--content-font);
@@ -363,6 +363,7 @@ header img {
     color: black;
     border-radius: 25px;
     margin-bottom: var(--mb-1-5);
+    font-weight: 900;
 }
 
 /*-============================ SECTION 1 ===========================-*/
