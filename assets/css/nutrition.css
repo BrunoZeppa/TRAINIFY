@@ -293,8 +293,6 @@ section {
     padding-bottom: 6rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 2rem;
 }
 
@@ -338,10 +336,15 @@ section img {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 8rem;
+    margin-top: 2rem;
+}
+.puno{
+    margin-left: 1.6rem;
 }
 .pdos{
     text-align: right;
-    margin-right: 3rem;
+    margin-right: .4rem;
 }
 
 
@@ -355,7 +358,10 @@ section img {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    margin-top: 2rem;
+}
+.ptres{
+    margin-left: 1.3rem;
 }
 /*--===============================  SETEO CONTACTO  =================================--*/
 
