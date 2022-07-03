@@ -16,10 +16,3 @@ menuHambuerguesa.addEventListener("click", (e) =>{
     menuMobil.classList.toggle('show');
     fondoHeader.classList.toggle('change');
 } )
-
-cardSalud.addEventListener("mouseover", (e) =>{
-    iconoSalud.classList.toggle('close');
-    if(e){
-    iconoSaludBlack.classList.toggle('seen');
-    }
-})

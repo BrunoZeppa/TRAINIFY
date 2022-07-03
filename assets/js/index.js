@@ -21,6 +21,4 @@ cardSalud.addEventListener("mouseover", (e) =>{
     if(e){
     iconoSaludBlack.classList.toggle('seen');
     }
-
-
 })

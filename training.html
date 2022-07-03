@@ -272,15 +272,18 @@
                 </div>
             </div>
             <div class="contact-form">
-                <h3>nosotros te <br> ayudamos</h3>
-                <h4>tu salud es lo más <br> importante</h4>
-                <input type="text" placeholder="Nombre">
-                <input type="mail" placeholder="Email">
-                <input type="phone" placeholder="Teléfono">
-                <input type="text" placeholder="Escribe aquí" id="mensaje-mail">
+                <h3 id="contacto">nosotros te <br> ayudamos</h3>
+                <b>tu salud es lo más <br> importante</b>
+                <form action="https://formsubmit.co/be424ab82a522da618b6569779be4ab0 " method="post">
+                    <input type="text" placeholder="Nombre*" name="name" required>
+                    <input type="mail" placeholder="Email*" name="email" required>
+                    <input type="phone" placeholder="Teléfono" name="telephone">
+                    <input type="text" placeholder="Escribe tu mensaje*" id="mensaje-mail" name="message" required>
+                    <br><br>
+                    <button type="submit" class="btn-form-enviar">enviar</button>
+                </form>
             </div>
             <hr>
-            <a href="#" class="btn-form-enviar">enviar</a>
         </div>
     </aside>
     <footer>
