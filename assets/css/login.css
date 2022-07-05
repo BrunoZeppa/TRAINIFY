@@ -249,7 +249,8 @@ nav {
 
 #nav-menu>li>a {
     color: white;
-    font-family: 'BLACKPAST', sans-serif;
+    font-family: var(--principal-title-font);
+    font-size: var(--content-size);
     font-weight: 600;
     z-index: 0;
 }
@@ -292,11 +293,14 @@ nav {
     width: 260px;
     height: 30px;
 }
-
-.inicia-sesion-div button{
+.inicia-sesion-div h3{
+    font-size: var(--secondary-title-size);
+    font-family: var(--secondary-title-font);
+    color: var(--primary-color-vivid-blue);
     margin-top: 10px;
-    margin-bottom: 30px;
 }
+
+
 .btn-form-enviar{
     display: flex;
     justify-content: center;
@@ -309,6 +313,9 @@ nav {
     margin-left: auto;
     margin-right: auto;
     border: none;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
     }
 
     #formulario{

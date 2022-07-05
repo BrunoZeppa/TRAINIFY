@@ -655,6 +655,10 @@ header img {
     align-items: center;
 
 }
+.section4 article{
+    display: flex;
+    flex-direction: column;
+}
 
 .section4 h2 {
     color: var(--primary-color-white);
@@ -674,7 +678,6 @@ header img {
 }
 .section4 p{
     color: var(--secondary-color-content);
-    margin-bottom: var(--mb-2-5);
 }
 
 .uno {
@@ -693,19 +696,27 @@ header img {
     background-size:cover ;
     background-position: center;
     align-items: flex-end;
-    padding-right: 3rem;
-    text-align: right;
+    padding-right: 4rem;
+    align-self: flex-end;
+    margin-top: 3rem;
 }
+.pdos{
+    text-align: right;
+    margin-left: 5.5rem;
+}
+
 
 .tres {
     background-image: url(../images/home/metodologia-3.png);
     background-size:cover ;
     background-position: center;
     align-items: flex-start;
-    padding-left: 5.6rem;
+    padding-left: 6rem;
+    margin-top: 3rem;
 }
 .ptres{
     margin-left: 1.2rem;
+    margin-right: 4rem;
 }
 /*-============================ SECTION 5 ===========================-*/
 
