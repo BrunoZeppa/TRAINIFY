@@ -332,6 +332,8 @@ header {
     background-size: cover;
     border: none;
     padding: var(--padding-nav);
+    display: flex;
+    flex-direction: column;
 }
 
 #header.change {
@@ -365,10 +367,14 @@ header img {
     margin-bottom: var(--mb-1-5);
     font-weight: 900;
 }
+.icons{
+    align-self: flex-end;
+    margin-top: 38vh;
 
+}
 @media screen and (min-height: 700px){
     .banner{
-        margin-top: 14rem;
+        margin-top: 13rem;
     }
 }
 @media screen and (min-height: 844px){
