@@ -5,31 +5,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="http://fonts.cdnfonts.com/css/cocogoose" rel="stylesheet">
     <script src="https://kit.fontawesome.com/16afc7fd77.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/login.css">
-    <title>Trainify</title>
+    <title>Training</title>
 </head>
 
 <body>
-    <header>
-        <!--------------------------------NAVEGACION--------------------------------------->
+    <header id="header">
+        <!--===============================  NAVEGACION =================================-->
         <nav>
             <!--logo-->
             <div>
-                <img class="logo" src="./assets/images/logo-&-iso.svg" alt="">
+                <a href="./index.html"><img class="logo" src="./assets/images/home/logo-&-iso.svg" alt=""></a>
             </div>
-            <!--menu haburguesa-->
-            <input type="checkbox" id="check">
-            <label for="check" class="burger-menu">
-                <img src="./assets/images/burger-menu.svg" alt="">
-            </label>
-            <!--barra de navegación-->
-            <ul class="nav-menu">
-                <li><a class="active" href="#programas">training</a></li>
-                <li><a href="#">nutrition</a></li>
-                <li><a href="#">prices</a></li>
-                <li><a href="#">store</a></li>
+            <div id="hamburger">
+                <button>
+                    <span class="top-line"></span>
+                    <span class="middle-line"></span>
+                    <span class="bottom-line"></span>
+                </button>
+            </div>
+
+            <ul id="nav-menu">
+                <li><a href="./training.html">training</a></li>
+                <li><a href="./nutrition.html">nutrition</a></li>
+                <li><a href="./prices.html">prices</a></li>
+                <li><a href="./store.html">store</a></li>
+                <li><a class="active" href="./login.html"><i class="fa-solid fa-user"></i></a></li>
             </ul>
         </nav>
         <div class="inicia-sesion-div">
@@ -42,10 +44,12 @@
                 placeholder="escribe tu contraseña"
                 >
                 <br>
-                <button type="submit">enviar</button>
+                <button class="btn-form-enviar" type="submit">entrar</button>
             </form>
+            <p>¿aún no tienes cuenta? <a href="">crear cuenta</a> </p>
         </div>
+        <!--===============================  PORTADA =================================-->
     </header>  
-    <script src="/assets/js/inicio-sesion.js"></script>
+    <script src="/assets/js/login.js"></script>
 </body>
     

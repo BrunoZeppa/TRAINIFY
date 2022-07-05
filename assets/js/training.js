@@ -11,4 +11,4 @@ menuHambuerguesa.addEventListener("click", (e) =>{
     menuHambuerguesa.classList.toggle('open');
     menuMobil.classList.toggle('show');
     fondoHeader.classList.toggle('change');
-} )
+} );
