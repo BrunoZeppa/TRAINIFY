@@ -48,7 +48,7 @@
 
     /*-------- Tamaño y funte de titulos y textos ----------*/
 
-    --principal-title-size: 2.7rem;
+    --principal-title-size: 2.4rem;
     --principal-title-font: 'BLACKPAST', sans-serif;
     --secondary-title-size: 2.25rem;
     --secondary-title-font: 'LUFGA-MEDIUM', sans-serif;
@@ -332,8 +332,6 @@ header {
     background-size: cover;
     border: none;
     padding: var(--padding-nav);
-    display: flex;
-    flex-direction: column;
 }
 
 #header.change {
@@ -369,7 +367,7 @@ header img {
 }
 .icons{
     align-self: flex-end;
-    margin-top: 38vh;
+    margin-top: 35vh;
 
 }
 @media screen and (min-height: 700px){
