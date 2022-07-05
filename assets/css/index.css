@@ -366,6 +366,24 @@ header img {
     font-weight: 900;
 }
 
+@media screen and (min-height: 700px){
+    .banner{
+        margin-top: 14rem;
+    }
+}
+@media screen and (min-height: 844px){
+    .banner{
+        margin-top: 18rem;
+    }
+}
+@media screen and (min-height: 915px){
+    .banner{
+        margin-top: 20rem;
+    }
+}
+    
+
+
 /*-============================ SECTION 1 ===========================-*/
 .programas {
     background-image: url(../images/home/HOME-05.jpg);
@@ -606,7 +624,7 @@ header img {
 /*-============================ SECTION 3 ===========================-*/
 .section3 {
     background-image: url(../images/home/como-lo-hacemos-fondo.jpg);
-    background-position: center;
+    background-position: 60% 40%;
     background-size: cover;
     padding: var(--section-padding);
     display: flex;
