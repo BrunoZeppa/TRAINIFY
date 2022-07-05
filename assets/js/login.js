@@ -6,6 +6,7 @@ let input2 = document.querySelector("#contraseña");
 let menuHambuerguesa = document.querySelector('#hamburger button');
 let menuMobil = document.querySelector('#nav-menu');
 let fondoHeader = document.querySelector('#header');
+let ocultarMostrar = document.querySelector('.ocultar');
 
 
 
@@ -14,6 +15,20 @@ menuHambuerguesa.addEventListener("click", (e) =>{
     menuMobil.classList.toggle('show');
     fondoHeader.classList.toggle('change');
 } );
+
+ocultarMostrar.addEventListener("click",function (){
+    const icon = this.querySelector('i');
+    if(this.previousElementSibling.type === 'password'){
+        this.previousElementSibling.type = 'text'; 
+        icon.classList.remove('fa-eye-slash');
+        icon.classList.add('fa-eye');
+        
+    }else{
+        this.previousElementSibling.type = 'password';
+        icon.classList.add('fa-eye-slash')
+
+    }
+});
 
 formulario.addEventListener("submit", (e) =>{
 

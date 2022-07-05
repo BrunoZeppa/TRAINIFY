@@ -1,63 +1,116 @@
 @font-face {
     font-family: 'BLACKPAST';
-    src: url(./fonts/file.otf);
+    src: url(../fonts/file.otf);
 }
 
 @font-face {
-    font-family: 'LUFGA';
-    src: url(./fonts/file-lfg.otf);
-}
-
-@font-face {
-    font-family: 'LUFGA-THIN';
-    src: url(./fonts/file-lfgthin.otf);
+    font-family: 'LUFGA-MEDIUM';
+    src: url(../fonts/Lufga-Medium.otf);
 }
 
 @font-face {
     font-family: 'LUFGA-LIGHT';
-    src: url(./fonts/file-lfglght.otf);
+    src: url(../fonts/file-lfglght.otf);
+}
 
+@font-face {
+    font-family: 'LUFGA-THIN';
+    src: url(../fonts/Lufga-Thin.otf);
 }
 
 @font-face {
     font-family: 'COCOGOOSE';
-    src: url(./fonts/Cocogoose\ Pro\ Italic-trial.ttf);
+    src: url(../fonts/Cocogoose\ Pro-trial.ttf);
 }
 
+@font-face {
+    font-family: 'COCOGOOSE-SEMILIGHT';
+    src: url(../fonts/Cocogoose\ Pro\ Semilight-trial.ttf);
+}
+
+/*-============================ RUTAS ===========================-*/
 :root {
-    --primary-color: hsl(0, 0%, 100%);
-    --highlight-color: hsl(180, 99%, 52%);
-    --second-color: hsl(206.6, 89.7, 54.1);
-    --gradient-color: linear-gradient(180deg, #0cfcfe 0%, #2196f3 100%);
+    --nav-height: 7rem;
+
+    /*-------- Color Textos ----------*/
+
+    --primary-color-white: white;
+    --primary-color-vivid-cyan: hsl(185.5, 99.2%, 52.2%);
+    --primary-color-vivid-blue: hsl(206.6, 89.7%, 54.1%);
+    --primary-background-gradient-blue: linear-gradient(90deg, #0cfcfe 0%, #2196f3 100%);
+    --primary-background-hoover-gradiente-orange: linear-gradient(90deg, #F3A22E 0%, hsl(42, 78%, 58%) 100%);
+    --secondary-color-content: rgba(245, 245, 245, 0.921);
+
+    /*-------- Tamaño y funte de titulos y textos ----------*/
+
+    --principal-title-size: 2.25rem;
+    --principal-title-font: 'BLACKPAST', sans-serif;
+    --secondary-title-size: 2.25rem;
+    --secondary-title-font: 'LUFGA-MEDIUM', sans-serif;
+    --content-size: 1.5rem;
+    --content-font: 'LUFGA-LIGHT', sans-serif;
+
+    /*-------- Peso de titulos y subtitulos ----------*/
+
+    --font-medium: 500;
+    --font-bold: 700;
+    /*--------- Margenes Bottom -------*/
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+
+    /*--------- Padding Mobile -------*/
+
+    --padding-nav: 1rem;
+    --padding-content: 2rem;
+
+    /*------- z index ------------*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
 }
 
-/*---------RESETEO------------------------------*/
+
+/*-============================ RESETEO ===========================-*/
 
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    list-style: none;
     text-decoration: none;
+    list-style: none;
 }
 
-Body {
-    background-color: gray;
+html {
+    font-size: 62.5%;
 }
 
-/*------INICIA HEADER--------------------------------*/
+
+/*-============================ HEADER ===========================-*/
+/* ( primeros 100 vh ) */
+
 header {
-    width: 100%;
-    height: 5.5rem;
+    height: 100vh;
+    background-image: url(../images/nutrition/nutrition-wp.jpg);
+    background-repeat: no-repeat;
+    background-position: 75% 25%;
+    background-size: cover;
+    border: none;
+    padding: var(--padding-nav);
+}
+
+#header.change {
+    background-image: none;
     background-color: black;
 }
 
-/*NEVEGACION------------------------------------------*/
+/*-============================ NAVEGACION ===========================-*/
 
 nav {
-    background-color: rgb(0, 0, 0, .30);
-    width: 100%;
-    height: 5rem;
+    height: var(--nav-height);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -66,83 +119,196 @@ nav {
 .logo {
     width: 180px;
     height: 180px;
-    margin-left: 16px;
 }
 
-.burger-menu {
+/*=======- cambio de apariencia al click de la hamburguesa -===========*/
+#hamburger button {
+    background: none;
+    border: 0;
     cursor: pointer;
-    margin-right: 16px;
+    padding: 0;
+    width: 60px;
+    height: 60px;
 }
 
-.burger-menu img {
-    width: 30px;
-    height: 30px;
+#hamburger button span {
+    border-radius: 5px;
+    background: var(--primary-background-gradient-blue);
+    display: block;
+    width: 60%;
+    margin: 5px auto;
+    height: 2px;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
 
-.nav-menu {
+#hamburger button.open .top-line {
+    animation-name: top-line-animation;
+}
+
+#hamburger button.open .middle-line {
+    animation-name: middle-line-animation;
+}
+
+#hamburger button.open .bottom-line {
+    animation-name: bottom-line-animation;
+}
+
+#hamburger button .top-line {
+    animation-name: top-line-animation-close;
+}
+
+#hamburger button .middle-line {
+    animation-name: middle-line-animation-close;
+}
+
+#hamburger button .bottom-line {
+    animation-name: bottom-line-animation-close;
+}
+
+@keyframes top-line-animation {
+
+    50%,
+    100% {
+        margin: 0 auto;
+        transform: translateY(2px) rotate(-45deg);
+    }
+}
+
+@keyframes middle-line-animation {
+
+    20%,
+    100% {
+        margin: 0 auto;
+        width: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes bottom-line-animation {
+
+    50%,
+    100% {
+        margin: 0 auto;
+        transform: translateY(-2px) rotate(45deg);
+    }
+}
+
+@keyframes top-line-animation-close {
+    0% {
+        margin: 0 auto;
+        transform: translateY(2px) rotate(-45deg);
+    }
+
+    50%,
+    100% {
+        margin: 5px auto;
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+@keyframes middle-line-animation-close {
+    0% {
+        margin: 0 auto;
+        width: 0;
+        opacity: 0;
+    }
+
+    20%,
+    100% {
+        margin: 0 auto;
+        width: 60%;
+        opacity: 1;
+    }
+}
+
+@keyframes bottom-line-animation-close {
+    0% {
+        margin: 0 auto;
+        transform: translateY(-2px) rotate(45deg);
+    }
+
+    50%,
+    100% {
+        margin: 5px auto;
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+/*=======- fin -===========*/
+
+
+#nav-menu {
+    display: none;
     position: fixed;
     width: 100%;
-    height: 0vh;
-    top: 80px;
+    height: 100vh;
+    top: 10px;
     background-color: black;
     text-align: center;
     transition: all .5s;
+    z-index: 0;
 }
 
-.nav-menu li {
-    display: none;
-    line-height: 30px;
-    margin: 50px 0;
-    transition: all .5s;
-}
-
-.nav-menu>li>a {
-    color: white;
-    font-family: 'BLACKPAST', sans-serif;
-    font-weight: 600;
-}
-
-.nav-menu li a.active,
-.nav-menu li a:hover {
-    color: var(--highlight-color);
-    transition: .3s;
-}
-
-#check {
-    display: none;
-}
-
-#check:checked~.nav-menu {
-    height: 100vh;
-}
-
-#check:checked~.nav-menu li {
+#nav-menu.show {
     display: block;
 }
 
+#nav-menu li {
+    display: block;
+    line-height: 30px;
+    margin: 50px 0;
+    transition: all .5s;
+    z-index: 0;
+}
+
+#nav-menu.show {
+    display: block;
+    line-height: 30px;
+    margin: 50px 0;
+    transition: all .5s;
+    z-index: 0;
+}
+
+#nav-menu>li>a {
+    color: white;
+    font-family:var(--principal-title-font);
+    font-weight: 600;
+    z-index: 0;
+    font-size: var(--content-size);
+}
+
+#nav-menu li a.active,
+#nav-menu li a:hover {
+    color: var(--primary-color-vivid-cyan);
+    transition: .3s;
+}
+
+/*-============================ NAVEGACION ===========================-*/
+
 main{
-    background-color: black;
+    background-image: url(../images/nutrition/section-nut-wp.jpg);
     height: auto;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    padding: 2rem;
 }
 
 form{
-    height: auto;
-    width: auto;
     max-width: 500px;
-    font-family: 'LUFGA',sans-serif;
-    font-size: 16px;
+    font-family: var(--content-font);
+    font-size: var(--content-size);
     display: flex;
     flex-direction: column;
-    background: linear-gradient(90deg, #0cfcfe 0%, #2196f3 100%);
+    background: rgba(0, 0, 0, 0.469);
     gap: 5px;
-    margin: 20px;
     border-radius: 15px;
-    margin-bottom: 200px;
+    color: white;
+    padding: 1rem;
+    border: #0cfcfe .3px solid;
 }
 
 form div{

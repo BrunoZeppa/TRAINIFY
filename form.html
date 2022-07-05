@@ -10,70 +10,74 @@
 </head>
 
 <body>
-    <header>
-
+    <header id="header">
+        <!--===============================  NAVEGACION =================================-->
         <nav>
             <!--logo-->
             <div>
-                <img class="logo" src="./assets/images/logo-&-iso.svg" alt="">
+                <a href="./index.html"><img class="logo" src="./assets/images/home/logo-&-iso.svg" alt=""></a>
             </div>
-            <!--menu haburguesa-->
-            <input type="checkbox" id="check">
-            <label for="check" class="burger-menu">
-                <img src="./assets/images/burger-menu.svg" alt="">
-            </label>
-            <!--barra de navegación-->
-            <ul class="nav-menu">
-                <li><a class="active" href="#programas">training</a></li>
-                <li><a href="#">nutrition</a></li>
-                <li><a href="#">prices</a></li>
-                <li><a href="#">store</a></li>
+            <div id="hamburger">
+                <button>
+                    <span class="top-line"></span>
+                    <span class="middle-line"></span>
+                    <span class="bottom-line"></span>
+                </button>
+            </div>
+
+            <ul id="nav-menu">
+                <li><a href="./training.html">training</a></li>
+                <li><a href="./nutrition.html">nutrition</a></li>
+                <li><a href="./prices.html">prices</a></li>
+                <li><a href="./store.html">store</a></li>
+                <li><a href="./login.html"><i class="fa-solid fa-user"></i></a></li>
             </ul>
         </nav>
-
+        <!--===============================  PORTADA =================================-->
     </header>
     <main>
 
         <form id="formulario">
-            <div class="primer-div"> 
-                <Label>1.¿Alguna vez te ha diagnosticado tu médico un problema en el corazón, recomendándole que
+            <div class="form-check"> 
+                <Label id="p1">1.¿Alguna vez te ha diagnosticado tu médico un problema en el corazón, recomendándole que
                     solo haga deporte bajo supervisión médica? :</Label><br><br>
 
-                <input type="radio" name="p-uno" id="p1" value="option1" checked>
-                <label for="p-uno1">
+                <input type="radio" name="p1" value="o1" checked>
+                <label for="p1">
                     si
                 </label>
 
-                <input type="radio" name="p-uno" id="p1" value="option2">
-                <label for="p-uno2">
+                <input type="radio" name="p1" value="o2">
+                <label for="p1">
                     no
                 </label>
             </div>
+
             <div class="form-check">
-                <Label>2.¿Sientes dolor en el pecho al hacer ejercicio o alguna actividad física intensa?
+                <Label id="p2">2.¿Sientes dolor en el pecho al hacer ejercicio o alguna actividad física intensa?
                     :</Label><br><br>
 
-                <input type="radio" name="p-dos" id="p-dos1" value="option1" checked>
-                <label for="p-dos1">
+                <input type="radio" name="p2" value="o1" checked>
+                <label for="p2">
                     si
                 </label>
 
 
-                <input type="radio" name="p-dos" id="p-dos2" value="option2">
-                <label for="p-dos2">
+                <input type="radio" name="p2" value="o2">
+                <label for="p2">
                     no
                 </label>
             </div>
             <div class="form-check">
-                <Label>3.¿Has tenido dolor en el pecho durante el último mes? :</Label><br><br>
+                <Label id="p3">3.¿Has tenido dolor en el pecho durante el último mes? :</Label><br><br>
 
-                <input type="radio" name="p-tres" id="p-tres1" value="option1" checked>
-                <label for="p-tres1">
+                <input type="radio" name="p-tres" value="option1" checked>
+                <label for="p3">
                     si
                 </label>
 
-                <input type="radio" name="p-tres" id="p-tres2" value="option2">
-                <label for="p-tres2">
+                <input type="radio" name="p-tres" value="option2">
+                <label for="p3">
                     no
                 </label>
             </div>
@@ -202,19 +206,19 @@
             <div class="form-check">
                 <Label>13.¿Padeces alguna enfermedad crónica o grave? :</Label><br><br>
 
-                <input type="radio" name="p-trece" id="p-trece1" value="option1" checked>
+                <input type="radio" name="p-trece" value="option1" checked>
                 <label for="p-trece1">
                     si
                 </label>
 
-                <input type="radio" name="p-trece" id="p-trece2" value="option2">
+                <input type="radio" name="p-trece"  value="option2">
                 <label for="p-trece2">
                     no
                 </label>
             </div>
             <div class="form-group">
                 <label for="p-catorce1">15. Del 1 al 10, selecciona tu nivel de estres: </label>
-                <select class="form-control" id="p-catorce1">
+                <select class="form-control" >
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -230,12 +234,12 @@
             <div class="form-check">
                 <Label>16.¿Tienes problemas para dormir? :</Label><br><br>
 
-                <input type="radio" name="p-trece" id="p-trece1" value="option1" checked>
+                <input type="radio" name="p-trece" value="option1" checked>
                 <label for="p-trece1">
                     si
                 </label>
 
-                <input type="radio" name="p-trece" id="p-trece2" value="option2">
+                <input type="radio" name="p-trece"  value="option2">
                 <label for="p-trece2">
                     no
                 </label>
@@ -243,12 +247,12 @@
             <div class="form-check">
                 <Label>17.¿Has fumado alguna vez cigarrillos, puros o pipa? :</Label><br><br>
 
-                <input type="radio" name="p-trece" id="p-trece1" value="option1" checked>
+                <input type="radio" name="p-trece" value="option1" checked>
                 <label for="p-trece1">
                     si
                 </label>
 
-                <input type="radio" name="p-trece" id="p-trece2" value="option2">
+                <input type="radio" name="p-trece"  value="option2">
                 <label for="p-trece2">
                     no
                 </label>
@@ -256,19 +260,19 @@
             <div class="form-check">
                 <Label>18.¿Fumas actualmente? :</Label><br><br>
 
-                <input type="radio" name="p-trece" id="p-trece1" value="option1" checked>
+                <input type="radio" name="p-trece" value="option1" checked>
                 <label for="p-trece1">
                     si
                 </label>
 
-                <input type="radio" name="p-trece" id="p-trece2" value="option2">
+                <input type="radio" name="p-trece"  value="option2">
                 <label for="p-trece2">
                     no
                 </label>
             </div>
             <div class="form-group">
                 <label for="p-diecinueve1">19.¿Cuál es la frecuencia con la que consumes alcohol?:</label><br><br>
-                <select class="form-control" id="p-diecinueve1">
+                <select class="form-control" >
                     <option>No consumo alcohol</option>
                     <option>1 vez al mes</option>
                     <option>1 vez cada 15 días</option>
@@ -280,12 +284,12 @@
                 <Label>20.¿Realizas ejercicios como lagartijas, sentadillas o abdominales de forma regular?
                     :</Label><br><br>
 
-                <input type="radio" name="p-trece" id="p-trece1" value="option1" checked>
+                <input type="radio" name="p-trece" value="option1" checked>
                 <label for="p-trece1">
                     si
                 </label>
 
-                <input type="radio" name="p-trece" id="p-trece2" value="option2">
+                <input type="radio" name="p-trece"  value="option2">
                 <label for="p-trece2">
                     no
                 </label>
@@ -293,12 +297,12 @@
             <div class="form-check">
                 <Label>21.¿Realizas ejercicio como caminata, trote o correr de forma regular?:</Label><br><br>
 
-                <input type="radio" name="p-trece" id="p-trece1" value="option1" checked>
+                <input type="radio" name="p-trece" value="option1" checked>
                 <label for="p-trece1">
                     si
                 </label>
 
-                <input type="radio" name="p-trece" id="p-trece2" value="option2">
+                <input type="radio" name="p-trece"  value="option2">
                 <label for="p-trece2">
                     no
                 </label>
@@ -306,12 +310,12 @@
             <div class="form-check">
                 <Label>22.¿Realizas ejercicios que incluyan estiramientos como yoga o pilates? :</Label><br><br>
 
-                <input type="radio" name="p-trece" id="p-trece1" value="option1" checked>
+                <input type="radio" name="p-trece" value="option1" checked>
                 <label for="p-trece1">
                     si
                 </label>
 
-                <input type="radio" name="p-trece" id="p-trece2" value="option2">
+                <input type="radio" name="p-trece"  value="option2">
                 <label for="p-trece2">
                     no
                 </label>
@@ -319,23 +323,23 @@
             <div class="form-group">
                 <label for="veintitres1">23.Describe brevemente como son tus comidas, en caso de no hacer
                     una, responde no</label><br><br>
-                <input type="text" class="form-control" id="veintitres1" placeholder="Desayuno"><br>
-                <input type="text" class="form-control" id="veintitres1" placeholder="Almuerzo"><br>
-                <input type="text" class="form-control" id="veintitres1" placeholder="Comida"><br>
-                <input type="text" class="form-control" id="veintitres1"
+                <input type="text" class="form-control" placeholder="Desayuno"><br>
+                <input type="text" class="form-control" placeholder="Almuerzo"><br>
+                <input type="text" class="form-control" placeholder="Comida"><br>
+                <input type="text" class="form-control"
                     placeholder="Bocadillo después de la comida"><br>
-                <input type="text" class="form-control" id="veintitres1" placeholder="Cena"><br>
-                <input type="text" class="form-control" id="veintitres1" placeholder="Bocadillo después de la cena"><br>
+                <input type="text" class="form-control" placeholder="Cena"><br>
+                <input type="text" class="form-control" placeholder="Bocadillo después de la cena"><br>
             </div>
             <div class="form-check">
                 <Label>24.¿Haces alguna actividad mientras comes? :</Label><br><br>
 
-                <input type="radio" name="p-trece" id="p-trece1" value="option1" checked>
+                <input type="radio" name="p-trece" value="option1" checked>
                 <label for="p-trece1">
                     si
                 </label>
 
-                <input type="radio" name="p-trece" id="p-trece2" value="option2">
+                <input type="radio" name="p-trece"  value="option2">
                 <label for="p-trece2">
                     no
                 </label>
@@ -343,24 +347,24 @@
             <div class="form-group">
                 <label for="veintitres1">25.¿Cuántas veces por semana consumes los siguients alimentos?
                 </label><br><br>
-                <input type="number" class="form-control" id="veintitres1" placeholder="Dulces tartas o pasteles"><br>
-                <input type="number" class="form-control" id="veintitres1"
+                <input type="number" class="form-control" placeholder="Dulces tartas o pasteles"><br>
+                <input type="number" class="form-control"
                     placeholder="Jugos en tetrapack y bebidas de sabor"><br>
-                <input type="number" class="form-control" id="veintitres1" placeholder="Leche o bebidas lácteas"><br>
-                <input type="number" class="form-control" id="veintitres1"
+                <input type="number" class="form-control" placeholder="Leche o bebidas lácteas"><br>
+                <input type="number" class="form-control"
                     placeholder="Frituras y alimentos fritos"><br>
-                <input type="number" class="form-control" id="veintitres1" placeholder="Refrescos"><br>
-                <input type="number" class="form-control" id="veintitres1" placeholder="Frutas"><br>
+                <input type="number" class="form-control" placeholder="Refrescos"><br>
+                <input type="number" class="form-control" placeholder="Frutas"><br>
             </div>
             <div class="form-check">
                 <Label>26.¿Le pones sal a tu comida? :</Label><br><br>
 
-                <input type="radio" name="p-trece" id="p-trece1" value="option1" checked>
+                <input type="radio" name="p-trece" value="option1" checked>
                 <label for="p-trece1">
                     si
                 </label>
 
-                <input type="radio" name="p-trece" id="p-trece2" value="option2">
+                <input type="radio" name="p-trece"  value="option2">
                 <label for="p-trece2">
                     no
                 </label>
@@ -368,12 +372,12 @@
             <div class="form-check">
                 <Label>27.¿Has intentado un cambio en tu cuerpo mediante dieta o ejercicio? :</Label><br><br>
 
-                <input type="radio" name="p-trece" id="p-trece1" value="option1" checked>
+                <input type="radio" name="p-trece" value="option1" checked>
                 <label for="p-trece1">
                     si
                 </label>
 
-                <input type="radio" name="p-trece" id="p-trece2" value="option2">
+                <input type="radio" name="p-trece"  value="option2">
                 <label for="p-trece2">
                     no
                 </label>
@@ -388,12 +392,12 @@
             <div class="form-check">
                 <Label>29.¿Puedes hacer ejercicio después de un día duro en el trabajo? :</Label><br><br>
 
-                <input type="radio" name="p-trece" id="p-trece1" value="option1" checked>
+                <input type="radio" name="p-trece" value="option1" checked>
                 <label for="p-trece1">
                     si
                 </label>
 
-                <input type="radio" name="p-trece" id="p-trece2" value="option2">
+                <input type="radio" name="p-trece"  value="option2">
                 <label for="p-trece2">
                     no
                 </label>
@@ -403,125 +407,125 @@
                     tengas la
                     posibilidad de
                     realizar: </label><br><br>
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox" value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Correr en parques</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Bicicleta al aire libre</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Nadar en la alberca</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Caminadora</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Eliptica</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Escalera sin fin</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Bicileta estática</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Remo estático</label><br>
 
             </div>
             <div class="form-check">
                 <label for="veintitres1">31.De la siguiente lista, escoge 5 alimentos por los que tengas preferencia
                 </label><br><br>
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Pechuga de pollo sin piel cocida</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Tampiqueña de filete</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Pechuga de pavo</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Huevo</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Queso panela</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Surimi</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Atún fresco</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Cecina</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Queso cottege</label><br>
 
             </div>
             <div class="form-check">
                 <label for="veintitres1">32.De la siguiente lista, escoge 5 alimentos por los que tengas preferencia
                 </label><br><br>
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Avena en hojuelas</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Pan integral</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Pasta</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Papa cocida</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Arroz</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Quinoa</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Elote amarillo</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Tortilla de maíz</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Pan árabe</label><br>
             </div>
             <div class="form-check">
                 <label for="veintitres1">33.De la siguiente lista, escoge 5 alimentos por los que tengas preferencia
                 </label><br><br>
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Crema de cacahuete</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Aguacate</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Mayonesa</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Nuez de castilla</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Almendra fileteada</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Leche de coco</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Mantequilla</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Áceite de aguacate</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Crema lala</label><br>
             </div>
             <div class="form-group">
                 <label for="p-diecinueve1">34.¿Cuál es tu principal objetivo?: </label>
-                <select class="form-control" id="p-diecinueve1">
+                <select class="form-control" >
                     <option>Salud</option>
                     <option>Imagen</option>
                     <option>Rendimiento</option>
@@ -530,26 +534,26 @@
             <div class="form-check">
                 <label for="veintitres1">35.¿Cuáles son tus prioridades? Escoge los 3 más importantes.
                 </label><br><br>
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Mejorar la condición aeróbica</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Mejorar la fuerza muscular</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Mejorar la flexibilidad</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Reducir el estrés</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Incrementar la energía para mis tareas de la
                     vida cotidiana</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Marcar y tonificar el cuerpo</label><br>
 
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox"  value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Mejorar las capacidades físicas para un
                     deporte</label><br>
 
@@ -557,12 +561,12 @@
             <div class="form-check">
                 <Label>36.¿Dónde piensas entrenar? :</Label><br><br>
 
-                <input type="radio" name="p-trece" id="p-trece1" value="option1" checked>
+                <input type="radio" name="p-trece" value="option1" checked>
                 <label for="p-trece1">
                     Casa
                 </label>
 
-                <input type="radio" name="p-trece" id="p-trece2" value="option2">
+                <input type="radio" name="p-trece"  value="option2">
                 <label for="p-trece2">
                     Gym
                 </label>
@@ -570,7 +574,7 @@
             <div class="form-group">
                 <label for="p-catorce1">37.¿Cuántos días te comprometes a entrenar (sin contar el cardio) por semana?
                 </label>
-                <select class="form-control" id="p-catorce1">
+                <select class="form-control" >
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -624,7 +628,7 @@
         </form>
 
     </main>
-    <script src="./assets/form.js"></script>
+    <script src="./assets/js/form.js"></script>
 </body>
 
 </html>
