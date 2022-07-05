@@ -368,6 +368,7 @@ header img {
 .icons{
     align-self: flex-end;
     margin-top: 35vh;
+    margin-left: 60vw;
 
 }
 @media screen and (min-height: 700px){
