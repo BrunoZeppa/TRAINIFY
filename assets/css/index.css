@@ -775,6 +775,7 @@ header img {
   background-position: center;
   background-size: cover;
   padding-bottom: 2.5rem;
+  padding-left: 3rem;
 }
 .section5 h2 {
   text-shadow: 0.2px 0.2px rgb(0, 0, 0, 0.6);
