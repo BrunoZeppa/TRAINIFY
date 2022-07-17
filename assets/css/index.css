@@ -801,13 +801,13 @@ header img {
   margin-top: 10rem;
 }
 .section5 b {
-  margin-top: 35px;
+  margin-top: 30px;
   margin-bottom: 25px;
   margin-left: 10px;
   color: var(--primary-color-white);
   font-family: var(--secondary-title-font);
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 18px;
   display: block;
 }
 .section5 small {
