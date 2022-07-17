@@ -823,6 +823,9 @@ header img {
   width: 13rem;
   height: 13rem;
 }
+.section5 p {
+  width: 18rem;
+}
 
 .aside2 {
   display: grid;
