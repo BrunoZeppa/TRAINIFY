@@ -19,13 +19,13 @@ const users = [
         cCadera: 100,
         cBrazo: 37,
         cPantorrilla: 40,
-        pTriceps: 5,
-        pSubEscapular: 4,
-        pSupraIliaco: 5,
-        pAbdominal: 6,
-        pCuadricipital: 3,
-        pComodin: 2,
-        pPantorrilla: 5,
+        pTriceps: 30,
+        pSubEscapular: 32,
+        pSupraIliaco: 35,
+        pAbdominal: 36,
+        pCuadricipital: 33,
+        pComodin: 32,
+        pPantorrilla: 35,
         dMuñeca: 5,
         dRodilla: 11,
         nivHombros: 10,
@@ -115,6 +115,7 @@ var colors = ["green", "blue", "yellow", "red"]
 document.addEventListener("DOMContentLoaded", () => {
     usuarioFiltrado("BrunoBZG24");
     clickMostrarTodo("BrunoBZG24");
+    
 
 })
 
@@ -136,7 +137,7 @@ mostrarTodo.addEventListener("click", () =>{
 })
 composicionCorporal.addEventListener("click", () =>{
     
-})
+});
 aspectosDeSalud.addEventListener("click", () =>{
     
 })
@@ -288,12 +289,28 @@ function clickMostrarTodo(id) {
     deshbordResults.innerHTML = fragment
 };
 
-function fAntropometria (id){
-    let fragmento = new DocumentFragment;
-    for ( let i = 0; i < users.length; i++){
-
-    }
-}
+function clickComposisionCorporal (id){
+    let fragment = "";
+    let usuarioFiltrados = users.filter((users) => users.id == id);
+    usuarioFiltrados.forEach((users) => {
+        fragment += `
+        <div class="tarjetas">
+                    <h3>Porcentaje de grasa</h3>
+                    <p>Valor normal de acuerdo al genero y la edad</p>
+                    <div class="porcentajes" style="background-color:${colorResultadoGrasa(porcentajeGrasa(users.genero, users.edad),users.genero,users.edad)} ;">
+                        <span>${porcentajeGrasa(users.genero, users.edad)}%</span>
+                    </div>
+                </div>
+                <div class="tarjetas">
+                    <h3>Índece de masa corporal</h3>
+                    <p>Valor normal de acuerdo al genero y la edad</p>
+                    <div class="porcentajes" style="background-color:${colorResultadoImc(imc(users.peso, users.altura))};">
+                        <span>${imc(users.peso, users.altura)}</span>
+                    </div>
+                </div>` ;
+            })
+            deshbordResults.innerHTML = fragment
+        };
 
 
 
@@ -1145,3 +1162,4 @@ function colorResultadoFlexibilidad (genero, flexibilidad){
     return "red";
 
 }
+
