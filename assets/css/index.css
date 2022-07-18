@@ -338,6 +338,10 @@ header {
   background-size: cover;
   border: none;
   padding: var(--padding-nav);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 5rem;
 }
 
 #header.change {
@@ -351,8 +355,8 @@ header img {
 }
 
 .banner {
-  margin-top: 11rem;
   margin-left: 2.1rem;
+  margin-bottom: 12rem;
 }
 
 .contactanos-btn {
@@ -396,9 +400,7 @@ header img {
   color: white;
 }
 .icons {
-  align-self: flex-end;
-  margin-top: 35vh;
-  margin-left: 60vw;
+  align-self:flex-end;
 }
 @media screen and (min-height: 700px) {
   .banner {
@@ -623,9 +625,15 @@ header img {
   color: var(--secondary-color-content);
 }
 
+.text-img{
+  display: flex;
+  flex-direction: column;
+}
+
 .compu {
   width: 20rem;
   margin-bottom: var(--mb-2-5);
+  align-self: center;
 }
 
 .Logo-section2 {
@@ -1104,6 +1112,7 @@ footer p {
     background-repeat: no-repeat;
     background-position: 68% 32%;
     background-size: cover;
+    padding-bottom: 10rem;
   }
 
   nav {
@@ -1161,8 +1170,8 @@ footer p {
   }
 
   .banner {
-    margin-top: 20rem;
     margin-left: 2.1rem;
+    margin-bottom: 36rem;
   }
   .contactanos-btn {
     width: 22rem;
@@ -1170,9 +1179,10 @@ footer p {
     font-size: 1.9rem;
   }
   .icons {
+    display: flex;
+    flex-direction: row;
     align-self: flex-end;
-    margin-top: 39vh;
-    margin-left: 63vw;
+    width: 25rem;
   }
   .icons img {
     width: 12rem;
@@ -1184,6 +1194,7 @@ footer p {
   }
 
   /*-============================ SECTION 1 ===========================-*/
+  
   .programas {
     padding-bottom: 7rem;
   }
@@ -1257,7 +1268,7 @@ footer p {
 
   /*-============================ SECTION 3 Footer ===========================-*/
   .section3-footer img {
-    width: 66rem;
+    width: 45rem;
   }
 
   /*-============================ SECTION 4 ===========================-*/
@@ -1269,8 +1280,8 @@ footer p {
     margin-bottom: var(--mb-3);
   }
   .section4 div {
-    width: 70rem;
-    height: 18rem;
+    width: 60rem;
+    height: 16rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1281,31 +1292,32 @@ footer p {
   }
 
   .uno {
-    padding-left: 9rem;
+    padding-left: 6rem;
   }
   .puno {
     margin-left: 3rem;
-    margin-right: 7rem;
-    margin-bottom: 3rem;
+    margin-right: 15rem;
+    margin-bottom: 4rem;
   }
 
   .dos {
-    padding-right: 11rem;
+    padding-right: 7rem;
     margin-top: 3rem;
+    margin-left: 15rem;
   }
   .pdos {
-    margin-left: 9.6rem;
-    margin-right: 2rem;
-    margin-bottom: 3rem;
+    margin-left: 12rem;
+    margin-right: 4rem;
+    margin-bottom: 4rem;
   }
 
   .tres {
-    padding-left: 14.5rem;
+    padding-left: 10.5rem;
     margin-top: 3rem;
   }
   .ptres {
     margin-left: 4rem;
-    margin-right: 3rem;
+    margin-right: 5rem;
     margin-bottom: 7rem;
   }
 

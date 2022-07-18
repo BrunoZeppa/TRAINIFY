@@ -13,6 +13,7 @@
     font-family: 'LUFGA-LIGHT';
     src: url(../fonts/file-lfglght.otf);
 }
+
 @font-face {
     font-family: 'LUFGA-THIN';
     src: url(../fonts/Lufga-Thin.otf);
@@ -22,55 +23,74 @@
     font-family: 'COCOGOOSE';
     src: url(../fonts/Cocogoose\ Pro-trial.ttf);
 }
+
 @font-face {
     font-family: 'COCOGOOSE-SEMILIGHT';
     src: url(../fonts/Cocogoose\ Pro\ Semilight-trial.ttf);
 }
+
 /*-============================ RUTAS ===========================-*/
-:root{
-    --nav-height: 7rem; 
+:root {
+    --nav-height: 7rem;
 
     /*-------- Color Textos ----------*/
 
     --primary-color-white: white;
-    --primary-color-vivid-cyan: hsl(185.5,99.2%,52.2%);
-    --primary-color-vivid-blue: hsl(206.6,89.7%,54.1%);
-    --primary-background-gradient-blue: linear-gradient(90deg, #0cfcfe 0%, #2196f3 100%);
-    --primary-background-hoover-gradiente-orange: linear-gradient(90deg, #F3A22E 0%, hsl(42, 78%, 58%) 100%);
+    --primary-color-vivid-cyan: hsl(185.5, 99.2%, 52.2%);
+    --primary-color-vivid-blue: hsl(206.6, 89.7%, 54.1%);
+    --primary-background-gradient-blue: linear-gradient(90deg,
+            #0cfcfe 0%,
+            #2196f3 100%);
+    --primary-background-hoover-gradiente-orange: linear-gradient(90deg,
+            #f3a22e 0%,
+            hsl(42, 78%, 58%) 100%);
     --secondary-color-content: rgba(245, 245, 245, 0.921);
 
     /*-------- Tamaño y funte de titulos y textos ----------*/
 
-    --principal-title-size: 2.25rem; 
-    --principal-title-font: 'BLACKPAST', sans-serif;
-    --secondary-title-size: 2.25rem; 
-    --secondary-title-font: 'LUFGA-MEDIUM', sans-serif;
-    --content-size: 1.5rem; 
-    --content-font: 'LUFGA-LIGHT', sans-serif;
+    --principal-title-size: 2.4rem;
+    --principal-title-size-tablet: 4.3rem;
+    --principal-title-font: "BLACKPAST", sans-serif;
+    --secondary-title-size: 2.25rem;
+    --secondary-title-size-tablet: 3.5rem;
+    --secondary-title-font: "LUFGA-MEDIUM", sans-serif;
+    --third-title-font: "BLACKPAST", sans-serif;
+    --third-title-size: 1.5rem;
+    --third-title-size-tablet: 3rem;
+    --content-size: 1.5rem;
+    --content-size-tablet: 2.3rem;
+    --content-font: "LUFGA-LIGHT", sans-serif;
+    --h5-font: "COCOGOOSE-ITALIC", sans-serif;
+    --h5-size: 4rem;
+    --small-size: 1.25rem;
+    --small-size-tablet: 1.5rem;
+    --small-font: "LUFGA-THIN", sans-serif;
 
     /*-------- Peso de titulos y subtitulos ----------*/
 
     --font-medium: 500;
     --font-bold: 700;
-     /*--------- Margenes Bottom -------*/
-     --mb-0-5: .5rem;
-     --mb-0-75: .75rem;
-     --mb-1: 1rem;
-     --mb-1-5: 1.5rem;
-     --mb-2: 2rem;
-     --mb-2-5: 2.5rem;
-     --mb-3: 3rem;
+    /*--------- Margenes Bottom -------*/
+    --mb-0-5: 0.5rem;
+    --mb-0-75: 0.75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
 
-     /*--------- Padding Mobile -------*/
+    /*--------- Padding Mobile -------*/
 
-     --padding-nav: 1rem;
-     --padding-content: 2rem;
-   
-     /*------- z index ------------*/
-     --z-tooltip: 10;
-     --z-fixed: 100;
-   }
+    --padding-nav: 1rem;
+    --padding-content: 2rem;
+    --padding-content-tablet: 5.5rem;
+    --padding-content-desktop: 5rem 0rem 2rem 0rem; 
+    --section-padding: 6rem 2rem;
 
+    /*------- z index ------------*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
 
 /*-============================ RESETEO ===========================-*/
 
@@ -86,9 +106,12 @@ html {
     font-size: 62.5%;
 }
 
+ul {
+    list-style: none;
+}
 
 /*-============================ HEADER ===========================-*/
-                       /* ( primeros 100 vh ) */
+/* ( primeros 100 vh ) */
 
 header {
     height: 100vh;
@@ -108,7 +131,6 @@ header {
 /*-============================ NAVEGACION ===========================-*/
 
 nav {
-    background-color: rgb(0, 0, 0, .30);
     height: var(--nav-height);
     display: flex;
     justify-content: space-between;
@@ -121,7 +143,7 @@ nav {
 }
 
 /*=======- cambio de apariencia al click de la hamburguesa -===========*/
-#hamburger button{
+#hamburger button {
     background: none;
     border: 0;
     cursor: pointer;
@@ -130,7 +152,7 @@ nav {
     height: 60px;
 }
 
-#hamburger button span{
+#hamburger button span {
     border-radius: 5px;
     background: var(--primary-background-gradient-blue);
     display: block;
@@ -141,76 +163,96 @@ nav {
     animation-fill-mode: forwards;
 }
 
-#hamburger button.open .top-line{
-    animation-name: top-line-animation;   
-}
-#hamburger button.open .middle-line{
-    animation-name: middle-line-animation;   
-}
-#hamburger button.open .bottom-line{
-    animation-name: bottom-line-animation;   
+#hamburger button.open .top-line {
+    animation-name: top-line-animation;
 }
 
-#hamburger button .top-line{
-    animation-name: top-line-animation-close;   
-}
-#hamburger button .middle-line{
-    animation-name: middle-line-animation-close;   
-}
-#hamburger button .bottom-line{
-    animation-name: bottom-line-animation-close;   
+#hamburger button.open .middle-line {
+    animation-name: middle-line-animation;
 }
 
-@keyframes top-line-animation{
-    50%, 100%{
+#hamburger button.open .bottom-line {
+    animation-name: bottom-line-animation;
+}
+
+#hamburger button .top-line {
+    animation-name: top-line-animation-close;
+}
+
+#hamburger button .middle-line {
+    animation-name: middle-line-animation-close;
+}
+
+#hamburger button .bottom-line {
+    animation-name: bottom-line-animation-close;
+}
+
+@keyframes top-line-animation {
+
+    50%,
+    100% {
         margin: 0 auto;
         transform: translateY(2px) rotate(-45deg);
     }
 }
-@keyframes middle-line-animation{
-    20%, 100%{
+
+@keyframes middle-line-animation {
+
+    20%,
+    100% {
         margin: 0 auto;
         width: 0;
         opacity: 0;
     }
 }
-@keyframes bottom-line-animation{
-    50%, 100%{
+
+@keyframes bottom-line-animation {
+
+    50%,
+    100% {
         margin: 0 auto;
-        transform: translateY(-2px) rotate(45deg); 
+        transform: translateY(-2px) rotate(45deg);
     }
 }
-@keyframes top-line-animation-close{
-    0%{
+
+@keyframes top-line-animation-close {
+    0% {
         margin: 0 auto;
         transform: translateY(2px) rotate(-45deg);
     }
-    50%, 100%{
+
+    50%,
+    100% {
         margin: 5px auto;
         transform: translateY(0px) rotate(0deg);
     }
 }
-@keyframes middle-line-animation-close{
-    0%{
+
+@keyframes middle-line-animation-close {
+    0% {
         margin: 0 auto;
         width: 0;
         opacity: 0;
     }
-    
-    20%, 100%{
+
+    20%,
+    100% {
         margin: 0 auto;
         width: 60%;
         opacity: 1;
     }
 }
-@keyframes bottom-line-animation-close{
-    0%{
+
+@keyframes bottom-line-animation-close {
+    0% {
         margin: 0 auto;
-        transform: translateY(-2px) rotate(45deg); 
+        transform: translateY(-2px) rotate(45deg);
     }
-    50%, 100%{
+
+    50%,
+    100% {
         margin: 5px auto;
-        transform: translateY(0px) rotate(0deg); 
+        transform: translateY(0px) rotate(0deg);
     }
 }
 
@@ -228,7 +270,8 @@ nav {
     transition: all .5s;
     z-index: 0;
 }
-#nav-menu.show{
+
+#nav-menu.show {
     display: block;
 }
 
@@ -239,7 +282,8 @@ nav {
     transition: all .5s;
     z-index: 0;
 }
-#nav-menu.show{
+
+#nav-menu.show {
     display: block;
     line-height: 30px;
     margin: 50px 0;
@@ -254,6 +298,10 @@ nav {
     z-index: 0;
 }
 
+#nav-menu a i {
+    color: white;
+}
+
 #nav-menu li a.active,
 #nav-menu li a:hover {
     color: var(--primary-color-vivid-cyan);
@@ -261,74 +309,86 @@ nav {
 }
 
 /*--===============================  SETEO CONTENIDO PRINCIPAL =================================--*/
-                                /* ( Reglas para el contenido p. ) */
+/* ( Reglas para el contenido p. ) */
 
 
-main{
+main {
     background-color: black;
     padding: var(--padding-content);
     overflow: hidden;
 }
-main h2{
+
+main h2 {
     color: var(--primary-color-white);
     font-family: var(--secondary-title-font);
     font-size: var(--secondary-title-size);
     margin-left: var(--mb-1);
 }
- hr{
+
+hr {
     width: 16rem;
     border-color: var(--primary-color-vivid-cyan);
- }
+}
 
-main p{
+main p {
     color: var(--secondary-color-content);
     font-family: var(--content-font);
     font-size: var(--content-size);
 
 }
-main span{
+
+main span {
     color: var(--primary-color-vivid-blue);
 }
 
-main>section{
+main>section {
     height: auto;
-    
+
 }
 
-ul{
+ul {
     color: var(--secondary-color-content);
     font-family: var(--content-font);
     font-size: var(--content-size);
 }
-ul i{
+
+ul i {
     color: var(--primary-color-vivid-blue);
     margin-right: 1rem;
 }
+
 /*--===============================  CONTENIDO PRINCIPAL PERSONALIZACION =================================--*/
-.logo-main>img{
+.logo-main>img {
     width: 40%;
     height: 5rem;
     margin-left: 30%;
     margin-right: 30%;
     margin-bottom: var(--mb-1);
 }
-.titulo{
+#engargolado{
+    display: none;
+}
+
+.titulo {
     display: flex;
     flex-direction: row;
     gap: 1rem;
     margin-bottom: var(--mb-2-5);
 }
-.ul-div{
+
+.ul-div {
     margin-bottom: var(--mb-2);
     margin-left: var(--mb-0-75);
 }
+
 /*--------- organizador de imagenes de evaluacion -------*/
-.contenedor-img-evaluacion{
+.contenedor-img-evaluacion {
     column-count: 2;
     column-gap: .5rem;
     margin-bottom: var(--mb-3);
 }
-.contenedor-img-evaluacion img{
+
+.contenedor-img-evaluacion img {
     width: 15rem;
     height: auto;
     display: block;
@@ -337,65 +397,80 @@ ul i{
     box-shadow: 0 0 30px rgba(0, 0, 0, .25);
     margin-bottom: 1.5rem;
 }
-.img-ev-1{
+
+.img-ev-1 {
     width: 15rem;
 
-    
+
 }
-.img-ev-2{
+
+.img-ev-2 {
     width: 14.5rem;
-    
+
 }
-.img-ev-3{
+
+.img-ev-3 {
     width: 14.5rem;
-    
+
 }
-.img-ev-4{
+
+.img-ev-4 {
     width: 14.5rem;
-    
+
 }
-.img-ev-5{
+
+.img-ev-5 {
     width: 14.5rem;
-    
+
 }
-.img-ev-6{
+
+.img-ev-6 {
     width: 14.5rem;
-   
+
 }
-.img-ev-7{
+
+.img-ev-7 {
     width: 14.5rem;
-    
+
 }
-.img-ev-8{
+
+.img-ev-8 {
     width: 14.5rem;
-    
+
 }
-.img-ev-9{
+
+.img-ev-9 {
     width: 14.5rem;
-    
+
 }
-.img-ev-10{
+
+.img-ev-10 {
     width: 14.5rem;
-    
+
 }
-.img-ev-11{
+
+.img-ev-11 {
     width: 14.5rem;
-    
+
 }
-.img-ev-12{
+
+.img-ev-12 {
     width: 14.5rem;
-    
+
 }
-.img-ev-13{
+
+.img-ev-13 {
     width: 14.5rem;
-    
+
 }
-.img-ev-14{
+
+.img-ev-14 {
     width: 14.5rem;
 }
+
 /*--------- fin del organizador -------*/
 
-.titulo-left{
+.titulo-left {
     display: flex;
     flex-direction: row-reverse;
     gap: 1rem;
@@ -409,58 +484,63 @@ ul i{
     height: 3rem;
     transform: skew(20deg);
     background: var(--primary-background-gradient-blue);
-  }
+}
 
-  #parallelogram-left{
+#parallelogram-left {
     width: 15rem;
     height: 3rem;
     transform: skew(-20deg);
-    background: linear-gradient(270deg, #0cfcfe 0%, #2196f3 100%);;
-  }
+    background: linear-gradient(270deg, #0cfcfe 0%, #2196f3 100%);
+    ;
+}
 
-  .contenedor-img-creacion-plan{
+.contenedor-img-creacion-plan {
     column-count: 2;
     column-gap: .5rem;
     margin-bottom: var(--mb-3);
     margin-top: var(--mb-3);
 }
 
-.descarga-plan{
+.descarga-plan {
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
 
 }
-.descarga-plan>img{
+
+.descarga-plan>img {
     width: 5rem;
 }
 
 /*--===============================  SETEO ASIDE =================================--*/
 
-aside h2{
+aside h2 {
     font-size: var(--secondary-title-size);
     font-family: var(--principal-title-font);
     text-align: center;
 }
-aside p{
+
+aside p {
     font-size: var(--content-size);
     font-family: var(--content-font);
 }
-aside span{
+
+aside span {
     color: var(--primary-color-vivid-blue);
 }
 
 /*--===============================  SECTION METODOLOGIA =================================--*/
 
-.metodologia{
+.metodologia {
     background-image: url(../images/training/metodologia-bg.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     padding: var(--padding-content);
 }
-.metodologia h2{
+
+.metodologia h2 {
     background: var(--primary-background-gradient-blue);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -469,7 +549,7 @@ aside span{
 
 /*--===============================  SECTION METODOLOGÍA 2 =================================--*/
 
-.metodologia2{
+.metodologia2 {
     background-image: url(../images/training/metodologia2.jpg);
     background-position: center;
     background-repeat: no-repeat;
@@ -480,7 +560,8 @@ aside span{
     padding-bottom: 8rem;
     padding-top: 4.3rem;
 }
-.metodologia2 div{
+
+.metodologia2 div {
     margin-top: 4rem;
     height: auto;
     display: flex;
@@ -488,51 +569,57 @@ aside span{
     justify-content: space-between;
 }
 
-.semana1 img{
+.semana1 img {
     width: 10rem;
     height: 11rem;
     margin-top: auto;
     margin-bottom: auto;
 }
-.semana1>article{
+
+.semana1>article {
     width: 22rem;
     padding-left: 2rem;
-   
+
 }
 
-.semana2 img{
+.semana2 img {
     width: 10rem;
     height: 20rem;
     margin-top: auto;
     margin-bottom: auto;
 }
-.semana2 article{
+
+.semana2 article {
     width: 22rem;
     order: 1;
     margin-top: 3rem;
     padding-right: 2rem;
 }
-.semana3{
+
+.semana3 {
     height: 10rem;
 }
-.semana3 img{
+
+.semana3 img {
     width: 10rem;
     height: 11rem;
 }
-.semana3 article{
+
+.semana3 article {
     width: 22rem;
     padding-left: 2rem;
-    margin-top: 2rem; 
+    margin-top: 2rem;
 }
 
 
-.semana4 img{
+.semana4 img {
     width: 10rem;
     height: 20rem;
     margin-top: auto;
     margin-bottom: auto;
 }
-.semana4 article{
+
+.semana4 article {
     width: 22rem;
     order: 1;
     margin-top: 3rem;
@@ -540,46 +627,51 @@ aside span{
 }
 
 /*--===============================  BENEFICIOS  =================================--*/
-.beneficios{
+.beneficios {
     background-color: black;
-    padding: var(--padding-content);   
+    padding: var(--padding-content);
 }
-.div-beneficios{
+
+.div-beneficios {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
 
 }
-.beneficios div{
+
+.beneficios div {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
-.beneficios h2{
+
+.beneficios h2 {
     color: var(--primary-color-white);
     font-size: var(--secondary-title-size);
-    margin: var(--mb-3); 
+    margin: var(--mb-3);
 }
 
-.beneficios img{
+.beneficios img {
     width: 75%;
     margin-left: 12.5%;
     margin-right: 12.5%;
 }
 
-.beneficios h3{
+.beneficios h3 {
     font-family: var(--secondary-title-font);
     font-size: var(--secondary-title-size);
     color: var(--primary-color-vivid-blue);
     margin-top: var(--mb-3);
     margin-left: 2rem;
-    
+
 }
-.beneficios li{
-    list-style-type:circle;
+
+.beneficios li {
+    list-style-type: circle;
     margin-left: 2rem;
 }
-.button{
+
+.button {
     margin-left: 2rem;
     display: flex;
     justify-content: center;
@@ -590,43 +682,56 @@ aside span{
     font-size: var(--content-size);
     font-weight: var(--font-bold);
     object-fit: contain;
-    background:var(--primary-background-gradient-blue);
+    background: var(--primary-background-gradient-blue);
     border-radius: 25px;
 }
 
 /*--===============================  SETEO CONTACTO  =================================--*/
 
-.contacto{
-    background-image:url(../images/home/contact-wallpaper.jpg);
+.contacto {
+    background-image: url(../images/home/FOOTER-04.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
 }
-.contacto h3{
+
+.contacto h3 {
     font-family: var(--secondary-title-font);
     text-transform: uppercase;
     font-size: var(--secondary-title-size);
     color: var(--primary-color-vivid-blue);
     margin-bottom: var(--mb-2);
 }
-.contacto h4{
+
+.contacto h4 {
     font-family: 'LUFGA-THIN', sans-serif;
     text-transform: uppercase;
     font-size: var(--secondary-title-size);
     color: var(--secondary-color-content);
     margin-bottom: var(--mb-2);
 }
-.contacto p{
+
+.contacto b {
+    font-family: "LUFGA-THIN", sans-serif;
+    text-transform: uppercase;
+    font-size: var(--secondary-title-size);
+    color: var(--secondary-color-content);
+    margin-bottom: var(--mb-2);
+}
+
+.contacto p {
     color: var(--secondary-color-content);
     font-size: var(--content-size);
     font-family: var(--content-font);
 }
-.contacto img{
+
+.contacto img {
     width: 160px;
 }
-.redes-y-contacto-div{
+
+.redes-y-contacto-div {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -634,7 +739,7 @@ aside span{
     align-self: center;
 }
 
-.redes{
+.redes {
     width: fit-content;
     height: auto;
     display: flex;
@@ -642,7 +747,8 @@ aside span{
     gap: 15px;
 
 }
-.redes div{
+
+.redes div {
     display: flex;
     height: 40px;
     width: 40px;
@@ -651,74 +757,79 @@ aside span{
     align-items: center;
     justify-content: center;
 }
-.redes i{
+
+.redes i {
     font-size: 20px;
 }
-.direccion-y-redes{
+
+.direccion-y-redes {
     display: flex;
     flex-direction: row;
     gap: 3rem;
     order: 3;
     margin-top: 2.5rem;
 }
-.direccion{
+
+.direccion {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-.contact-form{
+.contact-form {
     width: 300px;
     height: auto;
     order: 1;
 }
 
-.contact-form input{
+.contact-form input {
     border-radius: 10%;
     width: 300px;
     height: 35px;
     margin-top: 10px;
 }
-#mensaje-mail{
+
+#mensaje-mail {
     height: 200px;
 }
 
-.redes-y-contacto-div hr{
+.redes-y-contacto-div hr {
     display: none;
 }
-.btn-form-enviar{
-align-self: center;
-display: flex;
-justify-content: center;
-align-items: center;
-width: 100px;
-height: 40px;
-font-family: 'LUFGA', sans-serif;
-font-size: 13px;
-object-fit: contain;
-background: linear-gradient(90deg, #0cfcfe 0%, #2196f3 100%);
-color: black;
-border-radius: 25px;
-margin-left: auto;
-margin-right: auto;
-border: none;
+
+.btn-form-enviar {
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 40px;
+    font-family: 'LUFGA', sans-serif;
+    font-size: 13px;
+    object-fit: contain;
+    background: linear-gradient(90deg, #0cfcfe 0%, #2196f3 100%);
+    color: black;
+    border-radius: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
 }
+
 /*--===============================  SETEO FOOTER  =================================--*/
-footer{
+footer {
     height: auto;
-    background-image: url(../images/home/turquesa-footer-fondo.png);
-    background-position: top;
-    background-repeat: no-repeat;
+    background-color: black;
     padding: 3rem;
     color: var(--secondary-color-content);
     font-family: sans-serif;
     font-size: var(--content-size);
 }
-footer p{
+
+footer p {
     margin-top: var(--mb-1);
 }
 
-.contenedor-footer{
+.contenedor-footer {
     display: flex;
     flex-wrap: wrap;
     gap: 22px;
@@ -727,22 +838,814 @@ footer p{
 }
 
 
-.contenedor-footer img{
-   margin-top: 3rem;
-   margin-left: auto;
-   margin-right: auto;
-   width: 200px;
-   max-width: 210px;
-   
+.contenedor-footer img {
+    margin-top: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    max-width: 210px;
+
 }
-@media screen and ( min-width: 401px){
-    footer{
-        background-image: url(../images/home/FOOTER-02.png);
-        background-position: top;
-        background-repeat: no-repeat;
+
+
+/*--=================  TERMINA MOBILE, EMPIEZA 599PX ->  =================================--*/
+
+@media screen and (min-width: 599px) {
+    header {
+        padding-left: 3rem;
+        padding-bottom: 10rem;
+    }
+
+    nav {
+        height: 9rem;
+    }
+
+    #hamburger button {
+        width: 70px;
+        height: 70px;
+    }
+
+    #hamburger button span {
+        width: 63%;
+        height: 3.4px;
+    }
+
+    #nav-menu {
+        top: 49px;
+    }
+
+    #nav-menu li {
+        margin: 100px 0;
+    }
+
+    #nav-menu>li>a {
+        font-weight: 600;
+        font-size: 3rem;
+    }
+
+    .logo {
+        width: 253px;
+        height: 213px;
+    }
+
+    /*--===============================  SETEO CONTENIDO PRINCIPAL =================================--*/
+    /* ( Reglas para el contenido p. ) */
+
+
+    main {
+        padding: var(--padding-content-tablet);
+        overflow: hidden;
+    }
+
+    main h2 {
+        font-size: var(--secondary-title-size-tablet);
+        margin-left: var(--mb-1);
+    }
+
+    hr {
+        width: 23rem;
+    }
+
+    main p {
+        font-size: var(--content-size-tablet);
+
+    }
+
+
+    main>section {
+        height: auto;
+
+    }
+
+    ul {
+        font-size: var(--content-size-tablet);
+    }
+
+    ul i {
+        margin-right: 1rem;
+    }
+
+    /*--===============================  CONTENIDO PRINCIPAL PERSONALIZACION =================================--*/
+    .logo-main>img {
+        margin-bottom: var(--mb-3);
+        margin-top: var(--mb-1);
+    }
+
+    .titulo {
+        margin-bottom: var(--mb-3);
+    }
+
+    /*--------- organizador de imagenes de evaluacion -------*/
+    .contenedor-img-evaluacion {
+        column-count: 3;
+        column-gap: .5rem;
+    }
+
+    .contenedor-img-evaluacion img {
+        width: 21rem;
+        height: auto;
+        display: block;
+        box-sizing: border-box;
+        margin: 0 auto;
+        box-shadow: 0 0 30px rgba(0, 0, 0, .25);
+        margin-bottom: 1.5rem;
+    }
+
+    .img-ev-1 {
+        width: 15rem;
+
+    }
+
+    .img-ev-2 {
+        width: 14.5rem;
+
+    }
+
+    .img-ev-3 {
+        width: 14.5rem;
+
+    }
+
+    .img-ev-4 {
+        width: 14.5rem;
+
+    }
+
+    .img-ev-5 {
+        width: 14.5rem;
+
+    }
+
+    .img-ev-6 {
+        width: 14.5rem;
+
+    }
+
+    .img-ev-7 {
+        width: 14.5rem;
+
+    }
+
+    .img-ev-8 {
+        width: 14.5rem;
+
+    }
+
+    .img-ev-9 {
+        width: 14.5rem;
+
+    }
+
+    .img-ev-10 {
+        width: 14.5rem;
+
+    }
+
+    .img-ev-11 {
+        width: 14.5rem;
+
+    }
+
+    .img-ev-12 {
+        width: 14.5rem;
+
+    }
+
+    .img-ev-13 {
+        width: 14.5rem;
+
+    }
+
+    .img-ev-14 {
+        width: 14.5rem;
+    }
+
+    /*--------- fin del organizador -------*/
+
+    .titulo-left {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 1rem;
+        margin-bottom: var(--mb-2);
+        margin-top: var(--mb-2);
+    }
+
+
+    #parallelogram {
+        width: 44rem;
+        height: 5rem;
+        transform: skew(20deg);
+        background: var(--primary-background-gradient-blue);
+    }
+
+    #parallelogram-left {
+        width: 39rem;
+        height: 8rem;
+        transform: skew(-20deg);
+        background: linear-gradient(270deg, #0cfcfe 0%, #2196f3 100%);
+        ;
+    }
+
+    .creacion-del-plan img {
+        width: 32rem;
+        margin-top: var(--mb-0-75);
+    }
+
+    .descarga-plan>img {
+        width: 7rem;
+    }
+
+    /*--===============================  SETEO ASIDE =================================--*/
+    /*--===============================  SETEO ASIDE =================================--*/
+
+    aside h2 {
+        font-size: var(--secondary-title-size-tablet);
+    }
+
+    aside p {
+        font-size: var(--content-size-tablet);
+    }
+
+    /*--===============================  SECTION METODOLOGIA =================================--*/
+
+    .metodologia {
+        padding: var(--padding-content-tablet);
+    }
+
+    /*--===============================  SECTION METODOLOGÍA 2 =================================--*/
+
+    .metodologia2 {
+        color: var(--secondary-color-content);
+        padding-bottom: 8rem;
+        padding-top: 5.3rem;
+    }
+
+    .metodologia2 img {
+        display: none;
+    }
+
+    .metodologia2 div {
+        margin-top: 4rem;
+        display: flex;
+        height: 24rem;
+        width: 72rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .semana1 {
+        background-image: url(../images/training/semana1.svg);
+        background-position: center;
+        background-size: cover;
+        margin-left: 4rem;
+    }
+
+    .semana1>article {
+        width: 42rem;
+        padding-left: 2rem;
+    }
+
+    .semana2 {
+        background-image: url(../images/training/semana2.svg);
+        background-position: center;
+        background-size: cover;
+    }
+
+    .semana2 article {
+        width: 47rem;
+        margin-top: -2rem;
+    }
+
+    .semana3 {
+        background-image: url(../images/training/semana3.svg);
+        background-position: center;
+        background-size: cover;
+    }
+
+    .semana3 article {
+        width: 42rem;
+        margin-top: -5rem;
+    }
+
+    .semana4 {
+        background-image: url(../images/training/semana4.svg);
+        background-position: center;
+        background-size: cover;
+    }
+
+    .semana4 article {
+        width: 42rem;
+        margin-top: -3rem;
+    }
+
+    /*--===============================  BENEFICIOS  =================================--*/
+    .beneficios {
         background-color: black;
+        padding: var(--padding-content-tablet);
+    }
+
+    .div-beneficios {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+    }
+
+    .beneficios div {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .beneficios h2 {
+        font-size: var(--secondary-title-size-tablet);
+        margin: var(--mb-3);
+    }
+
+    .beneficios img {
+        width: 75%;
+        margin-left: 12.5%;
+        margin-right: 12.5%;
+    }
+
+    .beneficios h3 {
+        font-size: var(--secondary-title-size-tablet);
+        margin-top: var(--mb-3);
+        margin-left: 2rem;
+
+    }
+
+    .beneficios li {
+        list-style-type: none;
+        margin-left: 2rem;
+    }
+
+    .beneficios ul li::before {
+        content: "\2022";
+        color: #0cfcfe;
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+    }
+
+    .button {
+        width: 13rem;
+        height: 4rem;
+        font-size: var(--content-size-tablet);
+    }
+
+    /*--===============================  SETEO CONTACTO  =================================--*/
+
+    .contacto {
+        background-image: url(../images/home/FOOTER-04.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 8rem;
+
+    }
+
+    .contacto h3 {
+        font-size: var(--secondary-title-size-tablet);
+        margin-bottom: var(--mb-2);
+    }
+
+    .contacto b {
+        font-size: var(--secondary-title-size-tablet);
+        margin-bottom: var(--mb-2);
+    }
+
+    .contacto p {
+        color: var(--secondary-color-content);
+        font-size: var(--content-size-tablet);
+        font-family: var(--content-font);
+    }
+
+    .contacto img {
+        width: 21rem;
+        margin-left: 0.5rem;
+    }
+
+    .redes-y-contacto-div {
+        width: 60rem;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 2rem auto 2rem auto;
+        align-self: center;
+    }
+
+    .redes div {
+        height: 60px;
+        width: 60px;
+        background-color: white;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .redes i {
+        font-size: 30px;
+    }
+
+    .direccion-y-redes {
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+        order: 3;
+        margin-top: 2.5rem;
+    }
+
+    .direccion {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .contact-form {
+        width: 300px;
+        height: auto;
+    }
+
+    .contact-form input {
+        border-radius: 10%;
+        width: 595px;
+        height: 65px;
+        margin-top: 15px;
+    }
+
+    input::placeholder {
+        font-weight: bold;
+        opacity: 0.5;
+        font-size: larger;
+    }
+
+    #mensaje-mail {
+        height: 300px;
+    }
+
+    .redes-y-contacto-div hr {
+        display: none;
+    }
+
+    .btn-form-enviar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        height: 70px;
+        font-family: "LUFGA", sans-serif;
+        font-size: 23px;
+        margin-left: 21rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    /*--===============================  SETEO FOOTER  =================================--*/
+    footer {
+        height: auto;
+        background-image: url(../images/home/turquesa-footer-fondo.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 8rem;
+        color: var(--secondary-color-content);
+        font-family: sans-serif;
+        font-size: var(--content-size);
+    }
+
+    footer p {
+        margin-top: var(--mb-1);
+    }
+
+    .contenedor-footer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 52px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .contenedor-footer img {
+        margin-top: 0;
+        margin-bottom: 3rem;
+        margin-left: 13rem;
+        width: 300px;
+        max-width: 310px;
     }
 }
+
+@media screen and (min-width: 1024px) {
+    .logo {
+        width: 21.5rem;
+        height: 19.2rem;
+        margin-left: 1.4rem;
+    }
+
+    /*=======- cambio de apariencia al click de la hamburguesa -===========*/
+    #hamburger button {
+        display: none;
+    }
+
+    /*=======- fin -===========*/
+
+    #nav-menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        align-items: center;
+        position: relative;
+        gap: 3.5rem;
+        width: 50%;
+        height: 7rem;
+        margin-right: 0rem;
+        top: 0;
+        background-color: transparent;
+        text-align: center;
+        transition: all 0.5s;
+    }
+
+    #nav-menu.show {
+        display: block;
+    }
+
+    #nav-menu li {
+        display: block;
+        line-height: 30px;
+        margin: 50px 0;
+        transition: all 0.5s;
+        z-index: 0;
+    }
+
+
+    #nav-menu>li>a {
+        color: white;
+        font-family: var(--principal-title-font);
+        font-weight: 600;
+        z-index: 0;
+        font-size: 1.2rem;
+    }
+
+    #nav-menu li a.active,
+    #nav-menu li a:hover {
+        color: var(--primary-color-vivid-blue);
+        transition: 0.3s;
+    }
+
+    /*-============================ HEADER ===========================-*/
+    /* ( primeros 100 vh ) */
+
+    header {
+        background-position: center;
+        background-size: cover;
+        height: 120vh;
+        padding-left: 24rem;
+        padding-top: .5rem;
+        padding-right: 17rem;
+    }
+    /*--===============================  SETEO CONTENIDO PRINCIPAL =================================--*/
+    /* ( Reglas para el contenido p. ) */
+
+
+    main {
+        padding: var(--padding-content-desktop);
+        overflow: hidden;
+    }
+
+    main h2 {
+        font-size: var(--secondary-title-size-tablet);
+        margin-left: var(--mb-1);
+    }
+
+    hr {
+        width: 23rem;
+    }
+
+    main p {
+        font-size: var(--content-size);
+
+    }
+
+
+    main>section {
+        height: auto;
+
+    }
+
+    ul {
+        font-size: var(--content-size);
+    }
+
+    ul i {
+        margin-right: 1rem;
+    }
+
+    /*--===============================  CONTENIDO PRINCIPAL PERSONALIZACION =================================--*/
+    .logo-main{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #engargolado{
+        position: absolute;
+        width: 5rem;
+        height: 154rem;
+        margin-left: 93%;
+        margin-top: 19rem;
+        display: block;
+    }
     
-    
-/*--=================  TERMINA MOBILE, EMPIEZA 599PX ->  =================================--*/
+    .logo-main>img {
+        margin-bottom: var(--mb-3);
+        margin-top: 0;
+        width: 46.5rem;
+        margin-left: 0;
+        margin-right: 0;
+        height: auto;
+        align-self: center;
+    }
+    .cont-and-background{
+        background-image: url(../images/training/TRAINING-43.png);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .evaluacion{
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .titulo {
+        margin-bottom: var(--mb-3);
+        margin-left: 32rem;
+    }
+    .texto{
+        align-self: center;
+        width: 62rem;
+    }
+
+    /*--------- organizador de imagenes de evaluacion -------*/
+    .contenedor-img-evaluacion {
+        column-count: 6;
+        column-gap: 1px;
+        width: 95rem;
+        align-self: center;
+    }
+
+    .contenedor-img-evaluacion img {
+        width: 15rem;
+        height: auto;
+        display: block;
+        box-sizing: border-box;
+        margin: 0 auto;
+        box-shadow: 0 0 30px rgba(0, 0, 0, .25);
+        margin-bottom: 1.5rem;
+    }
+
+    .img-ev-1 {
+        width: 15rem;
+
+    }
+
+    .img-ev-2 {
+        width: 14.5rem;
+
+    }
+
+    .img-ev-3 {
+        width: 14.5rem;
+
+    }
+
+    .img-ev-4 {
+        width: 14.5rem;
+
+    }
+
+    .img-ev-5 {
+        width: 14.5rem;
+
+    }
+
+    .img-ev-6 {
+        width: 14.5rem;
+
+    }
+
+    .img-ev-7 {
+        width: 14.5rem;
+
+    }
+
+    .img-ev-8 {
+        width: 14.5rem;
+
+    }
+
+    .img-ev-9 {
+        width: 14.5rem;
+
+    }
+
+    .img-ev-10 {
+        width: 14.5rem;
+
+    }
+
+    .img-ev-11 {
+        width: 14.5rem;
+
+    }
+
+    .img-ev-12 {
+        width: 14.5rem;
+
+    }
+
+    .img-ev-13 {
+        width: 14.5rem;
+
+    }
+
+    .img-ev-14 {
+        width: 14.5rem;
+    }
+
+    /*--------- fin del organizador -------*/
+
+    .titulo-left {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 1rem;
+        margin-bottom: var(--mb-2);
+        margin-top: var(--mb-2);
+        overflow: hidden;
+        margin-right: 5rem;
+    }
+
+
+    #parallelogram {
+        width: 69rem;
+        height: 6rem;
+        transform: skew(20deg);
+        background: var(--primary-background-gradient-blue);
+    }
+
+    #parallelogram-left {
+        width: 80rem;
+        height: 8rem;
+        transform: skew(-20deg);
+        background: linear-gradient(270deg, #0cfcfe 0%, #2196f3 100%);
+        ;
+    }
+    .contenedor-img-creacion-plan {
+        column-count: 4;
+        column-gap: .2rem;
+        margin-bottom: var(--mb-3);
+        margin-top: var(--mb-3);
+        width: 95rem;
+        align-self: center;
+        height: 50rem;
+    }
+    .creacion-del-plan{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .creacion-del-plan img {
+        width: 23rem;
+        margin-top: var(--mb-0-75);
+    }
+
+    .descarga-plan>img {
+        width: 7rem;
+    }
+
+    .entrega-del-plan{
+        display: flex;
+        flex-direction: column;
+
+    }
+    /*--===============================  SECTION METODOLOGIA =================================--*/
+
+.metodologia {
+    background-image: url(../images/training/metodologia-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: var(--padding-content);
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+
+}
+
+.metodologia p{
+    font-size: var(--content-size);
+}
+
+}
