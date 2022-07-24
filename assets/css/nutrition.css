@@ -309,8 +309,14 @@ section p {
     font-family: var(--content-font);
     font-size: var(--content-size);
     margin-bottom: var(--mb-2);
+    width: 25.5rem;
 }
-
+section div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 section img {
     display: none;
 }
@@ -320,14 +326,14 @@ section img {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    width: 28rem;
+    width: 33rem;
     height: 10rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .puno{
-    margin-left: 1.6rem;
+margin-left: -2rem;
 }
 .x-uno{
     display: none;
@@ -338,17 +344,15 @@ section img {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    width: 28rem;
+    width: 33rem;
     height: 10rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 8rem;
-    margin-top: 2rem;
 }
 .pdos{
     text-align: right;
-    margin-right: .4rem;
+    margin-right: -4.5rem;
 }
 .x-dos{
     display: none;
@@ -360,52 +364,65 @@ section img {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    width: 28rem;
+    width: 33rem;
     height: 10rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
 }
 .ptres{
-    margin-left: 1.3rem;
+    margin-left: -2rem;
 }
 .x-tres{
     display: none;
 }
 /*--===============================  SETEO CONTACTO  =================================--*/
+/*--===============================  SETEO CONTACTO  =================================--*/
 
-.contacto{
-    background-image:url(../images/home/FOOTER-04.jpg);
+.contacto {
+    background-image: url(../images/home/FOOTER-04.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
 }
-.contacto h3{
+
+.contacto h3 {
     font-family: var(--secondary-title-font);
     text-transform: uppercase;
     font-size: var(--secondary-title-size);
     color: var(--primary-color-vivid-blue);
     margin-bottom: var(--mb-2);
 }
-.contacto h4{
+
+.contacto h4 {
     font-family: 'LUFGA-THIN', sans-serif;
     text-transform: uppercase;
     font-size: var(--secondary-title-size);
     color: var(--secondary-color-content);
     margin-bottom: var(--mb-2);
 }
-.contacto p{
+
+.contacto b {
+    font-family: "LUFGA-THIN", sans-serif;
+    text-transform: uppercase;
+    font-size: var(--secondary-title-size);
+    color: var(--secondary-color-content);
+    margin-bottom: var(--mb-2);
+}
+
+.contacto p {
     color: var(--secondary-color-content);
     font-size: var(--content-size);
     font-family: var(--content-font);
 }
-.contacto img{
+
+.contacto img {
     width: 160px;
 }
-.redes-y-contacto-div{
+
+.redes-y-contacto-div {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -413,15 +430,19 @@ section img {
     align-self: center;
 }
 
-.redes{
+.redes {
     width: fit-content;
     height: auto;
     display: flex;
     flex-direction: column;
     gap: 15px;
-
+    margin-bottom: 2rem;
 }
-.redes div{
+.x-redes{
+    display: none;
+}
+
+.redes div {
     display: flex;
     height: 40px;
     width: 40px;
@@ -430,72 +451,100 @@ section img {
     align-items: center;
     justify-content: center;
 }
-.redes i{
+
+.redes i {
     font-size: 20px;
 }
-.direccion-y-redes{
+
+.direccion-y-redes {
     display: flex;
     flex-direction: row;
     gap: 3rem;
     order: 3;
     margin-top: 2.5rem;
 }
-.direccion{
+
+.direccion {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-.contact-form{
+.contact-form {
     width: 300px;
     height: auto;
     order: 1;
 }
 
-.contact-form input{
-    border-radius: 10%;
+.contact-form input {
+    border-radius: 1.5em;
     width: 300px;
     height: 35px;
     margin-top: 10px;
-}
-#mensaje-mail{
-    height: 200px;
+    border: none;
+    background-color: hsl(0, 3%, 87%);
+    font-weight: 300;
+    font-size: 1.1rem;
+    color: rgb(17, 16, 16);
+    font-family:"LUFGA-THIN", sans-serif;
+    padding-left: 2rem;
 }
 
-.redes-y-contacto-div hr{
+#mensaje-mail {
+    height: 130px;
+}
+
+.redes-y-contacto-div hr {
     display: none;
 }
-.btn-form-enviar{
-align-self: center;
-display: flex;
-justify-content: center;
-align-items: center;
-width: 100px;
-height: 40px;
-font-family: 'LUFGA', sans-serif;
-font-size: 13px;
-object-fit: contain;
-background: linear-gradient(90deg, #0cfcfe 0%, #2196f3 100%);
-color: black;
-border-radius: 25px;
-margin-left: auto;
-margin-right: auto;
-border: none;
+
+.btn-form-enviar {
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 40px;
+    font-family: 'LUFGA', sans-serif;
+    font-size: 13px;
+    object-fit: contain;
+    background: linear-gradient(90deg, #0cfcfe 0%, #2196f3 100%);
+    color: black;
+    border-radius: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
 }
+
 /*--===============================  SETEO FOOTER  =================================--*/
-footer{
+footer {
     height: auto;
     background-color: black;
     padding: 3rem;
     color: var(--secondary-color-content);
     font-family: sans-serif;
     font-size: var(--content-size);
+    display: flex;
+    flex-direction: column;
 }
-footer p{
-    margin-top: var(--mb-1);
+footer span{
+    color: var(--primary-color-vivid-cyan);
 }
 
-.contenedor-footer{
+footer img {
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    max-width: 210px;
+    margin-bottom: 2rem;
+}
+footer p {
+    margin-top: var(--mb-1);
+    font-size: 14px;
+}
+
+.contenedor-footer {
     display: flex;
     flex-wrap: wrap;
     gap: 22px;
@@ -503,15 +552,6 @@ footer p{
     margin-right: auto;
 }
 
-
-.contenedor-footer img{
-   margin-top: 3rem;
-   margin-left: auto;
-   margin-right: auto;
-   width: 200px;
-   max-width: 210px;
-   
-}
 @media screen and (min-width: 599px) {
     header {
         padding-left: 3rem;

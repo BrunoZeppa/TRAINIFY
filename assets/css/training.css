@@ -633,6 +633,9 @@ aside span {
     background-color: black;
     padding: var(--padding-content);
 }
+.lineas{
+    display: none;
+}
 
 .div-beneficios {
     display: flex;
@@ -665,12 +668,21 @@ aside span {
     color: var(--primary-color-vivid-blue);
     margin-top: var(--mb-3);
     margin-left: 2rem;
+    align-self: center;
 
 }
 
 .beneficios li {
-    list-style-type: circle;
     margin-left: 2rem;
+}
+
+.beneficios ul li::before {
+    content: "\2022";
+    color: #0cfcfe;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
 }
 
 .button {
@@ -686,6 +698,7 @@ aside span {
     object-fit: contain;
     background: var(--primary-background-gradient-blue);
     border-radius: 25px;
+    border: none;
 }
 
 /*--===============================  SETEO CONTACTO  =================================--*/
@@ -747,7 +760,10 @@ aside span {
     display: flex;
     flex-direction: column;
     gap: 15px;
-
+    margin-bottom: 2rem;
+}
+.x-redes{
+    display: none;
 }
 
 .redes div {
@@ -785,14 +801,21 @@ aside span {
 }
 
 .contact-form input {
-    border-radius: 10%;
+    border-radius: 1.5em;
     width: 300px;
     height: 35px;
     margin-top: 10px;
+    border: none;
+    background-color: hsl(0, 3%, 87%);
+    font-weight: 300;
+    font-size: 1.1rem;
+    color: rgb(17, 16, 16);
+    font-family:"LUFGA-THIN", sans-serif;
+    padding-left: 2rem;
 }
 
 #mensaje-mail {
-    height: 200px;
+    height: 130px;
 }
 
 .redes-y-contacto-div hr {
@@ -825,10 +848,24 @@ footer {
     color: var(--secondary-color-content);
     font-family: sans-serif;
     font-size: var(--content-size);
+    display: flex;
+    flex-direction: column;
+}
+footer span{
+    color: var(--primary-color-vivid-cyan);
 }
 
+footer img {
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    max-width: 210px;
+    margin-bottom: 2rem;
+}
 footer p {
     margin-top: var(--mb-1);
+    font-size: 14px;
 }
 
 .contenedor-footer {
@@ -840,14 +877,7 @@ footer p {
 }
 
 
-.contenedor-footer img {
-    margin-top: 3rem;
-    margin-left: auto;
-    margin-right: auto;
-    width: 200px;
-    max-width: 210px;
 
-}
 
 
 /*--=================  TERMINA MOBILE, EMPIEZA 599PX ->  =================================--*/
@@ -1178,19 +1208,7 @@ footer p {
 
     }
 
-    .beneficios li {
-        list-style-type: none;
-        margin-left: 2rem;
-    }
-
-    .beneficios ul li::before {
-        content: "\2022";
-        color: #0cfcfe;
-        font-weight: bold;
-        display: inline-block;
-        width: 1em;
-        margin-left: -1em;
-    }
+ 
 
     .button {
         width: 13rem;
@@ -1416,8 +1434,8 @@ footer p {
         margin-left: var(--mb-1);
     }
 
-    hr {
-        width: 23rem;
+    main hr {
+        width: 35rem;
     }
 
     main p {
@@ -1580,7 +1598,7 @@ footer p {
         margin-bottom: var(--mb-2);
         margin-top: var(--mb-2);
         overflow: hidden;
-        margin-right: 5rem;
+        margin-right: 9rem;
     }
 
 
@@ -1639,9 +1657,14 @@ footer p {
     height: 90vh;
 
 }
+.metodologia h2{
+    margin-bottom: 1.5rem;
+}
 
 .metodologia p{
     font-size: var(--content-size);
+    font-weight: bolder;
+    margin-bottom: 1.5rem;
 }
 /*--===============================  SECTION METODOLOGIA 2 =================================--*/
 .metodologia2 {
@@ -1654,6 +1677,7 @@ footer p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-size: 100% 100%;
 }
 .metodologia2 p{
     font-size: 18px;
@@ -1731,13 +1755,16 @@ footer p {
 .beneficios {
     padding: 0;
     padding-top: 4rem;
-    padding-bottom: 4rem;
+}
+.lineas{
+    display: block;
 }
 .beneficios article{
     background-image: url(../images/training/TRAINING-50.png);
     background-size: cover;
     display: flex;
     flex-direction: column;
+    height: 120vh;
 }
 .beneficios .compu {
     width: 35%;
@@ -1748,7 +1775,7 @@ footer p {
     position: absolute;
     width: 4.5rem;
     height: auto;
-    margin-left: 90%;
+    margin-left: 95%;
 }
 
 
@@ -1759,6 +1786,7 @@ footer p {
     gap: 3rem;
     justify-content: center;
     align-items: baseline;
+    padding-left: 13rem;
 }
 
 .beneficios div {
@@ -1781,12 +1809,8 @@ footer p {
     color: var(--primary-color-vivid-blue);
     margin-top: var(--mb-3);
     margin-left: 2rem;
+    align-self:flex-start;
 
-}
-
-.beneficios li {
-    list-style-type: circle;
-    margin-left: 2rem;
 }
 
 .beneficios button {
@@ -1803,6 +1827,11 @@ footer p {
     background: var(--primary-background-gradient-blue);
     border-radius: 25px;
     border: none;
+    cursor: pointer;
+}
+.beneficios button:hover{
+    background: var(--primary-background-hoover-gradiente-orange);
+    color: white;
 }
 .pot-b button{
     margin-top: 4rem;
@@ -1964,6 +1993,11 @@ footer p {
     margin-right: 0;
     border: none;
     margin-top: -.01rem;
+    cursor: pointer;
+  }
+  .btn-form-enviar:hover{
+    background: var(--primary-background-hoover-gradiente-orange);
+    color: white;
   }
   /*--===============================  SETEO FOOTER  =================================--*/
 footer {
