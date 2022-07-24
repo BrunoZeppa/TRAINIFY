@@ -92,7 +92,7 @@ html {
 
 header {
     height: 100vh;
-    background-image: url(../images/home/HOME-01.jpg);
+    background-image: url(../images/login/MAQUETACION-TRAINIFY-HOME2\ \(1\).jpg);
     background-repeat: no-repeat;
     background-position: 27% 73%;
     background-size: cover;
@@ -254,7 +254,9 @@ nav {
     z-index: 0;
 }
 
-#nav-menu li a.active,
+#nav-menu li a.active{
+    color: var(--primary-color-vivid-blue);
+}
 #nav-menu li a:hover {
     color: var(--primary-color-vivid-cyan);
     transition: .3s;
@@ -331,4 +333,66 @@ nav {
         height: auto;
         padding: 0;
         margin: 0;
+    }
+    @media screen and (min-width: 1024px){
+        header {
+            background-position: center;
+            background-size: cover;
+            height: 100vh;
+            padding-left: 24rem;
+            padding-top: .5rem;
+            padding-right: 17rem;
+        }
+        .logo {
+            width: 21.5rem;
+            height: 19.2rem;
+            margin-left: 1.4rem;
+        }
+        nav{
+            height: 9rem;
+        }
+    
+        /*=======- cambio de apariencia al click de la hamburguesa -===========*/
+        #hamburger button {
+            display: none;
+        }
+    
+        /*=======- fin -===========*/
+    
+        #nav-menu {
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            align-items: center;
+            position: relative;
+            gap: 3.5rem;
+            width: 50%;
+            height: 7rem;
+            margin-right: 0rem;
+            top: 0;
+            background-color: transparent;
+            text-align: center;
+            transition: all 0.5s;
+        }
+    
+        #nav-menu.show {
+            display: block;
+        }
+    
+        #nav-menu li {
+            display: block;
+            line-height: 30px;
+            margin: 50px 0;
+            transition: all 0.5s;
+            z-index: 0;
+        }
+    
+    
+        #nav-menu>li>a {
+            color: white;
+            font-family: var(--principal-title-font);
+            font-weight: 600;
+            z-index: 0;
+            font-size: 1.2rem;
+        }
     }

@@ -277,7 +277,9 @@ nav {
     font-size: var(--content-size);
 }
 
-#nav-menu li a.active,
+#nav-menu li a.active{
+    color: var(--primary-color-vivid-blue);
+}
 #nav-menu li a:hover {
     color: var(--primary-color-vivid-cyan);
     transition: .3s;
@@ -690,9 +692,7 @@ border: none;
 /*--===============================  SETEO FOOTER  =================================--*/
 footer{
     height: auto;
-    background-image: url(../images/home/turquesa-footer-fondo.png);
-    background-position: top;
-    background-repeat: no-repeat;
+    background-color: black;
     padding: 3rem;
     color: var(--secondary-color-content);
     font-family: sans-serif;
@@ -719,11 +719,437 @@ footer p{
    max-width: 210px;
    
 }
-@media screen and ( min-width: 401px){
-    footer{
-        background-image: url(../images/home/FOOTER-02.png);
-        background-position: top;
-        background-repeat: no-repeat;
-        background-color: black;
+@media screen and (min-width: 1024px) {
+    /*-============================ NAVEGACION ===========================-*/
+    .logo {
+        width: 21.5rem;
+        height: 19.2rem;
+        margin-left: 1.4rem;
     }
+    nav{
+        height: 9rem;
+    }
+
+    /*=======- cambio de apariencia al click de la hamburguesa -===========*/
+    #hamburger button {
+        display: none;
+    }
+
+    /*=======- fin -===========*/
+
+    #nav-menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        align-items: center;
+        position: relative;
+        gap: 3.5rem;
+        width: 50%;
+        height: 7rem;
+        margin-right: 0rem;
+        top: 0;
+        background-color: transparent;
+        text-align: center;
+        transition: all 0.5s;
+    }
+
+    #nav-menu.show {
+        display: block;
+    }
+
+    #nav-menu li {
+        display: block;
+        line-height: 30px;
+        margin: 50px 0;
+        transition: all 0.5s;
+        z-index: 0;
+    }
+
+
+    #nav-menu>li>a {
+        color: white;
+        font-family: var(--principal-title-font);
+        font-weight: 600;
+        z-index: 0;
+        font-size: 1.2rem;
+    }
+
+    /*-============================ HEADER ===========================-*/
+    /* ( primeros 100 vh ) */
+
+    header {
+        background-position: center;
+        background-size: cover;
+        height: 120vh;
+        padding-left: 24rem;
+        padding-top: .5rem;
+        padding-right: 17rem;
+    }
+    /*--===============================  SETEO CONTENIDO PRINCIPAL =================================--*/
+    /* ( Reglas para el contenido p. ) */
+    .selecciona-tu-plan {
+        padding-bottom: 2.5rem;
+      }
+    .selecciona-tu-plan h2 {
+        text-shadow: 0.2px 0.2px rgb(0, 0, 0, 0.6);
+        font-weight: 400;
+        grid-column: 2/5;
+        margin-bottom: 3.5rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 4.4rem;
+      }
+      .selecciona-tu-plan h5 {
+        font-size: 35px;
+        color: var(--primary-color-white);
+        font-family: var(--h5-font);
+        margin-top: 30px;
+        margin-left: 45px;
+        margin-bottom: 0px;
+        text-shadow: 1px 2px rgb(0, 0, 0, 5);
+      }
+      .selecciona-tu-plan h6 {
+        font-size: 13px;
+        text-transform: uppercase;
+        margin-right: 12rem;
+        font-family: var(--secondary-title-font);
+        margin-top: 8rem;
+      }
+      .selecciona-tu-plan b {
+        margin-top: 25px;
+        margin-bottom: 25px;
+        margin-left: 10px;
+        color: var(--primary-color-white);
+        font-family: var(--secondary-title-font);
+        text-transform: uppercase;
+        font-size: 20px;
+        display: block;
+      }
+      .selecciona-tu-plan small {
+        margin-left: 20px;
+        font-weight: 400;
+        font-size: var(--small-size);
+        font-family: var(--small-font);
+        display: block;
+        margin-top: -20px;
+        margin-bottom: 0;
+      }
+      .selecciona-tu-plan p {
+       height: 6.5rem;
+       width: 15rem;
+       margin-left: 1.2rem;
+       margin-top: 2rem;
+       margin-bottom: 0;
+       line-height: 2.5rem;
+      
+      }
+      
+      .aside2 {
+        display: flex;
+        flex-direction: column;
+        margin-left: 1.5rem;
+        height: 60rem;
+      }
+      .aside2 .div-planes {
+        overflow-x: none;
+        scroll-snap-type: none;
+        grid-column: none;
+        grid-row: none;
+        display: flex;
+      }
+      .aside2 .div-planes::-webkit-scrollbar {
+        display: none;
+      }
+      .aside2 .div-planes::-webkit-scrollbar-track {
+        display: none;
+      }
+      .webkit-scrollbar-thumb {
+       display: none;
+      }
+      .div-planes {
+        display: flex;
+        flex-direction: row;
+        gap: 2.5rem;
+        justify-content: center;
+        align-items: center;
+      }
+      .div-planes div {
+        margin-left: 50px;
+        margin-top: 15px;
+        width: 5rem;
+        height: 10rem;
+        font-size: 15px;
+        margin-top: 2rem;
+      }
+      
+      .estandar {
+        width: 247.97px;
+        height: 475.92px;
+        background: url(../images/home/estandar-plan.svg);
+        background-size: cover;
+        border-radius: 3%;
+        text-align: center;
+        object-fit: contain;
+      }
+      .estandar h6 {
+        color: #0cfcfe;
+      }
+      .estandar b{
+        margin-top: 3.7rem;
+      }
+      .estandar a {
+        margin-left: 25px;
+      }
+      
+      .salud {
+        grid-column: 3/3;
+        grid-row: 2;
+        width: 247.97px;
+        height: 475.92px;
+        border-radius: 3%;
+        background: url(../images/home/health-plan.svg);
+        background-size: cover;
+        text-align: center;
+        object-fit: contain;
+        color: black;
+      }
+      .salud h6 {
+        color: #75e809;
+      }
+      .salud a {
+        margin-left: 25px;
+      }
+      
+      .imagen {
+        grid-column: 5/5;
+        grid-row: 2;
+        width: 247.97px;
+        height: 475.92px;
+        border-radius: 3%;
+        background: url(../images/home/fitness-plan.svg);
+        background-size: cover;
+        text-align: center;
+        object-fit: contain;
+        color: black;
+      }
+      
+      .imagen h6 {
+        color: purple;
+      }
+      .imagen a {
+        margin-left: 25px;
+      }
+      
+      .rendimiento {
+        grid-column: 7/7;
+        grid-row: 2;
+        width: 247.97px;
+        height: 475.92px;
+        border-radius: 3%;
+        background: url(../images/home/performance-plan.svg);
+        background-size: cover;
+        text-align: center;
+        object-fit: contain;
+        color: black;
+      }
+      .rendimiento h6 {
+        color: orange;
+      }
+      
+      .rendimiento a {
+        margin-left: 25px;
+      }
+
+    /*--===============================  SETEO CONTACTO  =================================--*/
+
+.contacto {
+    background-image: url(../images/home/FOOTER-04.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 3rem;
+    overflow: hidden;
+    height: 100vh;
+  }
+  .contacto h3 {
+    font-family: var(--secondary-title-font);
+    text-transform: uppercase;
+    font-size: 2.6rem;
+    color: var(--primary-color-vivid-blue);
+    margin-bottom: 0;
+    width: 70rem;
+  }
+  .contacto b {
+    font-family: "LUFGA-THIN", sans-serif;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 100;
+    color: var(--secondary-color-content);
+    margin-bottom: .3px;
+    margin-top: -5px;
+  }
+  .contacto p {
+    font-size: var(--content-size);
+    font-weight: 100;
+    color: var(--secondary-color-content);
+  
+  }
+  .contacto span {
+    color:#0cfcfe;
+  }
+  .contacto br{
+    display: none;
+  }
+  .contacto img {
+    display: none;
+  }
+  .redes-y-contacto-div {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    margin: 21.4rem auto 2rem auto;
+    align-self: center;
+    width: 75rem;
+  }
+  .redes-y-contacto-div hr {
+    display:block;
+    visibility: visible;
+    color: #0cfcfe;
+    width: 3rem;
+    height: 4rem;
+    border: #0cfcfe 7px solid;
+    order: 4;
+  }
+  
+  
+  .redes {
+    display: none;
+  }
+  .x-redes{
+    display: block;
+    width: fit-content;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 5rem;
+  }
+  .x-redes div {
+    display: flex;
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 50%;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+  }
+  .x-redes i {
+   font-size: 2.5rem;
+  }
+  
+  
+  .direccion-y-redes {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    order: 3;
+    margin-top: 2.5rem;
+    order: 2;
+    
+  }
+  .direccion {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-top: 3.5rem;
+  }
+  
+  .contact-form {
+    width: 34rem;
+    height: auto;
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    order: 1;
+    gap: 0;
+  }
+  
+  .contact-form input {
+    border-radius: 1.5em;
+    width: 33.3rem;
+    height: 2.7rem;
+    margin-top: 2px;
+    border: none;
+    background-color: hsl(0, 3%, 87%);
+    padding-left: 2.5rem;
+    font-family:"LUFGA-THIN", sans-serif;
+    font-weight: 300;
+    font-size: 1.1rem;
+    color: rgb(17, 16, 16);
+    margin-bottom: .65rem;
+  }
+  #mensaje-mail {
+    height: 11rem;
+    padding-bottom: 7rem;
+  }
+  
+  .redes-y-contacto-div hr {
+    display: none;
+  }
+  .btn-form-enviar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 40px;
+    font-family: "LUFGA", sans-serif;
+    font-size: 13px;
+    object-fit: contain;
+    background: linear-gradient(90deg, #0cfcfe 0%, #2196f3 100%);
+    border-radius: 25px;
+    margin-left: 0;
+    margin-right: 0;
+    border: none;
+    margin-top: -.01rem;
+  }
+  /*--===============================  SETEO FOOTER  =================================--*/
+  footer {
+    padding: 4.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+  }
+  footer img{
+    width: 170px;
+    max-width: 210px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  footer p {
+    margin-top: var(--mb-1);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: var(--secondary-color-content);
+    line-height: 2rem;
+  }
+  footer span{
+    color:#0cfcfe;
+  }
+  
+  
+  .contenedor-footer {
+    margin-right: 0;
+    margin-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+  }
+  
 }

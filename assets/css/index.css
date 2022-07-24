@@ -1067,9 +1067,7 @@ header img {
 /*--===============================  SETEO FOOTER  =================================--*/
 footer {
   height: auto;
-  background-image: url(../images/home/turquesa-footer-fondo.png);
-  background-position: top;
-  background-repeat: no-repeat;
+  background-color: black;
   padding: 3rem;
   color: var(--secondary-color-content);
   font-family: sans-serif;
@@ -1094,14 +1092,7 @@ footer p {
   width: 200px;
   max-width: 210px;
 }
-@media screen and (min-width: 401px) {
-  footer {
-    background-image: url(../images/home/FOOTER-02.png);
-    background-position: top;
-    background-repeat: no-repeat;
-    background-color: black;
-  }
-}
+
 
 /*--=================  TERMINA MOBILE, EMPIEZA 599PX ->  =================================--*/
 
@@ -1525,9 +1516,6 @@ footer p {
   /*--===============================  SETEO FOOTER  =================================--*/
   footer {
     height: auto;
-    background-image: url(../images/home/turquesa-footer-fondo.png);
-    background-position: top;
-    background-repeat: no-repeat;
     padding: 9rem;
     color: var(--secondary-color-content);
     font-family: sans-serif;
@@ -1552,14 +1540,7 @@ footer p {
     width: 300px;
     max-width: 310px;
   }
-  @media screen and (min-width: 401px) {
-    footer {
-      background-image: url(../images/home/FOOTER-02.png);
-      background-position: top;
-      background-repeat: no-repeat;
-      background-color: black;
-    }
-  }
+  
 }
 
 @media screen and (min-width: 1024px) {
@@ -1669,7 +1650,7 @@ footer p {
   /* ( primeros 100 vh ) */
 
   header {
-    height: 106vh;
+    height: 110vh;
     background-image: url(../images/home/HOME-01.jpg);
     background-position: center;
     background-size: cover;
@@ -1686,6 +1667,7 @@ footer p {
   .banner {
     margin-top: 19.5rem;
     margin-left: 2.1rem;
+    margin-bottom: 0;
   }
 
   .contactanos-btn {
@@ -1699,8 +1681,8 @@ footer p {
     margin-top: 3px;
   }
   .icons {
-    width: 104.5rem;
-    margin-top: 18vh;
+    width: 99.5rem;
+    margin-top: 9rem;
     margin-left: 2.1rem;
     justify-content: space-between;
     display: flex;
@@ -2227,6 +2209,9 @@ footer p {
   object-fit: contain;
   color: black;
 }
+.salud b{
+  margin-top: 36px;
+}
 .salud h6 {
   color: #75e809;
 }
@@ -2245,6 +2230,9 @@ footer p {
   text-align: center;
   object-fit: contain;
   color: black;
+}
+.imagen b{
+  margin-top: 36px;
 }
 
 .imagen h6 {
@@ -2265,6 +2253,9 @@ footer p {
   text-align: center;
   object-fit: contain;
   color: black;
+}
+.rendimiento b{
+  margin-top: 36px;
 }
 .rendimiento h6 {
   color: orange;
@@ -2430,38 +2421,39 @@ footer p {
 }
 /*--===============================  SETEO FOOTER  =================================--*/
 footer {
-  height: auto;
-  background-image: none;
-  background-position: top;
-  background-repeat: no-repeat;
-  padding: 3rem;
-  color: var(--secondary-color-content);
-  font-family: sans-serif;
-  font-size: var(--content-size);
-}
-footer p {
-  margin-top: var(--mb-1);
-}
-
-footer span{
-  color:#0cfcfe;
-}
-
-.contenedor-footer {
+  padding: 4.5rem;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 5rem;
-  margin-left: auto;
-  margin-right: auto;
+  gap: 4rem;
 }
-
-.contenedor-footer img {
-  margin-top: 3rem;
-  width: 200px;
+footer img{
+  width: 170px;
   max-width: 210px;
   margin-left: 0;
   margin-right: 0;
 }
+footer p {
+  margin-top: var(--mb-1);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: var(--secondary-color-content);
+  line-height: 2rem;
+}
+footer span{
+  color:#0cfcfe;
+}
+
+
+.contenedor-footer {
+  margin-right: 0;
+  margin-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
+}
+
 }
