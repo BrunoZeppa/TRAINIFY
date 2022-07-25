@@ -429,6 +429,22 @@ header img {
   align-items: center;
   padding-bottom: 4rem;
 }
+.programas li{
+  list-style: none;
+  font-size: 1.5rem;
+  margin-bottom: .6rem;
+  padding-left: 1rem;
+}
+
+.programas ul li::before {
+  content: "\2022";
+  color: #0cfcfe;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
 .btn-desktop-pg {
   display: none;
 }
@@ -547,9 +563,7 @@ header img {
   line-height: var(--mb-2);
 }
 
-.fitness-program-card span {
-  color: var(--highlight-color);
-}
+
 
 .fitness-program-card:hover {
   background: url(../images/home/fondo-programas-azul.png);
