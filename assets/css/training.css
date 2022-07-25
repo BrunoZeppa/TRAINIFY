@@ -1840,6 +1840,7 @@ footer p {
     margin-top: 2rem;
 }
 /*--===============================  SETEO CONTACTO  =================================--*/
+/*--===============================  SETEO CONTACTO  =================================--*/
 
 .contacto {
     background-image: url(../images/home/FOOTER-04.jpg);
@@ -1896,11 +1897,12 @@ footer p {
   .redes-y-contacto-div hr {
     display:block;
     visibility: visible;
-    color: #0cfcfe;
-    width: 3rem;
-    height: 4rem;
-    border: #0cfcfe 7px solid;
-    order: 4;
+    width: 5px;
+    height: 27rem;
+    order: 3;
+    align-self: center;
+    border-right: #2196f3 solid 2px;
+    border-left: #0cfcfe solid 1px;
   }
   
   
@@ -1915,6 +1917,7 @@ footer p {
     flex-direction: column;
     gap: 15px;
     margin-top: 5rem;
+    order: 1;
   }
   .x-redes div {
     display: flex;
@@ -1924,6 +1927,7 @@ footer p {
     background-color: white;
     align-items: center;
     justify-content: center;
+    
   }
   .x-redes i {
    font-size: 2.5rem;
@@ -1936,8 +1940,8 @@ footer p {
     gap: 3rem;
     order: 3;
     margin-top: 2.5rem;
-    order: 2;
-    
+    order: 4;
+  
   }
   .direccion {
     display: flex;
@@ -1952,7 +1956,7 @@ footer p {
     order: 1;
     display: flex;
     flex-direction: column;
-    order: 1;
+    order: 2;
     gap: 0;
   }
   
@@ -1976,7 +1980,7 @@ footer p {
   }
   
   .redes-y-contacto-div hr {
-    display: none;
+    display: block;
   }
   .btn-form-enviar {
     display: flex;
@@ -1993,11 +1997,6 @@ footer p {
     margin-right: 0;
     border: none;
     margin-top: -.01rem;
-    cursor: pointer;
-  }
-  .btn-form-enviar:hover{
-    background: var(--primary-background-hoover-gradiente-orange);
-    color: white;
   }
   /*--===============================  SETEO FOOTER  =================================--*/
 footer {
