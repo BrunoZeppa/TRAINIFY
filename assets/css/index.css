@@ -840,6 +840,9 @@ header img {
   font-family: var(--small-font);
   display: block;
 }
+.small-abajo{
+  margin-top: -1rem;
+}
 .section5 img {
   position: relative;
   margin: 0.2rem 0.6rem;
@@ -855,7 +858,6 @@ header img {
   margin-left: 1.5rem;
   grid-template-columns: auto auto auto auto auto;
   grid-template-rows: auto auto auto auto auto auto;
-  margin-right: 2.5rem;
 }
 .aside2 .div-planes {
   overflow-x: scroll;
