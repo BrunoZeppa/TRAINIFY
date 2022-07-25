@@ -118,6 +118,7 @@ nav {
 .logo {
     width: 180px;
     height: 180px;
+    cursor: pointer;
 }
 
 /*=======- cambio de apariencia al click de la hamburguesa -===========*/
